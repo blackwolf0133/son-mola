@@ -94,6 +94,7 @@ def fake2(method, url, params=None, headers=None, data=None, timeout=120):
     raise AssertionError(url)
 P._request = fake2
 os.environ.pop("IG_USER_ID", None)
+P.VARSAYILAN_KIMLIK = ""
 assert P.resolve_user_id("EAA", "facebook") == "444"
 os.environ["IG_USER_ID"] = "111"
 try:

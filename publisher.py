@@ -88,6 +88,7 @@ def _wait_container(host, container_id, token, timeout=900):
 
 
 HESAP = os.environ.get("IG_USERNAME", "sonmola.dizi").strip().lstrip("@").lower()
+VARSAYILAN_KIMLIK = "17841447821857845" if HESAP == "sonmola.dizi" else ""   # @sonmola.dizi Instagram kimliği
 
 
 def _kullanici_adi(uid, token, mode):
@@ -98,7 +99,7 @@ def _kullanici_adi(uid, token, mode):
 def resolve_user_id(token, mode):
     """Paylaşılacak Instagram hesabının kimliği. Aynı anahtar başka kanallara da erişebildiği için
     hesap HER ZAMAN kullanıcı adıyla (IG_USERNAME, varsayılan sonmola.dizi) doğrulanır; eşleşmezse paylaşım yapılmaz."""
-    uid = os.environ.get("IG_USER_ID", "").strip()
+    uid = os.environ.get("IG_USER_ID", "").strip() or VARSAYILAN_KIMLIK
     if uid:
         ad = _kullanici_adi(uid, token, mode)
         if ad != HESAP:
