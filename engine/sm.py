@@ -397,7 +397,10 @@ def draw_prop(ctx, p, st, ink=INK):
         w, h = 120 * s, 220 * s
         ctx.save()
         ctx.translate(x, y)
-        ctx.rotate(math.radians(p.get("rot", -8)))
+        rot = p.get("rot", -8) + (3.5 * math.sin(st * 45) if p.get("titre") and (st % 1.4) < 0.9 else 0)
+        if p.get("titre"):
+            _glow(ctx, 0, 0, w * 1.6, (0.55, 0.65, 1.0), 0.18 + 0.1 * math.sin(st * 6))
+        ctx.rotate(math.radians(rot))
         _rect(ctx, -w / 2, -h / 2, w, h, (0.05, 0.05, 0.06), (0.6, 0.6, 0.65), 4)
         _rect(ctx, -w / 2 + 8, -h / 2 + 16, w - 16, h - 32, (0.12, 0.16, 0.24))
         _text(ctx, p.get("text", "16:44"), 0, -h / 2 + 60 * s, CAPTION_FONT, int(30 * s), (0.95, 0.95, 1.0))

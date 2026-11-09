@@ -1,98 +1,236 @@
 {
-  "id": "001",
-  "title": "16:44",
-  "year": "16:44",
-  "instagram_caption": "Otobüs yirmi dakika mola verdi ve bir daha hiç gelmedi. Saatler 16:44'te durdu, tabela ise iki yönde de aynı şeyi söylüyor. 🌫️\n\nBölüm 1/30\n\nYarın 21:30'da devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #kısadizi #çöpadam #sonmola",
-  "scenes": [
+ "id": "001",
+ "title": "16:44",
+ "year": "16:44",
+ "instagram_caption": "Otobüs yirmi dakika mola verdi ve bir daha hiç gelmedi. Saatler 16:44'te durdu. Sonra, şebekesi olmayan bir telefon çaldı. 📱🌫️\n\nBölüm 1/30\n\nYarın 21:30'da devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #kısadizi #çöpadam #sonmola",
+ "scenes": [
+  {
+   "say": "Otobüs yirmi dakika mola verdi. Bir daha hiç gelmedi.",
+   "text": "Otobüs yirmi dakika mola verdi. Bir daha hiç gelmedi.",
+   "bg": "tesis_dis",
+   "sis": 0.25,
+   "zoom": 0.07,
+   "actors": [
     {
-      "say": "Otobüs yirmi dakika mola verdi. Bir daha hiç gelmedi.",
-      "text": "Otobüs yirmi dakika mola verdi. Bir daha hiç gelmedi.",
-      "bg": "tesis_dis", "sis": 0.25, "zoom": 0.07,
-      "actors": [
-        {"id": "deniz", "x": 0.42, "y": 0.93, "pose": "stand", "face": "neutral", "scale": 0.9}
-      ],
-      "props": []
-    },
-    {
-      "say": "Adım Deniz. Hasta babamı görmeye gidiyordum. Muavin anons etti: yirmi dakika mola. Hepimiz indik.",
-      "text": "Adım Deniz. Hasta babamı görmeye gidiyordum. Muavin anons etti: yirmi dakika mola. Hepimiz indik.",
-      "bg": "peron", "sis": 0.15,
-      "actors": [
-        {"id": "deniz", "x": 0.52, "y": 0.93, "pose": "stand", "face": "neutral", "talk": true},
-        {"id": "murat", "x": 0.68, "y": 0.92, "pose": "point", "face": "neutral", "scale": 0.85},
-        {"id": "hatice", "x": 0.80, "y": 0.91, "pose": "stand", "face": "smile", "scale": 0.78},
-        {"id": "ece", "x": 0.90, "y": 0.92, "pose": "stand", "face": "happy", "scale": 0.55},
-        {"id": "kerem", "x": 0.38, "y": 0.91, "pose": "relax", "face": "neutral", "scale": 0.82, "flip": true}
-      ],
-      "props": []
-    },
-    {
-      "say": "Lavabodan çıktığımda otopark bomboştu. Otobüs, valizlerimizle birlikte gitmişti. Muavini bile bırakmıştı.",
-      "text": "Lavabodan çıktığımda otopark bomboştu. Otobüs, valizlerimizle birlikte gitmişti. Muavini bile bırakmıştı.",
-      "bg": "peron", "sis": 0.3,
-      "actors": [
-        {"id": "deniz", "x": 0.55, "y": 0.93, "pose": "shock", "face": "shock"},
-        {"id": "murat", "x": 0.78, "y": 0.92, "pose": "sad", "face": "sad", "scale": 0.85, "f_in": 0.6}
-      ],
-      "props": [
-        {"type": "pop", "text": "OTOBÜS YOK", "x": 0.5, "y": 0.18, "size": 92, "f": 0.25}
-      ]
-    },
-    {
-      "say": "İçerideki duvar saati on altı kırk dörtü gösteriyordu. Telefonum da on altı kırk dört diyordu. Şebeke yoktu.",
-      "text": "İçerideki duvar saati 16:44'ü gösteriyordu. Telefonum da 16:44 diyordu. Şebeke yoktu.",
-      "bg": "tesis_ic", "tezgah": false, "zoom": 0.08,
-      "actors": [
-        {"id": "deniz", "x": 0.30, "y": 0.93, "pose": "think", "face": "think"}
-      ],
-      "props": [
-        {"type": "saat", "x": 0.50, "y": 0.30, "scale": 1.1},
-        {"type": "telefon", "x": 0.70, "y": 0.62, "scale": 1.15, "f": 0.45}
-      ]
-    },
-    {
-      "say": "Bir saat bekledik. Sonra bir saat daha. O saat bir saniye bile ilerlemedi.",
-      "text": "Bir saat bekledik. Sonra bir saat daha. O saat bir saniye bile ilerlemedi.",
-      "bg": "tesis_ic", "tezgah": false,
-      "actors": [
-        {"id": "selim", "x": 0.22, "y": 0.93, "pose": "hips", "face": "confident", "scale": 0.92},
-        {"id": "leyla", "x": 0.42, "y": 0.93, "pose": "stand", "face": "neutral", "scale": 0.85},
-        {"id": "ece", "x": 0.52, "y": 0.93, "pose": "sad", "face": "sleepy", "scale": 0.55},
-        {"id": "sevgi", "x": 0.80, "y": 0.93, "pose": "think", "face": "think", "scale": 0.86, "flip": true}
-      ],
-      "props": [
-        {"type": "saat", "x": 0.50, "y": 0.24, "scale": 0.8, "sabit": true}
-      ]
-    },
-    {
-      "say": "Kasadaki yaşlı adam hiç şaşırmadı. Tezgâha dokuz bardak çay dizdi. Kaç kişi olduğumuzu ona kimse söylememişti.",
-      "text": "Kasadaki yaşlı adam hiç şaşırmadı. Tezgâha dokuz bardak çay dizdi. Kaç kişi olduğumuzu ona kimse söylememişti.",
-      "bg": "tesis_ic", "zoom": 0.09,
-      "actors": [
-        {"id": "nuri", "x": 0.44, "y": 0.93, "pose": "stand", "face": "neutral", "scale": 0.9}
-      ],
-      "props": [
-        {"type": "bardak", "x": 0.78, "y": 0.60, "scale": 0.72, "adet": 9, "aralik": 0.32, "f": 0.3}
-      ]
-    },
-    {
-      "say": "Selim, otobüsü yakalarız diye yola çıktı. Yarım saat sonra koşarak döndü. Yüzü bembeyazdı.",
-      "text": "Selim, otobüsü yakalarız diye yola çıktı. Yarım saat sonra koşarak döndü. Yüzü bembeyazdı.",
-      "bg": "yol", "sis": 0.35, "akis": true,
-      "actors": [
-        {"id": "selim", "x": 0.50, "y": 0.62, "to_y": 0.95, "pose": "push", "face": "shock", "scale": 0.45, "move_dur": 3.5}
-      ],
-      "props": []
-    },
-    {
-      "say": "Yol tabelasını gösterdi. İki yönde de aynı yazı vardı. Son Mola. Sıfır kilometre.",
-      "text": "Yol tabelasını gösterdi. İki yönde de aynı yazı vardı: SON MOLA, 0 KM.",
-      "bg": "karanlik", "sis": 0.3, "sis_to": 0.75, "zoom": 0.1, "sarsinti": true, "sarsinti_t": 3.2,
-      "actors": [],
-      "props": [
-        {"type": "tabela", "x": 0.30, "y": 0.92, "scale": 0.82, "ok": "sol"},
-        {"type": "tabela", "x": 0.72, "y": 0.92, "scale": 0.82, "ok": "sag"}
-      ]
+     "id": "deniz",
+     "x": 0.42,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "neutral",
+     "scale": 0.9
     }
-  ]
+   ],
+   "props": []
+  },
+  {
+   "say": "Adım Deniz. Hasta babamı görmeye gidiyordum. Muavin anons etti: yirmi dakika mola. Hepimiz indik.",
+   "text": "Adım Deniz. Hasta babamı görmeye gidiyordum. Muavin anons etti: yirmi dakika mola. Hepimiz indik.",
+   "bg": "peron",
+   "sis": 0.15,
+   "actors": [
+    {
+     "id": "deniz",
+     "x": 0.52,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "neutral",
+     "talk": true
+    },
+    {
+     "id": "murat",
+     "x": 0.68,
+     "y": 0.92,
+     "pose": "point",
+     "face": "neutral",
+     "scale": 0.85
+    },
+    {
+     "id": "hatice",
+     "x": 0.8,
+     "y": 0.91,
+     "pose": "stand",
+     "face": "smile",
+     "scale": 0.78
+    },
+    {
+     "id": "ece",
+     "x": 0.9,
+     "y": 0.92,
+     "pose": "stand",
+     "face": "happy",
+     "scale": 0.55
+    },
+    {
+     "id": "kerem",
+     "x": 0.38,
+     "y": 0.91,
+     "pose": "relax",
+     "face": "neutral",
+     "scale": 0.82,
+     "flip": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Lavabodan çıktığımda otopark bomboştu. Otobüs, valizlerimizle birlikte gitmişti. Muavini bile bırakmıştı.",
+   "text": "Lavabodan çıktığımda otopark bomboştu. Otobüs, valizlerimizle birlikte gitmişti. Muavini bile bırakmıştı.",
+   "bg": "peron",
+   "sis": 0.3,
+   "actors": [
+    {
+     "id": "deniz",
+     "x": 0.55,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock"
+    },
+    {
+     "id": "murat",
+     "x": 0.78,
+     "y": 0.92,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.85,
+     "f_in": 0.6
+    }
+   ],
+   "props": [
+    {
+     "type": "pop",
+     "text": "OTOBÜS YOK",
+     "x": 0.5,
+     "y": 0.18,
+     "size": 92,
+     "f": 0.25
+    }
+   ]
+  },
+  {
+   "say": "İçerideki saat on altı kırk dörtte durmuştu. Saatler geçti, o hiç ilerlemedi. Telefonlar da çekmiyordu.",
+   "text": "İçerideki saat 16:44'te durmuştu. Saatler geçti, o hiç ilerlemedi. Telefonlar da çekmiyordu.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "zoom": 0.08,
+   "actors": [
+    {
+     "id": "deniz",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think"
+    }
+   ],
+   "props": [
+    {
+     "type": "saat",
+     "x": 0.5,
+     "y": 0.3,
+     "scale": 1.1
+    },
+    {
+     "type": "telefon",
+     "x": 0.7,
+     "y": 0.62,
+     "scale": 1.15,
+     "f": 0.45
+    }
+   ]
+  },
+  {
+   "say": "Kasadaki yaşlı adam hiç şaşırmadı. Tezgâha dokuz bardak çay dizdi. Kaç kişi olduğumuzu ona kimse söylememişti.",
+   "text": "Kasadaki yaşlı adam hiç şaşırmadı. Tezgâha dokuz bardak çay dizdi. Kaç kişi olduğumuzu ona kimse söylememişti.",
+   "bg": "tesis_ic",
+   "zoom": 0.09,
+   "actors": [
+    {
+     "id": "nuri",
+     "x": 0.44,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "neutral",
+     "scale": 0.9
+    }
+   ],
+   "props": [
+    {
+     "type": "bardak",
+     "x": 0.78,
+     "y": 0.6,
+     "scale": 0.72,
+     "adet": 9,
+     "aralik": 0.32,
+     "f": 0.3
+    }
+   ]
+  },
+  {
+   "say": "Selim, otobüsü yakalarız diye yola çıktı. Yarım saat sonra koşarak döndü. Yüzü bembeyazdı.",
+   "text": "Selim, otobüsü yakalarız diye yola çıktı. Yarım saat sonra koşarak döndü. Yüzü bembeyazdı.",
+   "bg": "yol",
+   "sis": 0.35,
+   "akis": true,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.5,
+     "y": 0.62,
+     "to_y": 0.95,
+     "pose": "push",
+     "face": "shock",
+     "scale": 0.45,
+     "move_dur": 3.5
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Selim'in gördüğü tabelada iki yönde de aynı yazı vardı. Son Mola. Sıfır kilometre.",
+   "text": "Selim'in gördüğü tabelada iki yönde de aynı yazı vardı: SON MOLA, 0 KM.",
+   "bg": "karanlik",
+   "sis": 0.3,
+   "sis_to": 0.6,
+   "zoom": 0.1,
+   "actors": [],
+   "props": [
+    {
+     "type": "tabela",
+     "x": 0.3,
+     "y": 0.92,
+     "scale": 0.82,
+     "ok": "sol"
+    },
+    {
+     "type": "tabela",
+     "x": 0.72,
+     "y": 0.92,
+     "scale": 0.82,
+     "ok": "sag"
+    }
+   ]
+  },
+  {
+   "say": "Tam o sırada, şebekesi olmayan telefonum çaldı. Ekranda tek bir kelime yazıyordu. Babam.",
+   "text": "Tam o sırada, şebekesi olmayan telefonum çaldı. Ekranda tek bir kelime yazıyordu: BABAM.",
+   "bg": "karanlik",
+   "sis": 0.12,
+   "zoom": 0.14,
+   "sarsinti": true,
+   "sarsinti_t": 0.4,
+   "actors": [],
+   "props": [
+    {
+     "type": "telefon",
+     "x": 0.5,
+     "y": 0.48,
+     "scale": 2.2,
+     "rot": -4,
+     "text": "BABAM",
+     "alt": "arıyor…",
+     "titre": true,
+     "delay": 0.2
+    }
+   ]
+  }
+ ]
 }

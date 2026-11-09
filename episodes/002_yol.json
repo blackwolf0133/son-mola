@@ -5,25 +5,45 @@
  "instagram_caption": "İki kişi yola çıktı, dümdüz yürüdü. Ama geri döndüklerinde yanlış yönden geliyorlardı. 🌫️\n\nBölüm 2/30\n\nYarın 21:30'da devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #gerilim #kısadizi #ürpertici #sonmola",
  "scenes": [
   {
-   "say": "Selim yalan söylemiyordu. Tabelayı ben de gördüm. İki yönde de Son Mola, sıfır kilometre.",
-   "text": "Selim yalan söylemiyordu. Tabelayı ben de gördüm. İki yönde de SON MOLA, 0 KM.",
-   "bg": "karanlik",
-   "sis": 0.4,
-   "zoom": 0.08,
-   "actors": [],
+   "say": "Telefonu açamadım. Nuri Amca bileğimi tuttu ve sessizce başını iki yana salladı. Telefon bir süre daha çaldı, sonra sustu.",
+   "text": "Telefonu açamadım. Nuri Amca bileğimi tuttu ve sessizce başını iki yana salladı. Telefon bir süre daha çaldı, sonra sustu.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "nuri",
+     "x": 0.62,
+     "y": 0.93,
+     "pose": "push",
+     "face": "neutral",
+     "scale": 0.9,
+     "flip": true
+    },
+    {
+     "id": "deniz",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.9
+    }
+   ],
    "props": [
     {
-     "type": "tabela",
-     "x": 0.5,
-     "y": 0.92,
-     "scale": 1.0,
-     "ok": "sag"
+     "type": "telefon",
+     "x": 0.22,
+     "y": 0.35,
+     "scale": 0.9,
+     "text": "BABAM",
+     "alt": "cevapsız arama",
+     "f": 0.6
     }
    ]
   },
   {
-   "say": "Kerem yerinde duramadı. Telefonu havaya kaldırıp şebeke aradı. Sonra Selim'le birlikte, otobüsün gittiği yöne yürümeye karar verdiler.",
-   "text": "Kerem yerinde duramadı. Telefonu havaya kaldırıp şebeke aradı. Sonra Selim'le birlikte, otobüsün gittiği yöne yürümeye karar verdiler.",
+   "say": "Kerem yerinde duramadı. Selim'le birlikte, otobüsün gittiği yöne yürümeye karar verdiler.",
+   "text": "Kerem yerinde duramadı. Selim'le birlikte, otobüsün gittiği yöne yürümeye karar verdiler.",
    "bg": "peron",
    "sis": 0.15,
    "actors": [
@@ -55,15 +75,7 @@
      "flip": true
     }
    ],
-   "props": [
-    {
-     "type": "telefon",
-     "x": 0.22,
-     "y": 0.35,
-     "scale": 0.8,
-     "f": 0.1
-    }
-   ]
+   "props": []
   },
   {
    "say": "Dümdüz bir yoldu. Ne bir kavşak vardı, ne de bir dönemeç. Arkalarından bakarken küçülüp kayboldular.",
