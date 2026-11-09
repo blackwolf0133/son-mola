@@ -19,4 +19,5 @@ jobs:
           IG_MODE: ${{ vars.IG_MODE }}
         run: |
           python -c "import os,publisher; t=os.environ['IG_ACCESS_TOKEN']; print('Anahtar türü:', publisher.detect_mode(t), '| uzunluk:', len(t))"
+          python tools/teshis.py || true
           python daily.py check
