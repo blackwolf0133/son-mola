@@ -1,0 +1,240 @@
+{
+ "id": "002",
+ "title": "Yol",
+ "year": "16:44",
+ "instagram_caption": "İki kişi yola çıktı, dümdüz yürüdü. Ama geri döndüklerinde yanlış yönden geliyorlardı. 🌫️\n\nBölüm 2/30\n\nYarın 21:30'da devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #gerilim #kısadizi #ürpertici #sonmola",
+ "scenes": [
+  {
+   "say": "Selim yalan söylemiyordu. Tabelayı ben de gördüm. İki yönde de Son Mola, sıfır kilometre.",
+   "text": "Selim yalan söylemiyordu. Tabelayı ben de gördüm. İki yönde de SON MOLA, 0 KM.",
+   "bg": "karanlik",
+   "sis": 0.4,
+   "zoom": 0.08,
+   "actors": [],
+   "props": [
+    {
+     "type": "tabela",
+     "x": 0.5,
+     "y": 0.92,
+     "scale": 1.0,
+     "ok": "sag"
+    }
+   ]
+  },
+  {
+   "say": "Kerem yerinde duramadı. Telefonu havaya kaldırıp şebeke aradı. Sonra Selim'le birlikte, otobüsün gittiği yöne yürümeye karar verdiler.",
+   "text": "Kerem yerinde duramadı. Telefonu havaya kaldırıp şebeke aradı. Sonra Selim'le birlikte, otobüsün gittiği yöne yürümeye karar verdiler.",
+   "bg": "peron",
+   "sis": 0.15,
+   "actors": [
+    {
+     "id": "kerem",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "point",
+     "face": "effort",
+     "scale": 0.9,
+     "talk": true
+    },
+    {
+     "id": "selim",
+     "x": 0.62,
+     "y": 0.93,
+     "pose": "hips",
+     "face": "confident",
+     "scale": 0.95,
+     "flip": true
+    },
+    {
+     "id": "deniz",
+     "x": 0.82,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.85,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "type": "telefon",
+     "x": 0.22,
+     "y": 0.35,
+     "scale": 0.8,
+     "f": 0.1
+    }
+   ]
+  },
+  {
+   "say": "Dümdüz bir yoldu. Ne bir kavşak vardı, ne de bir dönemeç. Arkalarından bakarken küçülüp kayboldular.",
+   "text": "Dümdüz bir yoldu. Ne bir kavşak vardı, ne de bir dönemeç. Arkalarından bakarken küçülüp kayboldular.",
+   "bg": "yol",
+   "sis": 0.3,
+   "sis_to": 0.5,
+   "actors": [
+    {
+     "id": "kerem",
+     "x": 0.47,
+     "y": 0.7,
+     "pose": "stand",
+     "face": "neutral",
+     "to_y": 0.47,
+     "scale": 0.42,
+     "move_dur": 5.5
+    },
+    {
+     "id": "selim",
+     "x": 0.54,
+     "y": 0.7,
+     "pose": "stand",
+     "face": "neutral",
+     "to_y": 0.47,
+     "scale": 0.45,
+     "move_dur": 5.5
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Kırk dakika sonra Ece pencereden seslendi. Geliyorlar! Ama yol tarafından değil. Tesisin arkasındaki tarladan geliyorlardı.",
+   "text": "Kırk dakika sonra Ece pencereden seslendi: “Geliyorlar!” Ama yol tarafından değil. Tesisin arkasındaki tarladan geliyorlardı.",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.72
+   },
+   "sis": 0.35,
+   "actors": [
+    {
+     "id": "ece",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "point",
+     "face": "shock",
+     "scale": 0.6,
+     "flip": false,
+     "talk": true
+    }
+   ],
+   "props": [
+    {
+     "type": "pop",
+     "text": "ARKADAN?",
+     "x": 0.5,
+     "y": 0.18,
+     "size": 88,
+     "f": 0.55
+    }
+   ]
+  },
+  {
+   "say": "Selim'in nefesi kesilmişti. Hiç dönmedik, dedi. Yemin ederim, hep düz yürüdük.",
+   "text": "Selim'in nefesi kesilmişti. “Hiç dönmedik,” dedi. “Yemin ederim, hep düz yürüdük.”",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "zoom": 0.08,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.45,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "shock",
+     "scale": 0.95,
+     "talk": true
+    },
+    {
+     "id": "kerem",
+     "x": 0.25,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.88
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Ece kâğıdına yolu çizdi. Düz bir çizgi değil, bir daire çizdi. Ortasına da bu tesisi koydu.",
+   "text": "Ece kâğıdına yolu çizdi. Düz bir çizgi değil, bir daire çizdi. Ortasına da bu tesisi koydu.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "actors": [
+    {
+     "id": "ece",
+     "x": 0.28,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.6
+    },
+    {
+     "id": "leyla",
+     "x": 0.15,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "neutral",
+     "scale": 0.85
+    }
+   ],
+   "props": [
+    {
+     "type": "resim",
+     "x": 0.62,
+     "y": 0.45,
+     "scale": 1.15,
+     "f": 0.3
+    }
+   ]
+  },
+  {
+   "say": "Dışarıda güneş batarken tarlalardan beyaz bir sis yükselmeye başladı. Nuri Amca kepenkleri tek tek indirdi.",
+   "text": "Dışarıda güneş batarken tarlalardan beyaz bir sis yükselmeye başladı. Nuri Amca kepenkleri tek tek indirdi.",
+   "bg": "tesis_dis",
+   "sis": 0.3,
+   "sis_to": 0.8,
+   "isik": true,
+   "zoom": 0.06,
+   "actors": [
+    {
+     "id": "nuri",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "push",
+     "face": "effort",
+     "scale": 0.85
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Sonra bize döndü ve ilk kez konuştu. Güneş batıyor. Adınızı duyarsanız, sakın cevap vermeyin.",
+   "text": "Sonra bize döndü ve ilk kez konuştu: “Güneş batıyor. Adınızı duyarsanız… sakın cevap vermeyin.”",
+   "bg": "tesis_ic",
+   "zoom": 0.12,
+   "karart": [
+    5.4,
+    6.6
+   ],
+   "actors": [
+    {
+     "id": "nuri",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "neutral",
+     "scale": 1.0,
+     "talk": true
+    }
+   ],
+   "props": [
+    {
+     "type": "saat",
+     "x": 0.5,
+     "y": 0.2,
+     "scale": 0.7,
+     "sabit": true
+    }
+   ]
+  }
+ ]
+}

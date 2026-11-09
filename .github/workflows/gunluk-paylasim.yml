@@ -1,0 +1,159 @@
+# Her gün sıradaki bölümü üretir ve Instagram'a Reel olarak paylaşır.
+name: Günlük paylaşım
+
+on:
+  schedule:
+    # 18:03 UTC = 21:03 Türkiye. Üretim ~15 dk sürer, paylaşım ~21:30'da olur.
+    - cron: "3 18 * * *"
+  workflow_dispatch:
+    inputs:
+      sadece_video:
+        description: "Sadece videoyu üret, paylaşma (deneme)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # paylaşım kaydı + videoyu GitHub Releases'e koymak için
+
+concurrency:
+  group: gunluk-paylasim
+  cancel-in-progress: false
+
+jobs:
+  uret:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    outputs:
+      bolum: ${{ steps.uret.outputs.bolum }}
+      skip: ${{ steps.uret.outputs.skip }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Sistem paketleri ve yazı tipleri
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg espeak-ng libcairo2-dev pkg-config
+          mkdir -p ~/.fonts && cp fonts/*.ttf ~/.fonts/ && fc-cache -f
+
+      - name: Python paketleri
+        run: |
+          pip install -r requirements.txt
+          pip install faster-whisper || echo "::warning::faster-whisper kurulamadı, okunuş kontrolü atlanacak"
+
+      - name: Gemini sesi
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          # Gemini çalışmazsa bölümün tamamı Piper ile okunur (yarım yamalak karışık ses olmaz).
+          if [ -n "$GEMINI_API_KEY" ]; then
+            echo "TTS_ENGINE=gemini" >> "$GITHUB_ENV"
+            echo "Gemini sesiyle seslendirilecek: $(cat assets/voice/gemini_ses 2>/dev/null || echo Enceladus)"
+            echo "GEMINI_VOICE=$(cat assets/voice/gemini_ses 2>/dev/null || echo Enceladus)" >> "$GITHUB_ENV"
+          else
+            echo "::warning::GEMINI_API_KEY yok, Piper sesi kullanılacak"
+          fi
+
+      - name: Ses modeli (önbellek)
+        uses: actions/cache@v4
+        with:
+          path: models
+          key: piper-tr-fahrettin-v1
+
+      - name: Ses modelini indir
+        run: |
+          mkdir -p models
+          if [ ! -f models/tr_TR-fahrettin-medium.onnx ]; then
+            curl -sSL https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-tr_TR-fahrettin-medium.tar.bz2 | tar xj -C /tmp
+            cp /tmp/vits-piper-tr_TR-fahrettin-medium/tr_TR-fahrettin-medium.onnx* models/
+          fi
+
+      - name: Sıra durumu
+        run: python daily.py status
+
+      - name: Videoyu üret
+        id: uret
+        env:
+          FORCE: ${{ inputs.sadece_video && '1' || '' }}
+          PYTHONUNBUFFERED: "1"
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python daily.py render
+          if grep -q "skip=true" "$GITHUB_OUTPUT"; then exit 0; fi
+          echo "bolum=$(python -c "import json;print(json.load(open('output/today.json'))['id'])")" >> "$GITHUB_OUTPUT"
+          mkdir -p site/videos
+          cp output/today.json site/
+          cp "$(python -c "import json;print(json.load(open('output/today.json'))['path'])")" site/videos/
+          echo '<meta charset="utf-8"><h1>Son Mola</h1>' > site/index.html
+
+      - name: Önizleme (deneme modunda)
+        if: ${{ inputs.sadece_video && steps.uret.outputs.skip != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ID="${{ steps.uret.outputs.bolum }}"
+          gh release create "onizleme-${ID}-$(date +%Y%m%d%H%M)" "site/videos/${ID}.mp4" --prerelease --title "Önizleme ${ID}" --notes "Deneme videosu" --repo "${{ github.repository }}"
+
+      - name: Videoyu indirilebilir olarak sakla
+        if: ${{ steps.uret.outputs.skip != 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ steps.uret.outputs.bolum }}
+          path: |
+            site/today.json
+            site/videos/*.mp4
+          retention-days: 14
+
+
+  paylas:
+    needs: uret
+    if: ${{ !inputs.sadece_video && needs.uret.outputs.skip != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Videoyu al
+        uses: actions/download-artifact@v4
+        with:
+          name: video-${{ needs.uret.outputs.bolum }}
+          path: site
+
+      - name: Videoyu herkese açık adrese koy (GitHub Releases)
+        id: yayin
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ID="${{ needs.uret.outputs.bolum }}"
+          TAG="video-${ID}-$(date +%Y%m%d%H%M)"
+          gh release create "$TAG" "site/videos/${ID}.mp4" --title "Bölüm ${ID}" --notes "Otomatik paylaşım videosu" --repo "${{ github.repository }}"
+          echo "url=https://github.com/${{ github.repository }}/releases/download/${TAG}/${ID}.mp4" >> "$GITHUB_OUTPUT"
+          # Eski video sürümlerini temizle (son 10 kalsın)
+          gh release list --repo "${{ github.repository }}" --limit 100 --json tagName --jq '.[].tagName' | grep '^video-' | tail -n +11 | while read t; do gh release delete "$t" --cleanup-tag -y --repo "${{ github.repository }}"; done || true
+
+      - name: Instagram'a paylaş
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_MODE: ${{ vars.IG_MODE }}
+        run: |
+          mkdir -p output
+          python -c "import json; t=json.load(open('site/today.json')); t['path']='site/videos/'+t['id']+'.mp4'; json.dump(t, open('output/today.json','w'), ensure_ascii=False)"
+          python daily.py publish --video-url "${{ steps.yayin.outputs.url }}"
+
+      - name: Paylaşım kaydını depoya yaz
+        if: always()
+        run: |
+          git config user.name "son-mola-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add state/posted.json
+          git commit -m "Paylaşıldı: bölüm ${{ needs.uret.outputs.bolum }}" || echo "değişiklik yok"
+          git pull --rebase -q && git push

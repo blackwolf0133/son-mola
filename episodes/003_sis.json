@@ -1,0 +1,209 @@
+{
+ "id": "003",
+ "title": "Sis",
+ "year": "16:44",
+ "instagram_caption": "İlk gece sis geldi ve herkes adının çağrıldığını duydu. Biri cevap verdi. 🌫️\n\nBölüm 3/30\n\nYarın 21:30'da devamı. Kaçırmamak için takip et 🌫️\n\n#korkuhikayesi #gizem #kısadizi #geceyarısı #sonmola",
+ "scenes": [
+  {
+   "say": "Saat hâlâ on altı kırk dörtü gösteriyordu. Ama dışarıda gece olmuştu. Sis, camlara kadar gelmişti.",
+   "text": "Saat hâlâ 16:44'ü gösteriyordu. Ama dışarıda gece olmuştu. Sis, camlara kadar gelmişti.",
+   "bg": "pencere",
+   "sis": 0.55,
+   "zoom": 0.08,
+   "actors": [],
+   "props": []
+  },
+  {
+   "say": "Hepimiz tezgâhın önünde, yere oturduk. Kimse uyumadı. Hatice Teyze alçak sesle dua ediyordu.",
+   "text": "Hepimiz tezgâhın önünde, yere oturduk. Kimse uyumadı. Hatice Teyze alçak sesle dua ediyordu.",
+   "bg": "tesis_ic",
+   "sis": 0.08,
+   "actors": [
+    {
+     "id": "hatice",
+     "x": 0.2,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sleepy",
+     "scale": 0.8
+    },
+    {
+     "id": "deniz",
+     "x": 0.38,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "neutral",
+     "scale": 0.85
+    },
+    {
+     "id": "ece",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sleepy",
+     "scale": 0.55
+    },
+    {
+     "id": "leyla",
+     "x": 0.6,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "neutral",
+     "scale": 0.82,
+     "flip": true
+    },
+    {
+     "id": "kerem",
+     "x": 0.85,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "neutral",
+     "scale": 0.85,
+     "flip": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Gece yarısına doğru ilk ses geldi. Kapının hemen önünden. Biri usulca adımı söyledi. Deniz.",
+   "text": "Gece yarısına doğru ilk ses geldi. Kapının hemen önünden. Biri usulca adımı söyledi: “Deniz…”",
+   "bg": "pencere",
+   "sis": 0.6,
+   "golge": {
+    "x": 0.62
+   },
+   "sarsinti": true,
+   "sarsinti_t": 4.0,
+   "actors": [],
+   "props": [
+    {
+     "type": "pop",
+     "text": "“DENİZ…”",
+     "x": 0.5,
+     "y": 0.2,
+     "size": 86,
+     "f": 0.75
+    }
+   ]
+  },
+  {
+   "say": "Babamın sesiydi. Hastanede yatan, nefes almakta zorlanan babamın sesi. Ama bu ses hiç hasta değildi.",
+   "text": "Babamın sesiydi. Hastanede yatan, nefes almakta zorlanan babamın sesi. Ama bu ses hiç hasta değildi.",
+   "bg": "karanlik",
+   "sis": 0.4,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "deniz",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 1.0
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Sonra herkes kendi adını duydu. Selim kızının sesini, Leyla annesininkini. Kimse kıpırdamadı.",
+   "text": "Sonra herkes kendi adını duydu. Selim kızının sesini, Leyla annesininkini. Kimse kıpırdamadı.",
+   "bg": "tesis_ic",
+   "karart": [
+    3.0,
+    3.4
+   ],
+   "sis": 0.15,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.25,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.9
+    },
+    {
+     "id": "leyla",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.85
+    },
+    {
+     "id": "hatice",
+     "x": 0.75,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.8,
+     "flip": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Ama Kerem annesini duyduğunda dayanamadı. Fısıldadı. Anne? Selim elini Kerem'in ağzına kapattı. Çok geçti.",
+   "text": "Ama Kerem annesini duyduğunda dayanamadı. Fısıldadı: “Anne?” Selim elini Kerem'in ağzına kapattı. Çok geçti.",
+   "bg": "tesis_ic",
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "kerem",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "open",
+     "face": "sad",
+     "scale": 0.9,
+     "talk": true
+    },
+    {
+     "id": "selim",
+     "x": 0.58,
+     "y": 0.93,
+     "pose": "push",
+     "face": "effort",
+     "scale": 0.92,
+     "flip": true
+    }
+   ],
+   "props": [
+    {
+     "type": "pop",
+     "text": "“ANNE?”",
+     "x": 0.5,
+     "y": 0.18,
+     "size": 90,
+     "f": 0.4
+    }
+   ]
+  },
+  {
+   "say": "Dışarıdaki ses sustu. Sanki bir şey memnun olmuştu.",
+   "text": "Dışarıdaki ses sustu. Sanki bir şey memnun olmuştu.",
+   "bg": "karanlik",
+   "sis": 0.5,
+   "zoom": 0.06,
+   "actors": [],
+   "props": []
+  },
+  {
+   "say": "Sabah Kerem yoktu. Kapı kilitliydi. Ama montu dışarıda, peronun bankında, özenle katlanmış duruyordu.",
+   "text": "Sabah Kerem yoktu. Kapı kilitliydi. Ama montu dışarıda, peronun bankında, özenle katlanmış duruyordu.",
+   "bg": "peron",
+   "sis": 0.2,
+   "gunduz": true,
+   "zoom": 0.12,
+   "actors": [],
+   "props": [
+    {
+     "type": "mont",
+     "x": 0.3,
+     "y": 0.8,
+     "scale": 1.0,
+     "bank": false
+    }
+   ]
+  }
+ ]
+}
