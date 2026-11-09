@@ -81,6 +81,7 @@ jobs:
           FORCE: ${{ inputs.sadece_video && '1' || '' }}
           PYTHONUNBUFFERED: "1"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TEMPO: "1.07"   # Enceladus yavaş okuyor; hafif hızlandırma (süre ~55-58 sn)
         run: |
           python daily.py render
           if grep -q "skip=true" "$GITHUB_OUTPUT"; then exit 0; fi
