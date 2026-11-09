@@ -80,6 +80,10 @@ def cmd_render(_):
         print(f"Zamanlayıcı geç tetiklendi (TR saat {hour_tr}:xx), gece paylaşımı yapılmıyor.")
         set_output("skip", "true")
         return
+    if os.environ.get("FORCE") != "1" and not os.path.exists(os.path.join(ROOT, "assets", "yayinda")):
+        print("Dizi henüz yayında değil (assets/yayinda dosyası yok). Ses ve ilk bölüm onaylanınca açılacak.")
+        set_output("skip", "true")
+        return
     if os.environ.get("FORCE") != "1" and any(p.get("date") == today_tr() for p in load_state()["posted"]):
         print(f"Bugün ({today_tr()}) zaten paylaşım yapılmış, ikinci video üretilmiyor.")
         set_output("skip", "true")
