@@ -1,6 +1,6 @@
 # SON MOLA · @sonmola.dizi
 
-Çöp adamlarla günlük gizem/gerilim dizisi. Her gün 21:30'da bir bölüm Reels olarak paylaşılır.
+Çöp adamlarla günlük gizem/gerilim dizisi. Her gün 17:45'te bir bölüm Reels olarak paylaşılır.
 
 - Hikâye ve kurallar: `docs/dizi_kitabi.md` · Teknik format: `docs/senaryo_formati.md`
 - Bölümler: `episodes/` · Paylaşım kaydı: `state/posted.json`

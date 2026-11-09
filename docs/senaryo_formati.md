@@ -1,11 +1,11 @@
 # Son Mola · bölüm JSON formatı
 
-Dosya: `episodes/NNN_kisa_ad.json`. Sıradaki paylaşılmamış bölüm her gün 21:30'da paylaşılır.
+Dosya: `episodes/NNN_kisa_ad.json`. Sıradaki paylaşılmamış bölüm her gün 17:45'te paylaşılır.
 
 ```json
 {
   "id": "004", "title": "Fazla Bardak", "year": "16:44",
-  "instagram_caption": "1-2 cümle ürpertici özet 🌫️\n\nBölüm 4/30\n\nYarın 21:30'da devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #kısadizi #çöpadam #sonmola",
+  "instagram_caption": "1-2 cümle ürpertici özet 🌫️\n\nBölüm 4/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #kısadizi #çöpadam #sonmola",
   "scenes": [ { "say": "...", "text": "...", "bg": "tesis_ic", "actors": [], "props": [] } ]
 }
 ```
@@ -38,4 +38,4 @@ Dosya: `episodes/NNN_kisa_ad.json`. Sıradaki paylaşılmamış bölüm her gün
 `kapi` (`aralik`), `defter`, `resim` (Ece'nin çizimi), `fener`, `lamba`, `far` (sisteki farlar), `pop` (kırmızı büyük yazı, `f` = sesin yüzde kaçında).
 Zamanlama: `delay` (sn) ya da `f` (konuşmanın oranı).
 
-Kapanış kartı ("BÖLÜM N+1 · YARIN 21:30") ve gerilim müziği otomatik eklenir.
+Kapanış kartı ("BÖLÜM N+1 · YARIN 17:45") ve gerilim müziği otomatik eklenir.

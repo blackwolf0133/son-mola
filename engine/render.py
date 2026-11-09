@@ -18,7 +18,7 @@ FPS = 30
 SR = 22050
 SCENE_PAD = 0.45          # her sahnenin sesinden sonra bekleme (sn)
 PUNCH = 0.22              # sahne girişindeki zoom süresi
-END_CARD = 3.2            # kapanış kartı ("BÖLÜM N+1 · YARIN 21:30") süresi
+END_CARD = 3.2            # kapanış kartı ("BÖLÜM N+1 · YARIN 17:45") süresi
 SM_BACK = {"tabela", "kapi", "mont", "lamba", "far"}
 _FOG = {"f": None}
 
@@ -841,7 +841,7 @@ def render_episode(ep_path, out_mp4, voice_model, workdir="build", handle="@sonm
         if t >= scenes_end:  # kapanış kartı
             ctx.set_source_surface(header)
             ctx.paint()
-            SM.draw_end_card(ctx, (t - scenes_end) / 0.8, int(ep["id"]) + 1, ep.get("next_time", "21:30"))
+            SM.draw_end_card(ctx, (t - scenes_end) / 0.8, int(ep["id"]) + 1, ep.get("next_time", "17:45"))
             surf.flush()
             ff.stdin.write(bytes(surf.get_data()))
             continue

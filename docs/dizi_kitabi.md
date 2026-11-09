@@ -2,7 +2,7 @@
 
 > "Otobüs on dakika mola verdi. Geri döndüğümüzde otobüs yoktu. Saat hâlâ 16:44."
 
-Instagram: **@sonmola.dizi** · Her gece **21:30** · 40–55 sn · Çöp adam çizimli gizem / korku dizisi.
+Instagram: **@sonmola.dizi** · Her gün **17:45** · 40–55 sn · Çöp adam çizimli gizem / korku dizisi.
 Bu dosya dizinin tek gerçek kaynağıdır. Yeni bölüm yazan herkes (insan ya da Claude) önce bunu okur,
 kurallara ve sırların açılış takvimine uyar.
 
@@ -107,9 +107,9 @@ Durum: ⬜ yazılmadı · ✅ yazıldı. Her bölüm: **merak sorusu** → **uç
 
 ## 8. Bölüm formatı
 - 6–8 sahne, **40–55 sn**, toplam ~110–140 kelime. İlk sahne kanca (soğuk açılış), son sahne uçurum.
-- Kapanış kartı otomatik eklenir: "Bölüm N+1 · Yarın 21:30" (yazmana gerek yok).
+- Kapanış kartı otomatik eklenir: "Bölüm N+1 · Yarın 17:45" (yazmana gerek yok).
 - Teknik format: `docs/senaryo_formati.md`.
 - Açıklama (instagram_caption): 1–2 cümlelik ürpertici özet (cevabı vermeden) + "Bölüm N/30" +
-  TEK çağrı: "Yarın 21:30'da devamı. Kaçırmamak için takip et 🌫️" + TAM 5 etiket, sonuncusu #sonmola.
+  TEK çağrı: "Yarın 17:45'te devamı. Kaçırmamak için takip et 🌫️" + TAM 5 etiket, sonuncusu #sonmola.
   Etiketlerde başka dizi adı yok. Önerilen havuz: #gizem #korkuhikayesi #kısadizi #gerilim #çöpadam
   #ürpertici #geceyarısı #sonmola.

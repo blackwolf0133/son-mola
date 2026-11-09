@@ -577,7 +577,7 @@ def drone(seconds, sr, seed=4, sting_at=None):
 # --------------------------------------------------------------------------
 # Kapanış kartı
 # --------------------------------------------------------------------------
-def draw_end_card(ctx, k, next_no, saat="21:30"):
+def draw_end_card(ctx, k, next_no, saat="17:45"):
     """k: 0..1 kartın görünme oranı."""
     ctx.set_source_rgba(0, 0, 0, min(1, k * 1.5))
     ctx.rectangle(0, 0, W, H)

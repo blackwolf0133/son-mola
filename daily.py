@@ -1,4 +1,4 @@
-"""SON MOLA (@sonmola.dizi) - günlük otomasyon (her gün 21:30).
+"""SON MOLA (@sonmola.dizi) - günlük otomasyon (her gün 17:45).
 
 Komutlar:
   python daily.py status                 -> sırada kaç bölüm var, son paylaşılanlar
@@ -73,10 +73,10 @@ def cmd_render(_):
     if not q:
         print("::error::Sırada bölüm yok! episodes/ klasörüne yeni bölüm ekleyin.")
         sys.exit(1)
-    # GitHub zamanlayıcısı saatlerce gecikebiliyor: otomatik tetiklemede Türkiye saati 20:00-24:00
+    # GitHub zamanlayıcısı saatlerce gecikebiliyor: otomatik tetiklemede Türkiye saati 17:00-21:00
     # dışındaysa paylaşma; yedek alarm elle başlatır.
     hour_tr = (dt.datetime.utcnow() + dt.timedelta(hours=3)).hour
-    if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and not (20 <= hour_tr < 24):
+    if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and not (17 <= hour_tr < 21):
         print(f"Zamanlayıcı geç tetiklendi (TR saat {hour_tr}:xx), gece paylaşımı yapılmıyor.")
         set_output("skip", "true")
         return
