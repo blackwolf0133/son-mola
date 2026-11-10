@@ -8,8 +8,8 @@
    "kanca": true,
    "kanca_yazi": "SAKIN CEVAP VERME",
    "voice_delay": 0.0,
-   "say": "Gece yarısı kapıdan babamın sesi geldi. Ama babam hastanedeydi.",
-   "text": "Gece yarısı kapıdan babamın sesi geldi. Ama babam hastanedeydi.",
+   "say": "Gece yarısı babamın sesi geldi. Ama babam hastanedeydi.",
+   "text": "Gece yarısı babamın sesi geldi. Ama babam hastanedeydi.",
    "bg": "pencere",
    "golge": {
     "x": 0.62

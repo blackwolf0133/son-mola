@@ -8,8 +8,8 @@
    "kanca": true,
    "kanca_yazi": "HİÇ DÖNMEDİLER",
    "voice_delay": 0.0,
-   "say": "Dümdüz yürüdüler. Hiç dönmediler. Ama arkamızdan geri geldiler.",
-   "text": "Dümdüz yürüdüler. Hiç dönmediler. Ama arkamızdan geri geldiler.",
+   "say": "Hiç dönmediler. Ama arkamızdan geri geldiler.",
+   "text": "Hiç dönmediler. Ama arkamızdan geri geldiler.",
    "bg": "pencere",
    "golge": {
     "x": 0.72
@@ -31,8 +31,8 @@
    "props": []
   },
   {
-   "say": "Telefonu açamadım. Nuri Amca bileğimi tuttu ve sessizce başını iki yana salladı. Telefon bir süre daha çaldı, sonra sustu.",
-   "text": "Telefonu açamadım. Nuri Amca bileğimi tuttu ve sessizce başını iki yana salladı. Telefon bir süre daha çaldı, sonra sustu.",
+   "say": "Telefonu açamadım. Nuri Amca bileğimi tuttu, başını iki yana salladı. Telefon sustu.",
+   "text": "Telefonu açamadım. Nuri Amca bileğimi tuttu, başını iki yana salladı. Telefon sustu.",
    "bg": "tesis_ic",
    "tezgah": false,
    "zoom": 0.1,
@@ -68,8 +68,8 @@
    ]
   },
   {
-   "say": "Kerem yerinde duramadı. Selim'le birlikte, otobüsün gittiği yöne yürümeye karar verdiler.",
-   "text": "Kerem yerinde duramadı. Selim'le birlikte, otobüsün gittiği yöne yürümeye karar verdiler.",
+   "say": "Kerem duramadı. Selim'le birlikte otobüsün gittiği yöne yürüdüler.",
+   "text": "Kerem duramadı. Selim'le birlikte otobüsün gittiği yöne yürüdüler.",
    "bg": "peron",
    "sis": 0.15,
    "actors": [
@@ -104,8 +104,8 @@
    "props": []
   },
   {
-   "say": "Dümdüz bir yoldu. Ne bir kavşak vardı, ne de bir dönemeç. Arkalarından bakarken küçülüp kayboldular.",
-   "text": "Dümdüz bir yoldu. Ne bir kavşak vardı, ne de bir dönemeç. Arkalarından bakarken küçülüp kayboldular.",
+   "say": "Dümdüz bir yoldu. Ne kavşak vardı, ne dönemeç. Sisin içinde küçülüp kayboldular.",
+   "text": "Dümdüz bir yoldu. Ne kavşak vardı, ne dönemeç. Sisin içinde küçülüp kayboldular.",
    "bg": "yol",
    "sis": 0.3,
    "sis_to": 0.5,
@@ -134,8 +134,8 @@
    "props": []
   },
   {
-   "say": "Kırk dakika sonra Ece pencereden seslendi. Geliyorlar! Ama yol tarafından değil. Tesisin arkasındaki tarladan geliyorlardı.",
-   "text": "Kırk dakika sonra Ece pencereden seslendi: “Geliyorlar!” Ama yol tarafından değil. Tesisin arkasındaki tarladan geliyorlardı.",
+   "say": "Kırk dakika sonra Ece pencereden seslendi. Geliyorlar! Ama yoldan değil. Tesisin arkasındaki tarladan.",
+   "text": "Kırk dakika sonra Ece pencereden seslendi: “Geliyorlar!” Ama yoldan değil. Tesisin arkasındaki tarladan.",
    "bg": "pencere",
    "golge": {
     "x": 0.72
