@@ -5,6 +5,32 @@
  "instagram_caption": "İki kişi yola çıktı, dümdüz yürüdü. Ama geri döndüklerinde yanlış yönden geliyorlardı. 🌫️\n\nBölüm 2/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #gerilim #kısadizi #ürpertici #sonmola",
  "scenes": [
   {
+   "kanca": true,
+   "kanca_yazi": "HİÇ DÖNMEDİLER",
+   "voice_delay": 0.0,
+   "say": "Dümdüz yürüdüler. Hiç dönmediler. Ama arkamızdan geri geldiler.",
+   "text": "Dümdüz yürüdüler. Hiç dönmediler. Ama arkamızdan geri geldiler.",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.72
+   },
+   "sis": 0.45,
+   "zoom": 0.12,
+   "sarsinti": true,
+   "sarsinti_t": 2.2,
+   "actors": [
+    {
+     "id": "ece",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "point",
+     "face": "shock",
+     "scale": 0.6
+    }
+   ],
+   "props": []
+  },
+  {
    "say": "Telefonu açamadım. Nuri Amca bileğimi tuttu ve sessizce başını iki yana salladı. Telefon bir süre daha çaldı, sonra sustu.",
    "text": "Telefonu açamadım. Nuri Amca bileğimi tuttu ve sessizce başını iki yana salladı. Telefon bir süre daha çaldı, sonra sustu.",
    "bg": "tesis_ic",

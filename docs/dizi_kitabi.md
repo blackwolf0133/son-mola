@@ -22,7 +22,8 @@ kurallara ve sırların açılış takvimine uyar.
 - Kısa, soğuk cümleler. Birinci tekil anlatıcı (Deniz) iç sesle anlatır; diyaloglar anlatımın içinde
   aktarılır: `Nuri Amca fısıldadı: "Sis gelmeden içeri girin."`
 - Her bölüm **tek bir merak sorusu** açar ve son cümlede onu daha da büyütür (uçurum / cliffhanger).
-- Bölümün ilk cümlesi kancadır: önceki bölümün uçurumunu bir cümlede hatırlatır ya da yeni bir şok verir.
+- Bölüm **"biraz sonra" kancasıyla** açılır (ilk 3 sn): bölümün en ürpertici anından kısa bir kesit + büyük kırmızı yazı.
+  Ardından ikinci sahne önceki bölümün uçurumunu bir cümlede bağlar. Ayrıntı: `docs/senaryo_formati.md`.
 - Renk: lacivert-siyah zemin, beyaz çöp adamlar, sarı lamba/fener ışığı, kırmızı **16:44**.
 
 ## 3. Mekân: "Son Mola" dinlenme tesisi
@@ -106,7 +107,7 @@ Durum: ⬜ yazılmadı · ✅ yazıldı. Her bölüm: **merak sorusu** → **uç
 | 30 | Son Mola | Sezon finali: yolcular otobüse biner; otobüsten inenler 1987 kıyafetli | Otobüs kalkar. Deniz cama bakar: tesiste duran, kendisidir. (2. sezon) | ⬜ |
 
 ## 8. Bölüm formatı
-- 6–8 sahne, **40–55 sn**, toplam ~110–140 kelime. İlk sahne kanca (soğuk açılış), son sahne uçurum.
+- Kanca + 6–8 sahne, **45–55 sn**, toplam ~110–130 kelime. İlk sahne "biraz sonra" kancası, son sahne uçurum.
 - Kapanış kartı otomatik eklenir: "Bölüm N+1 · Yarın 17:45" (yazmana gerek yok).
 - Teknik format: `docs/senaryo_formati.md`.
 - Açıklama (instagram_caption): 1–2 cümlelik ürpertici özet (cevabı vermeden) + "Bölüm N/30" +

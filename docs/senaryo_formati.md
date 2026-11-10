@@ -10,6 +10,22 @@ Dosya: `episodes/NNN_kisa_ad.json`. Sıradaki paylaşılmamış bölüm her gün
 }
 ```
 
+## İlk sahne: KANCA (zorunlu, ilk 3 saniye)
+İlk istatistik: izleyiciler ~8 saniyede çıkıyor. Bu yüzden **her bölüm** kısa bir "biraz sonra" sahnesiyle açılır:
+bölümün en ürpertici anından bir kesit (cevabı vermeden), sonra geri sarma efektiyle hikâyeye dönülür.
+
+```json
+{ "kanca": true, "kanca_yazi": "SAKIN CEVAP VERME", "voice_delay": 0.0,
+  "say": "Gece yarısı kapıdan babamın sesi geldi. Ama babam hastanedeydi.",
+  "bg": "pencere", "golge": {"x": 0.62}, "sis": 0.65, "zoom": 0.12, "sarsinti": true, "sarsinti_t": 2.0,
+  "actors": [], "props": [] }
+```
+- `say`: en fazla **10–12 kelime**, 2 kısa cümle; ikinci cümle çelişki/şok ("Ama…"). Bölümün son uçurumunu ele verme.
+- `kanca_yazi`: 2–3 kelimelik büyük kırmızı yazı; **ilk kareden** görünür (kapak karesi olur).
+- Etiket otomatik "BİRAZ SONRA" olur; başta darbe sesi, sonda geri sarma sesi ve parazit geçişi otomatik eklenir.
+- İkinci sahne önceki bölümün uçurumunu tek cümlede bağlar, sonra hikâye başlar.
+- Kanca sahnesi dahil toplam süre ~55 sn'yi geçmesin (gerekirse diğer sahneleri kısalt).
+
 ## Sahne alanları
 | Alan | Anlamı |
 |---|---|
@@ -24,7 +40,8 @@ Dosya: `episodes/NNN_kisa_ad.json`. Sıradaki paylaşılmamış bölüm her gün
 | `isik` (tesis_dis) | `false` → pencereler karanlık |
 | `gunduz` | Soluk sabah ışığı |
 | `golge` (pencere) | `{"x":0.7}` → siste belirsiz bir siluet. Asla net gösterme. |
-| `tag` | Sol üst etiket (varsayılan "16:44"), ör. "GÜN 3" |
+| `tag` | Sol üst etiket (varsayılan "16:44", kancada "BİRAZ SONRA"), ör. "GÜN 3" |
+| `kanca`, `kanca_yazi`, `kanca_y` | Soğuk açılış sahnesi (yukarıya bak); `kanca_y` yazının dikey yeri (0.19) |
 
 ## Karakterler (`actors`)
 `{"id":"deniz","x":0.5,"y":0.93,"pose":"stand","face":"neutral","scale":0.9,"flip":false,"talk":true}`

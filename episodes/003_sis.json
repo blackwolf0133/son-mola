@@ -5,6 +5,23 @@
  "instagram_caption": "İlk gece sis geldi ve herkes adının çağrıldığını duydu. Biri cevap verdi. 🌫️\n\nBölüm 3/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#korkuhikayesi #gizem #kısadizi #geceyarısı #sonmola",
  "scenes": [
   {
+   "kanca": true,
+   "kanca_yazi": "SAKIN CEVAP VERME",
+   "voice_delay": 0.0,
+   "say": "Gece yarısı kapıdan babamın sesi geldi. Ama babam hastanedeydi.",
+   "text": "Gece yarısı kapıdan babamın sesi geldi. Ama babam hastanedeydi.",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.62
+   },
+   "sis": 0.65,
+   "zoom": 0.12,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": []
+  },
+  {
    "say": "Saat hâlâ on altı kırk dörtü gösteriyordu. Ama dışarıda gece olmuştu. Sis, camlara kadar gelmişti.",
    "text": "Saat hâlâ 16:44'ü gösteriyordu. Ama dışarıda gece olmuştu. Sis, camlara kadar gelmişti.",
    "bg": "pencere",

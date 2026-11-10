@@ -331,6 +331,30 @@ def sfx_boing():
     return 0.3 * np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 5)
 
 
+def sfx_darbe():
+    """Kanca açılışı için alçak, ani darbe (boom)."""
+    n = int(SR * 1.1)
+    t = np.arange(n) / SR
+    f = 38 + 70 * np.exp(-t * 9)
+    body = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 3.2)
+    rng = np.random.default_rng(7)
+    hit = np.convolve(rng.standard_normal(n), np.ones(12) / 12, mode="same") * np.exp(-t * 30)
+    return 0.75 * body + 0.25 * hit / (np.abs(hit).max() + 1e-6)
+
+
+def sfx_geri_sar():
+    """Kancadan hikâyeye dönüşte kısa, yükselen geri sarma sesi."""
+    n = int(SR * 0.4)
+    t = np.arange(n) / SR
+    f = 200 + 1600 * (t / t[-1]) ** 2
+    tone = np.sin(2 * np.pi * np.cumsum(f) / SR)
+    env = np.minimum(1, t / 0.05) * np.exp(-((t - 0.32) / 0.12) ** 2 * 0.5)
+    out = 0.16 * tone * env
+    w = sfx_whoosh()
+    out[n - len(w):] += 0.8 * w
+    return out
+
+
 def sfx_whoosh():
     n = int(SR * 0.3)
     rng = np.random.default_rng(1)
@@ -669,6 +693,44 @@ def draw_scene(ctx, scene, st, dur, voice_dur):
     ctx.stroke()
 
 
+def draw_kanca(ctx, scene, st, dur):
+    """Soğuk açılış: ilk kareden itibaren panelde büyük kırmızı kanca yazısı;
+    sahnenin son ~0,35 sn'sinde 'geri sarma' parazit geçişi."""
+    txt = scene.get("kanca_yazi")
+    if txt:
+        txt = D.tr_upper(txt)
+        size = 92
+        D.set_font(ctx, D.CAPTION_FONT, size, bold=True)
+        while D.text_width(ctx, txt) > PW - 120 and size > 50:
+            size -= 4
+            D.set_font(ctx, D.CAPTION_FONT, size, bold=True)
+        tw = D.text_width(ctx, txt)
+        cy = PY + PH * scene.get("kanca_y", 0.19)
+        # hafif titreme (ilk kare sabit ve okunaklı kalır)
+        jx = 3 * math.sin(st * 41) if st > 0.6 else 0
+        bw, bh = tw + 60, size * 1.35
+        ctx.rectangle(PX + PW / 2 - bw / 2 + jx, cy - bh / 2, bw, bh)
+        ctx.set_source_rgba(0.02, 0.02, 0.03, 0.82)
+        ctx.fill()
+        ctx.set_source_rgb(*SM.RED)
+        ctx.move_to(PX + PW / 2 - tw / 2 + jx, cy + size * 0.36)
+        ctx.show_text(txt)
+    # Geri sarma geçişi
+    g0 = dur - 0.35
+    if st > g0:
+        u = min(1.0, (st - g0) / 0.35)
+        rng = np.random.default_rng(int(st * 1000))
+        for _ in range(int(10 + 30 * u)):
+            y = PY + rng.random() * PH
+            h = 2 + rng.random() * 14
+            ctx.rectangle(PX, y, PW, h)
+            ctx.set_source_rgba(1, 1, 1, 0.10 + 0.35 * rng.random() * u)
+            ctx.fill()
+        ctx.rectangle(PX, PY, PW, PH)
+        ctx.set_source_rgba(1, 1, 1, 0.55 * u ** 2)
+        ctx.fill()
+
+
 def make_header(ep, paper):
     surf = cairo.ImageSurface(cairo.FORMAT_RGB24, W, H)
     ctx = cairo.Context(surf)
@@ -787,6 +849,13 @@ def render_episode(ep_path, out_mp4, voice_model, workdir="build", handle="@sonm
                 s = int((s0 + tp) * SR)
                 a = a[: max(0, len(mix) - s)] * p.get("gain", 0.6)
                 mix[s:s + len(a)] += a
+    # Kanca (soğuk açılış) sahneleri: başta darbe, sonda geri sarma
+    for i, (s0, dur, vd) in enumerate(timeline):
+        if ep["scenes"][i].get("kanca"):
+            for a, tp in ((sfx_darbe(), s0), (sfx_geri_sar(), s0 + dur - 0.42)):
+                st_i = int(max(0, tp) * SR)
+                a = a[: max(0, len(mix) - st_i)]
+                mix[st_i:st_i + len(a)] += a
     # Arka plan müziği (assets/audio/music.*): döngü + konuşmada otomatik kısma
     music = load_asset(ep["music"]) if ep.get("music") else None
     if music is None:  # sentetik gerilim müziği, son sahnenin sonunda yükselip kesilir
@@ -854,7 +923,9 @@ def render_episode(ep_path, out_mp4, voice_model, workdir="build", handle="@sonm
         ctx.set_source_surface(header)
         ctx.paint()
         draw_scene(ctx, ep["scenes"][idx], st, dur, vd)
-        tag = ep["scenes"][idx].get("tag", ep.get("year"))
+        if ep["scenes"][idx].get("kanca"):
+            draw_kanca(ctx, ep["scenes"][idx], st, dur)
+        tag = ep["scenes"][idx].get("tag", "BİRAZ SONRA" if ep["scenes"][idx].get("kanca") else ep.get("year"))
         if tag:
             draw_year_tag(ctx, tag)
         # İlerleme çubuğu
