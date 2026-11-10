@@ -25,7 +25,7 @@ Kısa ve net yaz."""
 
 
 def modeller(key):
-    adlar = ["gemini-3.8-flash"]
+    adlar = ["gemini-3.8-flash", "gemini-flash-lite-latest"]
     try:
         req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
                                      headers={"x-goog-api-key": key})
