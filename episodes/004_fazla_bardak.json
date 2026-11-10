@@ -1,0 +1,233 @@
+{
+ "id": "004",
+ "title": "Fazla Bardak",
+ "year": "16:44",
+ "instagram_caption": "Kerem'in kaybolduğu sabah çay ocağında bir bardak fazla çay vardı ve Deniz o bardağı ters çevirdi. 🌫️ Sence o fazla bardak kimin için demlendi?\n\nBölüm 4/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #kısadizi #ürpertici #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "BİR BARDAK FAZLA",
+   "voice_delay": 0.0,
+   "say": "Bardağın dibine bir isim kazınmıştı. Ama aramızda öyle biri yoktu.",
+   "text": "Bardağın dibine bir isim kazınmıştı. Ama aramızda öyle biri yoktu.",
+   "bg": "karanlik",
+   "sis": 0.3,
+   "zoom": 0.14,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": [
+    {
+     "type": "bardak",
+     "x": 0.5,
+     "y": 0.62,
+     "scale": 2.2,
+     "adet": 1,
+     "fazla": true
+    }
+   ]
+  },
+  {
+   "say": "Kerem'in montunu kimse içeri almadı. Bankta, katlanmış öylece bekledi.",
+   "text": "Kerem'in montunu kimse içeri almadı. Bankta, katlanmış öylece bekledi.",
+   "bg": "peron",
+   "gunduz": true,
+   "sis": 0.25,
+   "zoom": 0.1,
+   "actors": [],
+   "props": [
+    {
+     "type": "mont",
+     "x": 0.3,
+     "y": 0.8,
+     "bank": false
+    }
+   ]
+  },
+  {
+   "say": "İçeride Hatice Teyze çay ocağının başında donup kalmıştı. Eli ağzındaydı.",
+   "text": "İçeride Hatice Teyze çay ocağının başında donup kalmıştı. Eli ağzındaydı.",
+   "bg": "tesis_ic",
+   "sis": 0.05,
+   "actors": [
+    {
+     "id": "hatice",
+     "x": 0.42,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.82
+    },
+    {
+     "id": "deniz",
+     "x": 0.18,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.86
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Dün Nuri Amca dokuz bardak dizmişti. Kerem artık yoktu. Ama ocakta on bardak çay vardı.",
+   "text": "Dün Nuri Amca 9 bardak dizmişti. Kerem artık yoktu. Ama ocakta 10 bardak çay vardı.",
+   "bg": "tesis_ic",
+   "zoom": 0.1,
+   "actors": [],
+   "props": [
+    {
+     "type": "bardak",
+     "x": 0.72,
+     "y": 0.6,
+     "scale": 0.62,
+     "adet": 10,
+     "aralik": 0.3,
+     "f": 0.45,
+     "fazla": true
+    },
+    {
+     "type": "pop",
+     "text": "10",
+     "x": 0.5,
+     "y": 0.2,
+     "size": 110,
+     "f": 0.8
+    }
+   ]
+  },
+  {
+   "say": "Nuri Amca'ya sorduk. \"Ben demlemedim,\" dedi. \"Burada sabah çayını kimse demlemez.\"",
+   "text": "Nuri Amca'ya sorduk. “Ben demlemedim,” dedi. “Burada sabah çayını kimse demlemez.”",
+   "bg": "tesis_ic",
+   "actors": [
+    {
+     "id": "nuri",
+     "x": 0.66,
+     "y": 0.93,
+     "pose": "relax",
+     "face": "neutral",
+     "scale": 0.88,
+     "flip": true,
+     "talk": true
+    },
+    {
+     "id": "selim",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "hips",
+     "face": "think",
+     "scale": 0.9
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Selim bardakları tek tek saydı. Sonra bir daha saydı. Sonuç değişmedi.",
+   "text": "Selim bardakları tek tek saydı. Sonra bir daha saydı. Sonuç değişmedi.",
+   "bg": "tesis_ic",
+   "zoom": 0.08,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "point",
+     "face": "think",
+     "scale": 0.9
+    }
+   ],
+   "props": [
+    {
+     "type": "bardak",
+     "x": 0.72,
+     "y": 0.6,
+     "scale": 0.62,
+     "adet": 10,
+     "fazla": true
+    }
+   ]
+  },
+  {
+   "say": "Bardaklardan biri hafifçe kızıl parlıyordu. Kimse dokunmak istemedi. Elim titreyerek onu aldım ve ters çevirdim.",
+   "text": "Bardaklardan biri hafifçe kızıl parlıyordu. Kimse dokunmak istemedi. Elim titreyerek onu aldım ve ters çevirdim.",
+   "bg": "karanlik",
+   "sis": 0.15,
+   "zoom": 0.12,
+   "actors": [
+    {
+     "id": "deniz",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "push",
+     "face": "effort",
+     "scale": 0.95
+    }
+   ],
+   "props": [
+    {
+     "type": "bardak",
+     "x": 0.7,
+     "y": 0.66,
+     "scale": 2.0,
+     "adet": 1,
+     "fazla": true
+    }
+   ]
+  },
+  {
+   "say": "Dibine çakıyla kazınmış tek bir isim vardı. Tamer. Aramızda Tamer diye kimse yoktu.",
+   "text": "Dibine çakıyla kazınmış tek bir isim vardı: TAMER. Aramızda Tamer diye kimse yoktu.",
+   "bg": "karanlik",
+   "sis": 0.2,
+   "zoom": 0.1,
+   "actors": [],
+   "props": [
+    {
+     "type": "pop",
+     "text": "TAMER",
+     "x": 0.5,
+     "y": 0.4,
+     "size": 120,
+     "f": 0.3
+    }
+   ]
+  },
+  {
+   "say": "Tam o an, dışarıdan kilitli depodan biri öksürdü. Oysa hepimiz buradaydık.",
+   "text": "Tam o an, dışarıdan kilitli depodan biri öksürdü. Oysa hepimiz buradaydık.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "sis": 0.1,
+   "zoom": 0.14,
+   "sarsinti": true,
+   "sarsinti_t": 1.0,
+   "actors": [
+    {
+     "id": "deniz",
+     "x": 0.25,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.85
+    },
+    {
+     "id": "leyla",
+     "x": 0.12,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.82
+    }
+   ],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.7,
+     "y": 0.9,
+     "scale": 1.0
+    }
+   ]
+  }
+ ]
+}

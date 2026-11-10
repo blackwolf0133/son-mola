@@ -1,0 +1,189 @@
+{
+ "id": "010",
+ "title": "Sevgi'nin Defteri",
+ "year": "16:44",
+ "instagram_caption": "Sevgi'nin defteri yere düştü ve içinden 1987'de kaybolan otobüsün gazete kupürleri çıktı. 🌫️ Sence Sevgi buraya neden bile bile geldi?\n\nBölüm 10/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #kısadizi #ürpertici #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "KAYIP OTOBÜS",
+   "voice_delay": 0.0,
+   "say": "Kupürün başlığında kayıp otobüs yazıyordu. Ama fotoğraftakini hepimiz tanıdık.",
+   "text": "Kupürün başlığında kayıp otobüs yazıyordu. Ama fotoğraftakini hepimiz tanıdık.",
+   "bg": "karanlik",
+   "sis": 0.3,
+   "zoom": 0.14,
+   "sarsinti": true,
+   "sarsinti_t": 2.2,
+   "actors": [],
+   "props": [
+    {
+     "type": "defter",
+     "x": 0.5,
+     "y": 0.5,
+     "scale": 1.5
+    }
+   ]
+  },
+  {
+   "say": "Hatice Teyze kırık bardağı tek tek topladı. Kimse Selim'e bir şey sormadı.",
+   "text": "Hatice Teyze kırık bardağı tek tek topladı. Kimse Selim'e bir şey sormadı.",
+   "bg": "tesis_ic",
+   "gunduz": true,
+   "actors": [
+    {
+     "id": "hatice",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.82
+    },
+    {
+     "id": "selim",
+     "x": 0.15,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "think",
+     "scale": 0.88
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Öğlene doğru Sevgi masaya çarptı. Elinden hiç bırakmadığı defteri yere düştü, sayfalar dağıldı.",
+   "text": "Öğlene doğru Sevgi masaya çarptı. Elinden hiç bırakmadığı defteri yere düştü, sayfalar dağıldı.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "actors": [
+    {
+     "id": "sevgi",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.88
+    }
+   ],
+   "props": [
+    {
+     "type": "defter",
+     "x": 0.66,
+     "y": 0.86,
+     "scale": 0.6,
+     "f": 0.6
+    }
+   ]
+  },
+  {
+   "say": "Sayfaların arasından sararmış gazete kupürleri saçıldı. Hepsi aynı haberdi. Aynı yıl, aynı yol.",
+   "text": "Sayfaların arasından sararmış gazete kupürleri saçıldı. Hepsi aynı haberdi. Aynı yıl, aynı yol.",
+   "bg": "karanlik",
+   "zoom": 0.1,
+   "actors": [],
+   "props": [
+    {
+     "type": "defter",
+     "x": 0.5,
+     "y": 0.5,
+     "scale": 1.2
+    }
+   ]
+  },
+  {
+   "say": "Bin dokuz yüz seksen yedi. Dokuz yolcusuyla kaybolan bir otobüs. Hiçbiri bulunamadı.",
+   "text": "1987. Dokuz yolcusuyla kaybolan bir otobüs. Hiçbiri bulunamadı.",
+   "bg": "karanlik",
+   "sis": 0.3,
+   "sis_to": 0.5,
+   "zoom": 0.12,
+   "actors": [],
+   "props": [
+    {
+     "type": "pop",
+     "text": "1987",
+     "x": 0.5,
+     "y": 0.35,
+     "size": 130,
+     "f": 0.05
+    }
+   ]
+  },
+  {
+   "say": "Selim kupürleri topladı. \"Sen buraya bile bile geldin,\" dedi. Sevgi cevap vermedi.",
+   "text": "Selim kupürleri topladı. “Sen buraya bile bile geldin,” dedi. Sevgi cevap vermedi.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "point",
+     "face": "confident",
+     "scale": 0.9,
+     "talk": true
+    },
+    {
+     "id": "sevgi",
+     "x": 0.7,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.86,
+     "flip": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Birini avucunda saklıyordu. Leyla elini zorla açtı. Bir otobüs fotoğrafıydı. Önünde, kasketli genç bir şoför.",
+   "text": "Birini avucunda saklıyordu. Leyla elini zorla açtı. Bir otobüs fotoğrafıydı. Önünde, kasketli genç bir şoför.",
+   "bg": "karanlik",
+   "sis": 0.2,
+   "zoom": 0.14,
+   "actors": [
+    {
+     "id": "leyla",
+     "x": 0.36,
+     "y": 0.93,
+     "pose": "push",
+     "face": "effort",
+     "scale": 0.86
+    },
+    {
+     "id": "sevgi",
+     "x": 0.62,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.86,
+     "flip": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Tezgâha döndük. Nuri Amca bizi izliyordu. Hiç acele etmeden, fotoğraftaki kasketin aynısını başından çıkardı.",
+   "text": "Tezgâha döndük. Nuri Amca bizi izliyordu. Hiç acele etmeden, fotoğraftaki kasketin aynısını başından çıkardı.",
+   "bg": "tesis_ic",
+   "zoom": 0.16,
+   "sarsinti": true,
+   "sarsinti_t": 3.8,
+   "actors": [
+    {
+     "id": "nuri",
+     "x": 0.72,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "neutral",
+     "scale": 0.9,
+     "flip": true,
+     "pose2": "shrug",
+     "switch": 0.65
+    }
+   ],
+   "props": []
+  }
+ ]
+}

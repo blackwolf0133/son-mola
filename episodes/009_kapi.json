@@ -1,0 +1,247 @@
+{
+ "id": "009",
+ "title": "Kapı",
+ "year": "16:44",
+ "instagram_caption": "Selim uykusunda kapıyı açmaya çalıştı, dışarıdan bir kız sesi ona baba dedi. 🌫️ Sence ses Selim'i neden bir kızın sesiyle çağırdı?\n\nBölüm 9/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #gerilim #korkuhikayesi #geceyarısı #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "BABA, AÇ",
+   "voice_delay": 0.0,
+   "say": "Selim kapıyı açmak için çırpınıyordu. Ama gözleri hâlâ kapalıydı.",
+   "text": "Selim kapıyı açmak için çırpınıyordu. Ama gözleri hâlâ kapalıydı.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "sis": 0.3,
+   "zoom": 0.14,
+   "sarsinti": true,
+   "sarsinti_t": 1.5,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "push",
+     "face": "sleepy",
+     "scale": 0.92
+    }
+   ],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.78,
+     "y": 0.9,
+     "scale": 1.0
+    }
+   ]
+  },
+  {
+   "say": "Murat'la birlikte Selim'in elini kapı kolundan bütün gücümüzle çektik.",
+   "text": "Murat'la birlikte Selim'in elini kapı kolundan bütün gücümüzle çektik.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "murat",
+     "x": 0.25,
+     "y": 0.93,
+     "pose": "push",
+     "face": "effort",
+     "scale": 0.88
+    },
+    {
+     "id": "selim",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "sleepy",
+     "scale": 0.9
+    },
+    {
+     "id": "deniz",
+     "x": 0.72,
+     "y": 0.93,
+     "pose": "push",
+     "face": "effort",
+     "scale": 0.86,
+     "flip": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Uyanmıyordu. Gözleri kapalı, kollarını sürekli kapıya uzatıyordu. Sanki biri onu çekiyordu.",
+   "text": "Uyanmıyordu. Gözleri kapalı, kollarını sürekli kapıya uzatıyordu. Sanki biri onu çekiyordu.",
+   "bg": "karanlik",
+   "sis": 0.2,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "open",
+     "face": "sleepy",
+     "scale": 0.95
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Dışarıdan ince, titrek bir kız sesi geliyordu. \"Babacığım, aç. Burası çok karanlık. Korkuyorum.\"",
+   "text": "Dışarıdan ince, titrek bir kız sesi geliyordu: “Babacığım, aç. Burası çok karanlık. Korkuyorum.”",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.4
+   },
+   "sis": 0.6,
+   "sarsinti": true,
+   "sarsinti_t": 3.0,
+   "actors": [],
+   "props": [
+    {
+     "type": "pop",
+     "text": "“BABACIĞIM…”",
+     "x": 0.5,
+     "y": 0.2,
+     "size": 80,
+     "f": 0.55
+    }
+   ]
+  },
+  {
+   "say": "Selim'in dudakları kıpırdıyordu. Cevap vermek üzereydi.",
+   "text": "Selim'in dudakları kıpırdıyordu. Cevap vermek üzereydi.",
+   "bg": "karanlik",
+   "sis": 0.3,
+   "zoom": 0.16,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "open",
+     "face": "sad",
+     "scale": 1.0,
+     "talk": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Leyla Selim'in kulaklarını kapattı. Hatice Teyze bütün gece dua etti. Ses sabaha kadar hiç susmadı.",
+   "text": "Leyla Selim'in kulaklarını kapattı. Hatice Teyze bütün gece dua etti. Ses sabaha kadar hiç susmadı.",
+   "bg": "tesis_ic",
+   "sis": 0.15,
+   "karart": [
+    4.0,
+    4.3
+   ],
+   "actors": [
+    {
+     "id": "leyla",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "push",
+     "face": "effort",
+     "scale": 0.84
+    },
+    {
+     "id": "selim",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sleepy",
+     "scale": 0.9
+    },
+    {
+     "id": "hatice",
+     "x": 0.75,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.82,
+     "flip": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Güneş doğunca sis çekildi. Selim gözlerini açtı. Gecenin hiçbir anını hatırlamıyordu.",
+   "text": "Güneş doğunca sis çekildi. Selim gözlerini açtı. Gecenin hiçbir anını hatırlamıyordu.",
+   "bg": "tesis_ic",
+   "gunduz": true,
+   "sis": 0.05,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.45,
+     "y": 0.93,
+     "pose": "stretch",
+     "face": "sleepy",
+     "scale": 0.9
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Ona kızının sesini duyduğunu söyledim. Kızı ona baba diyordu. Yüzü bembeyaz oldu.",
+   "text": "Ona kızının sesini duyduğunu söyledim. Kızı ona baba diyordu. Yüzü bembeyaz oldu.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "zoom": 0.12,
+   "actors": [
+    {
+     "id": "deniz",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "open",
+     "face": "neutral",
+     "scale": 0.86,
+     "talk": true
+    },
+    {
+     "id": "selim",
+     "x": 0.65,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.92,
+     "flip": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Gözlüğünü yavaşça çıkardı ve fısıldadı: \"Benim kızım yok.\" Hatice Teyze'nin elindeki bardak yere düştü.",
+   "text": "Gözlüğünü yavaşça çıkardı ve fısıldadı: “Benim kızım yok.” Hatice Teyze'nin elindeki bardak yere düştü.",
+   "bg": "karanlik",
+   "sis": 0.2,
+   "zoom": 0.16,
+   "sarsinti": true,
+   "sarsinti_t": 4.2,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "shock",
+     "scale": 0.98,
+     "talk": true
+    }
+   ],
+   "props": [
+    {
+     "type": "pop",
+     "text": "“BENİM KIZIM YOK.”",
+     "x": 0.5,
+     "y": 0.17,
+     "size": 70,
+     "f": 0.3
+    }
+   ]
+  }
+ ]
+}

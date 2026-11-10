@@ -1,0 +1,232 @@
+{
+ "id": "008",
+ "title": "Çizim",
+ "year": "16:44",
+ "instagram_caption": "Ece sisin içinde gözlüklü bir adam çizdi ve o gece Selim uykusunda kapıya yürüdü. 🌫️ Sence Ece bunu nereden biliyordu?\n\nBölüm 8/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #kısadizi #çöpadam #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "RESİMDEKİ ADAM",
+   "voice_delay": 0.0,
+   "say": "Ece'nin resmindeki adamın yüzü yoktu. Ama gözlüğü vardı.",
+   "text": "Ece'nin resmindeki adamın yüzü yoktu. Ama gözlüğü vardı.",
+   "bg": "karanlik",
+   "sis": 0.3,
+   "zoom": 0.14,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": [
+    {
+     "type": "resim",
+     "x": 0.5,
+     "y": 0.45,
+     "scale": 1.6
+    }
+   ]
+  },
+  {
+   "say": "Leyla sürgüyü son anda geri itti. Hatice Teyze sabaha kadar sessizce ağladı.",
+   "text": "Leyla sürgüyü son anda geri itti. Hatice Teyze sabaha kadar sessizce ağladı.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "sis": 0.1,
+   "actors": [
+    {
+     "id": "leyla",
+     "x": 0.55,
+     "y": 0.93,
+     "pose": "push",
+     "face": "effort",
+     "scale": 0.85
+    },
+    {
+     "id": "hatice",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.82
+    }
+   ],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.8,
+     "y": 0.9,
+     "scale": 1.0
+    }
+   ]
+  },
+  {
+   "say": "Sabah Ece hiç konuşmadı. Kahvaltı bile etmedi. Bütün gün tezgâhın ucunda resim çizdi.",
+   "text": "Sabah Ece hiç konuşmadı. Kahvaltı bile etmedi. Bütün gün tezgâhın ucunda resim çizdi.",
+   "bg": "tesis_ic",
+   "gunduz": true,
+   "actors": [
+    {
+     "id": "ece",
+     "x": 0.55,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.58
+    },
+    {
+     "id": "leyla",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "neutral",
+     "scale": 0.82
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Akşama doğru Leyla resmi bana gösterdi. Sisin içinde tek başına duran bir adam.",
+   "text": "Akşama doğru Leyla resmi bana gösterdi. Sisin içinde tek başına duran bir adam.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "leyla",
+     "x": 0.22,
+     "y": 0.93,
+     "pose": "point",
+     "face": "think",
+     "scale": 0.84
+    }
+   ],
+   "props": [
+    {
+     "type": "resim",
+     "x": 0.62,
+     "y": 0.45,
+     "scale": 1.2,
+     "f": 0.35
+    }
+   ]
+  },
+  {
+   "say": "Adamın yüzü yoktu. Ama gözlük takıyordu. Hepimiz aynı anda Selim'e baktık.",
+   "text": "Adamın yüzü yoktu. Ama gözlük takıyordu. Hepimiz aynı anda Selim'e baktık.",
+   "bg": "tesis_ic",
+   "zoom": 0.12,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "neutral",
+     "scale": 0.92
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Selim güldü. \"Çocuk resmi işte,\" dedi. Ama resmi buruşturup cebine soktu.",
+   "text": "Selim güldü. “Çocuk resmi işte,” dedi. Ama resmi buruşturup cebine soktu.",
+   "bg": "tesis_ic",
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.45,
+     "y": 0.93,
+     "pose": "shrug",
+     "face": "smug",
+     "scale": 0.92,
+     "talk": true,
+     "pose2": "sad",
+     "face2": "think",
+     "switch": 0.6
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Ece başını kâğıttan kaldırmadan konuştu: \"Bu gece kapıya gidecek.\"",
+   "text": "Ece başını kâğıttan kaldırmadan konuştu: “Bu gece kapıya gidecek.”",
+   "bg": "tesis_ic",
+   "zoom": 0.12,
+   "actors": [
+    {
+     "id": "ece",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "think",
+     "face": "neutral",
+     "scale": 0.6,
+     "talk": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Gece yarısı bir tıkırtıyla uyandım. Karanlıkta biri, sürgüyü sessizce açmaya çalışıyordu.",
+   "text": "Gece yarısı bir tıkırtıyla uyandım. Karanlıkta biri, sürgüyü sessizce açmaya çalışıyordu.",
+   "bg": "karanlik",
+   "sis": 0.2,
+   "karart": [
+    0.0,
+    1.2
+   ],
+   "zoom": 0.1,
+   "actors": [],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.55,
+     "y": 0.9,
+     "scale": 1.1
+    },
+    {
+     "type": "pop",
+     "text": "TIK… TIK…",
+     "x": 0.5,
+     "y": 0.18,
+     "size": 80,
+     "f": 0.55
+    }
+   ]
+  },
+  {
+   "say": "Selim'di. Gözleri kapalıydı. Eli kapı kolundaydı ve dışarıdan biri ona fısıltıyla baba diyordu.",
+   "text": "Selim'di. Gözleri kapalıydı. Eli kapı kolundaydı ve dışarıdan biri ona fısıltıyla baba diyordu.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "sis": 0.25,
+   "zoom": 0.16,
+   "sarsinti": true,
+   "sarsinti_t": 3.5,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "push",
+     "face": "sleepy",
+     "scale": 0.92
+    }
+   ],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.75,
+     "y": 0.9,
+     "scale": 1.0
+    },
+    {
+     "type": "pop",
+     "text": "“BABA…”",
+     "x": 0.5,
+     "y": 0.18,
+     "size": 90,
+     "f": 0.85
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,235 @@
+{
+ "id": "007",
+ "title": "Hatice",
+ "year": "16:44",
+ "instagram_caption": "İkinci gece sis Hatice Teyze'yi oğlunun sesiyle çağırdı ve Hatice Teyze kapıya yürüdü. 🌫️ Sence Hatice Teyze o kapıyı açar mı?\n\nBölüm 7/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #gerilim #ürpertici #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "ANNE, KAPIYI AÇ",
+   "voice_delay": 0.0,
+   "say": "Hatice Teyze sese cevap vermedi. Ama kapıya doğru yürüdü.",
+   "text": "Hatice Teyze sese cevap vermedi. Ama kapıya doğru yürüdü.",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.68
+   },
+   "sis": 0.6,
+   "zoom": 0.12,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [
+    {
+     "id": "hatice",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "sad",
+     "scale": 0.85,
+     "to_x": 0.42,
+     "move_dur": 3.0
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Sevgi parmağını akşama kadar yıkadı. Kırmızı bir türlü çıkmadı.",
+   "text": "Sevgi parmağını akşama kadar yıkadı. Kırmızı bir türlü çıkmadı.",
+   "bg": "tesis_ic",
+   "sis": 0.05,
+   "actors": [
+    {
+     "id": "sevgi",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.88
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "İkinci gece sis yine geldi. Herkes kulaklarını kapattı. Hatice Teyze hariç.",
+   "text": "İkinci gece sis yine geldi. Herkes kulaklarını kapattı. Hatice Teyze hariç.",
+   "bg": "tesis_ic",
+   "sis": 0.2,
+   "sis_to": 0.35,
+   "karart": [
+    3.6,
+    4.0
+   ],
+   "actors": [
+    {
+     "id": "leyla",
+     "x": 0.2,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "sad",
+     "scale": 0.82
+    },
+    {
+     "id": "ece",
+     "x": 0.32,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sleepy",
+     "scale": 0.56
+    },
+    {
+     "id": "hatice",
+     "x": 0.55,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "neutral",
+     "scale": 0.82
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Ece annesinin kucağında uyudu. Selim kapının önünde nöbet tuttu. Ama saatler geçmek bilmedi.",
+   "text": "Ece annesinin kucağında uyudu. Selim kapının önünde nöbet tuttu. Ama saatler geçmek bilmedi.",
+   "bg": "karanlik",
+   "sis": 0.25,
+   "zoom": 0.08,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "hips",
+     "face": "effort",
+     "scale": 0.9
+    }
+   ],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.8,
+     "y": 0.9,
+     "scale": 0.9
+    }
+   ]
+  },
+  {
+   "say": "Pencerenin önünde oturuyordu. Dudakları kıpırdıyordu ama dua etmiyordu. Biriyle konuşur gibiydi.",
+   "text": "Pencerenin önünde oturuyordu. Dudakları kıpırdıyordu ama dua etmiyordu. Biriyle konuşur gibiydi.",
+   "bg": "pencere",
+   "sis": 0.55,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "hatice",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "neutral",
+     "scale": 0.85
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Dışarıdan çok genç bir erkek sesi geldi. \"Anne, kapıyı aç. Üşüyorum.\"",
+   "text": "Dışarıdan çok genç bir erkek sesi geldi: “Anne, kapıyı aç. Üşüyorum.”",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.66
+   },
+   "sis": 0.65,
+   "sarsinti": true,
+   "sarsinti_t": 3.0,
+   "actors": [],
+   "props": [
+    {
+     "type": "pop",
+     "text": "“ANNE…”",
+     "x": 0.5,
+     "y": 0.2,
+     "size": 90,
+     "f": 0.6
+    }
+   ]
+  },
+  {
+   "say": "Yanına çömeldim, elini tuttum. Buz gibiydi. Fısıldadı: \"Oğlum otuz yıl önce bu yolda kayboldu.\"",
+   "text": "Yanına çömeldim, elini tuttum. Buz gibiydi. Fısıldadı: “Oğlum 30 yıl önce bu yolda kayboldu.”",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "zoom": 0.12,
+   "actors": [
+    {
+     "id": "deniz",
+     "x": 0.38,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.82
+    },
+    {
+     "id": "hatice",
+     "x": 0.62,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.84,
+     "flip": true,
+     "talk": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "\"Bu onun sesi. Otuz yıldır her gece rüyamda duyduğum ses. Hiç değişmemiş.\"",
+   "text": "“Bu onun sesi. 30 yıldır her gece rüyamda duyduğum ses. Hiç değişmemiş.”",
+   "bg": "karanlik",
+   "sis": 0.4,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "hatice",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.95,
+     "talk": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Sonra ayağa kalktı. Kimse kıpırdayamadan, sessizce kapıya yürüdü ve sürgüyü çekti.",
+   "text": "Sonra ayağa kalktı. Kimse kıpırdayamadan, sessizce kapıya yürüdü ve sürgüyü çekti.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "sis": 0.15,
+   "zoom": 0.16,
+   "sarsinti": true,
+   "sarsinti_t": 3.0,
+   "actors": [
+    {
+     "id": "hatice",
+     "x": 0.45,
+     "y": 0.93,
+     "pose": "push",
+     "face": "sad",
+     "scale": 0.85,
+     "to_x": 0.58,
+     "move_dur": 2.5
+    }
+   ],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.78,
+     "y": 0.9,
+     "scale": 1.0,
+     "aralik": true,
+     "f": 0.7
+    }
+   ]
+  }
+ ]
+}

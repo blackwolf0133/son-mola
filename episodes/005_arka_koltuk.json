@@ -1,0 +1,234 @@
+{
+ "id": "005",
+ "title": "Arka Koltuk",
+ "year": "16:44",
+ "instagram_caption": "Selim depo kapısını açtığında çuvalların arasında Tamer uyuyordu ve Tamer hiçbir şey hatırlamıyordu. 🌫️ Sence Tamer otobüse ne zaman bindi?\n\nBölüm 5/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #gerilim #kısadizi #çöpadam #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "DEPODA BİRİ VAR",
+   "voice_delay": 0.0,
+   "say": "Depoda biri uyuyordu. Ama otobüse bindiğini hiçbirimiz görmemişti.",
+   "text": "Depoda biri uyuyordu. Ama otobüse bindiğini hiçbirimiz görmemişti.",
+   "bg": "karanlik",
+   "sis": 0.35,
+   "zoom": 0.14,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.5,
+     "y": 0.9,
+     "scale": 1.1,
+     "aralik": true
+    }
+   ]
+  },
+  {
+   "say": "Selim depo kapısını yavaşça açtı. Öksüren kişi hâlâ oradaydı.",
+   "text": "Selim depo kapısını yavaşça açtı. Öksüren kişi hâlâ oradaydı.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.32,
+     "y": 0.93,
+     "pose": "push",
+     "face": "effort",
+     "scale": 0.9
+    }
+   ],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.68,
+     "y": 0.9,
+     "scale": 1.0,
+     "aralik": true
+    }
+   ]
+  },
+  {
+   "say": "Çuvalların arasında, eski ceketli bir adam uyuyordu. Sanki yıllardır hiç uyanmamıştı.",
+   "text": "Çuvalların arasında, eski ceketli bir adam uyuyordu. Sanki yıllardır hiç uyanmamıştı.",
+   "bg": "karanlik",
+   "sis": 0.2,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "tamer",
+     "x": 0.6,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sleepy",
+     "scale": 0.85
+    }
+   ],
+   "props": [
+    {
+     "type": "fener",
+     "x": 0.12,
+     "y": 0.5,
+     "dx": 1
+    }
+   ]
+  },
+  {
+   "say": "Murat kaşlarını çattı. \"Bu adam otobüsteydi. Arka koltukta. Ama ne zaman bindi, bilmiyorum.\"",
+   "text": "Murat kaşlarını çattı: “Bu adam otobüsteydi. Arka koltukta. Ama ne zaman bindi, bilmiyorum.”",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "actors": [
+    {
+     "id": "murat",
+     "x": 0.35,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.9,
+     "talk": true
+    },
+    {
+     "id": "tamer",
+     "x": 0.7,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sleepy",
+     "scale": 0.85,
+     "flip": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Adam gözlerini açtı. Adını sorduk. Uzun uzun düşündü. \"Tamer,\" dedi. \"Galiba.\"",
+   "text": "Adam gözlerini açtı. Adını sorduk. Uzun uzun düşündü. “Tamer,” dedi. “Galiba.”",
+   "bg": "tesis_ic",
+   "zoom": 0.12,
+   "actors": [
+    {
+     "id": "tamer",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.92,
+     "talk": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Saati sordu. Duvardaki saati gösterdim. Hiç şaşırmadı. \"Hep öyleydi zaten,\" dedi.",
+   "text": "Saati sordu. Duvardaki saati gösterdim. Hiç şaşırmadı. “Hep öyleydi zaten,” dedi.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "actors": [
+    {
+     "id": "deniz",
+     "x": 0.25,
+     "y": 0.93,
+     "pose": "point",
+     "face": "neutral",
+     "scale": 0.88
+    },
+    {
+     "id": "tamer",
+     "x": 0.75,
+     "y": 0.93,
+     "pose": "shrug",
+     "face": "neutral",
+     "scale": 0.88,
+     "flip": true,
+     "talk": true
+    }
+   ],
+   "props": [
+    {
+     "type": "saat",
+     "x": 0.5,
+     "y": 0.28,
+     "scale": 0.8,
+     "sabit": true
+    }
+   ]
+  },
+  {
+   "say": "Ece annesinin arkasına saklandı. Fısıldadı: \"Bu amcayı daha önce çizmiştim.\"",
+   "text": "Ece annesinin arkasına saklandı. Fısıldadı: “Bu amcayı daha önce çizmiştim.”",
+   "bg": "tesis_ic",
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "leyla",
+     "x": 0.55,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "think",
+     "scale": 0.84
+    },
+    {
+     "id": "ece",
+     "x": 0.38,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "shock",
+     "scale": 0.56,
+     "talk": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Selim ceplerini karıştırdı. Kimlik yoktu. Sadece katlanmış, sararmış bir otobüs bileti.",
+   "text": "Selim ceplerini karıştırdı. Kimlik yoktu. Sadece katlanmış, sararmış bir otobüs bileti.",
+   "bg": "karanlik",
+   "sis": 0.1,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "selim",
+     "x": 0.35,
+     "y": 0.93,
+     "pose": "point",
+     "face": "think",
+     "scale": 0.92
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Tamer bileti elimizden kapmak istedi. Geç kalmıştı. Üstünde bir tarih yazıyordu: on altı Mart, bin dokuz yüz seksen yedi.",
+   "text": "Tamer bileti elimizden kapmak istedi. Geç kalmıştı. Üstünde bir tarih yazıyordu: 16 Mart 1987.",
+   "bg": "karanlik",
+   "sis": 0.3,
+   "zoom": 0.14,
+   "sarsinti": true,
+   "sarsinti_t": 3.5,
+   "actors": [
+    {
+     "id": "tamer",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.9
+    }
+   ],
+   "props": [
+    {
+     "type": "pop",
+     "text": "16 MART 1987",
+     "x": 0.5,
+     "y": 0.2,
+     "size": 84,
+     "f": 0.62
+    }
+   ]
+  }
+ ]
+}

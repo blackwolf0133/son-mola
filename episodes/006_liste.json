@@ -1,0 +1,177 @@
+{
+ "id": "006",
+ "title": "Liste",
+ "year": "16:44",
+ "instagram_caption": "Sevgi duvardaki 1987 yolcu listesini okudu ve son satırlarda hepimizin adını buldu. 🌫️ Sence Kerem'in adını kim çizdi?\n\nBölüm 6/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #kısadizi #geceyarısı #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "BENİM ADIM",
+   "voice_delay": 0.0,
+   "say": "Otuz dokuz yıllık bir listeydi. Ama içinde benim adım vardı.",
+   "text": "Otuz dokuz yıllık bir listeydi. Ama içinde benim adım vardı.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "sis": 0.25,
+   "zoom": 0.14,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": [
+    {
+     "type": "liste",
+     "x": 0.5,
+     "y": 0.42,
+     "scale": 1.3
+    }
+   ]
+  },
+  {
+   "say": "Tamer bileti cebine geri koydu. Bir daha ağzını açmadı.",
+   "text": "Tamer bileti cebine geri koydu. Bir daha ağzını açmadı.",
+   "bg": "tesis_ic",
+   "sis": 0.05,
+   "actors": [
+    {
+     "id": "tamer",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.88
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "O gün Sevgi ilk kez sesini çıkardı. Sanki yerini biliyormuş gibi, duvardaki çerçeveye yürüdü.",
+   "text": "O gün Sevgi ilk kez sesini çıkardı. Sanki yerini biliyormuş gibi, duvardaki çerçeveye yürüdü.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "actors": [
+    {
+     "id": "sevgi",
+     "x": 0.25,
+     "y": 0.93,
+     "pose": "point",
+     "face": "neutral",
+     "scale": 0.88,
+     "to_x": 0.4,
+     "move_dur": 2.5
+    }
+   ],
+   "props": [
+    {
+     "type": "liste",
+     "x": 0.7,
+     "y": 0.4,
+     "scale": 0.9
+    }
+   ]
+  },
+  {
+   "say": "Eski bir yolcu listesiydi. En üstte bir tarih: bin dokuz yüz seksen yedi.",
+   "text": "Eski bir yolcu listesiydi. En üstte bir tarih: 1987.",
+   "bg": "karanlik",
+   "zoom": 0.12,
+   "actors": [],
+   "props": [
+    {
+     "type": "liste",
+     "x": 0.5,
+     "y": 0.45,
+     "scale": 1.5
+    }
+   ]
+  },
+  {
+   "say": "Nuri Amca tezgâhın arkasından izledi. Bardak silmeyi bıraktı ama hiçbir şey söylemedi.",
+   "text": "Nuri Amca tezgâhın arkasından izledi. Bardak silmeyi bıraktı ama hiçbir şey söylemedi.",
+   "bg": "tesis_ic",
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "nuri",
+     "x": 0.75,
+     "y": 0.93,
+     "pose": "stand",
+     "face": "neutral",
+     "scale": 0.88,
+     "flip": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Sevgi tozlu camı sildi, isimleri tek tek okudu. Son dokuz satırda durdu.",
+   "text": "Sevgi tozlu camı sildi, isimleri tek tek okudu. Son dokuz satırda durdu.",
+   "bg": "tesis_ic",
+   "tezgah": false,
+   "actors": [
+    {
+     "id": "sevgi",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.88
+    }
+   ],
+   "props": [
+    {
+     "type": "liste",
+     "x": 0.68,
+     "y": 0.4,
+     "scale": 1.0
+    }
+   ]
+  },
+  {
+   "say": "Selim. Hatice. Leyla. Ece. Murat. Tamer. Sevgi. Kerem. Ve en sonda, Deniz. Benim adım. Hepimiz oradaydık.",
+   "text": "Selim. Hatice. Leyla. Ece. Murat. Tamer. Sevgi. Kerem. Ve en sonda… Deniz. Benim adım. Hepimiz oradaydık.",
+   "bg": "karanlik",
+   "sis": 0.15,
+   "zoom": 0.14,
+   "actors": [
+    {
+     "id": "deniz",
+     "x": 0.5,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 1.0
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Kerem'in adının üstü kırmızı bir çizgiyle çizilmişti. Sevgi parmağıyla dokundu. Kırmızı parmağına bulaştı. Hâlâ ıslaktı.",
+   "text": "Kerem'in adının üstü kırmızı bir çizgiyle çizilmişti. Sevgi parmağıyla dokundu. Kırmızı parmağına bulaştı. Hâlâ ıslaktı.",
+   "bg": "karanlik",
+   "sis": 0.2,
+   "zoom": 0.16,
+   "sarsinti": true,
+   "sarsinti_t": 4.5,
+   "actors": [],
+   "props": [
+    {
+     "type": "liste",
+     "x": 0.5,
+     "y": 0.45,
+     "scale": 1.5,
+     "cizik": [
+      10
+     ]
+    },
+    {
+     "type": "pop",
+     "text": "HÂLÂ ISLAK",
+     "x": 0.5,
+     "y": 0.15,
+     "size": 84,
+     "f": 0.85
+    }
+   ]
+  }
+ ]
+}

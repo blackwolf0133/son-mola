@@ -78,13 +78,13 @@ Durum: ⬜ yazılmadı · ✅ yazıldı. Her bölüm: **merak sorusu** → **uç
 | 1 | 16:44 | Mola, otobüs yok, saatler durmuş, telefon çekmiyor | Yol tabelası: iki yönde de "SON MOLA 0 KM" | ✅ |
 | 2 | Yol | Kerem ve Selim yürüyerek çıkar; karşıdan geri gelirler | Nuri Amca: "Güneş batıyor. Adınızı duyarsanız cevap vermeyin." | ✅ |
 | 3 | Sis | İlk gece; herkes adının çağrıldığını duyar; Kerem annesinin sesini duyar | Sabah Kerem yok; montu bankta katlanmış duruyor | ✅ |
-| 4 | Fazla Bardak | Çay ocağında 10 bardak; 9 kişiyiz | Bardağın altına kazınmış isim: TAMER | ⬜ |
-| 5 | Arka Koltuk | Tamer depoda uyurken bulunur, hiçbir şey hatırlamaz | Cebindeki bilet: 16 Mart 1987 | ⬜ |
-| 6 | Liste | Duvardaki çerçeveli liste: 1987 yolcuları | Listenin son 9 satırında bizim adlarımız; Kerem'inkinin üstü çizili | ⬜ |
-| 7 | Hatice | Hatice Teyze siste oğlunun sesini duyduğunu söyler | "Oğlum 30 yıl önce bu yolda kayboldu." | ⬜ |
-| 8 | Çizim | Ece bir resim çizer: sisin içinde bir adam | Resimdeki adam Selim; Selim o gece kapıyı açmaya kalkar | ⬜ |
-| 9 | Kapı | Selim'i son anda tutarlar; ses Selim'i kızının sesiyle çağırıyordu | Selim: "Benim kızım yok." | ⬜ |
-| 10 | Sevgi'nin Defteri | Sevgi'nin defteri düşer: 1987 gazete kupürleri | Kupürdeki fotoğrafta genç Nuri Amca var | ⬜ |
+| 4 | Fazla Bardak | Çay ocağında 10 bardak; 9 kişiyiz | Bardağın altına kazınmış isim: TAMER; o an kilitli depodan biri öksürür | ✅ |
+| 5 | Arka Koltuk | Tamer depoda uyurken bulunur, hiçbir şey hatırlamaz | Cebindeki bilet: 16 Mart 1987 (Ece: "Bu amcayı daha önce çizmiştim.") | ✅ |
+| 6 | Liste | Duvardaki çerçeveli liste: 1987 yolcuları | Listenin son 9 satırında bizim adlarımız; Kerem'inkinin üstü çizili, kırmızı mürekkep hâlâ ıslak | ✅ |
+| 7 | Hatice | Hatice Teyze siste oğlunun sesini duyduğunu söyler | "Oğlum 30 yıl önce bu yolda kayboldu." Sonra kapının sürgüsünü çeker | ✅ |
+| 8 | Çizim | Ece bir resim çizer: sisin içinde bir adam | Resimdeki adam Selim; Selim o gece uykusunda kapıyı açmaya kalkar (Leyla, Hatice'yi son anda durdurmuştu) | ✅ |
+| 9 | Kapı | Selim'i son anda tutarlar; ses Selim'i kızının sesiyle çağırıyordu | Selim: "Benim kızım yok." Hatice Teyze'nin elindeki bardak yere düşer | ✅ |
+| 10 | Sevgi'nin Defteri | Sevgi'nin defteri düşer: 1987 gazete kupürleri | Kupürdeki fotoğrafta genç Nuri Amca var; Nuri Amca aynı kasketi çıkarır | ✅ |
 | 11 | Nuri Amca | Nuri Amca'ya sorarlar; cevap vermez, sadece çay koyar | Gece pencerede Nuri Amca'yı sisin içinde yürürken görürler | ⬜ |
 | 12 | Sise Yürüyen Adam | Nuri Amca siste yürüyor ama kimseyi çağırmıyor, ona da kimse | Sabah döndüğünde elinde Kerem'in telefonu var | ⬜ |
 | 13 | Telefon | Kerem'in telefonunda tek bir yeni ses kaydı | Kayıtta Kerem fısıldıyor: "Cevap verme, Deniz." | ⬜ |
