@@ -36,18 +36,29 @@ jobs:
 
       - name: Sistem paketleri ve yazı tipleri
         run: |
-          AOPT="-o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o Acquire::Retries=3 -o DPkg::Lock::Timeout=60"
-          # ffmpeg: Ubuntu apt sunucuları yavaşlayınca takılmamak için önce GitHub'dan hazır derleme
+          AOPT="-o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o Acquire::Retries=2 -o DPkg::Lock::Timeout=60"
+          # ffmpeg: Ubuntu apt sunucuları yavaşlayınca takılmamak için GitHub'dan hazır derleme
           if ! command -v ffmpeg >/dev/null; then
             for i in 1 2 3; do curl -fsSL --max-time 240 https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz -o /tmp/ff.tar.xz && break; sleep 5; done
             tar xJf /tmp/ff.tar.xz -C /tmp 2>/dev/null && sudo cp /tmp/ffmpeg-master-latest-linux64-gpl/bin/ff* /usr/local/bin/ || true
           fi
-          sudo timeout 300 apt-get update -q $AOPT || echo "::warning::apt update yavaş/başarısız"
-          for i in 1 2 3; do sudo timeout 420 apt-get install -y -q --no-install-recommends $AOPT libcairo2-dev pkg-config && break; echo "::warning::apt denemesi $i başarısız"; sleep 10; done
-          sudo timeout 180 apt-get install -y -q --no-install-recommends $AOPT espeak-ng || echo "::warning::espeak-ng kurulamadı (yedek ses yok)"
-          command -v ffmpeg >/dev/null || sudo timeout 600 apt-get install -y -q --no-install-recommends $AOPT ffmpeg || true
           command -v ffmpeg >/dev/null || { echo "::error::ffmpeg kurulamadı"; exit 1; }
+          # cairo: önce apt (en fazla ~4 dk), olmazsa conda-forge
+          if ! pkg-config --exists cairo 2>/dev/null; then
+            sudo timeout 100 apt-get update -q $AOPT || echo "::warning::apt update yavaş"
+            sudo timeout 150 apt-get install -y -q --no-install-recommends $AOPT libcairo2-dev pkg-config || echo "::warning::apt'tan cairo kurulamadı"
+          fi
+          if ! pkg-config --exists cairo 2>/dev/null; then
+            echo "::warning::cairo conda-forge'dan kuruluyor"
+            curl -fsSL --max-time 120 https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj -C /tmp bin/micromamba
+            /tmp/bin/micromamba create -y -q -p "$HOME/cairo" -c conda-forge cairo pkg-config
+            echo "$HOME/cairo/bin" >> "$GITHUB_PATH"
+            echo "PKG_CONFIG_PATH=$HOME/cairo/lib/pkgconfig" >> "$GITHUB_ENV"
+            echo "LDFLAGS=-Wl,-rpath,$HOME/cairo/lib" >> "$GITHUB_ENV"
+            export PATH="$HOME/cairo/bin:$PATH" PKG_CONFIG_PATH="$HOME/cairo/lib/pkgconfig"
+          fi
           pkg-config --exists cairo || { echo "::error::cairo kurulamadı"; exit 1; }
+          sudo timeout 90 apt-get install -y -q --no-install-recommends $AOPT espeak-ng || echo "::warning::espeak-ng kurulamadı (yedek ses yok)"
           mkdir -p ~/.fonts && cp fonts/*.ttf ~/.fonts/ && fc-cache -f
 
       - name: Python paketleri
