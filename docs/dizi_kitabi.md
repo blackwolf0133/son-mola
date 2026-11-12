@@ -1,3 +1,5 @@
+> **ARŞİV: 12 Kasım'da antolojiye geçildi.** Bu dizi kitabı artık kullanılmıyor; paylaşılmamış dizi bölümleri (004–010) `episodes/arsiv_dizi/` klasöründe. Yeni bölümlerde bu dizinin karakterlerine/sırlarına atıf yok. Kurallar: `docs/senaryo_formati.md` → "Antoloji formatı (12 Kasım)".
+
 # SON MOLA — Dizi Kitabı (1. Sezon)
 
 > "Otobüs on dakika mola verdi. Geri döndüğümüzde otobüs yoktu. Saat hâlâ 16:44."

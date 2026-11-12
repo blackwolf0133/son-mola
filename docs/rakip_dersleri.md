@@ -17,3 +17,8 @@ Kural: hikâyelerini, karakterlerini, sahnelerini, metinlerini ASLA kopyalama. S
   ("Sence Kerem neden cevap verdi?"). Takip çağrısı yine tek ve sonda.
 - Her bölümde en az bir kişisel bağ/duygu anı (Deniz'in babası, Ece'nin çizimleri, Hatice Teyze'nin duası).
 - Uçurum bir OLAY olmalı ve bir karakterin kararıyla ilgili olursa daha çok yorum getirir.
+
+## 12 Kasım 2026 incelemesi (antolojiye geçiş)
+- En çok tutan gönderi yine bir hikâyenin **1. bölümü** (238 bin beğeni / 2.953 yorum); sonraki bölümler 30-74 bin. Yeni izleyici girişi başlangıç bölümünden oluyor → her bölümü "1. bölüm" gibi kendi içinde kapalı yazmak (antoloji) doğru yön.
+- O gönderinin açıklaması doğrudan bir soruyla açılıyor ("…gerçekten … mi?"), sonra "Ama…" ile çelişki. Bizde: 1. satır ürpertici çelişki, 2. satır açık uçlu soru.
+- Bizim ilk 3 dizi bölümü: ort. izlenme 7,2–8,4 sn, etkileşim ~0. Antoloji bölümleri yayınlanınca (004+) bu ortalamayla karşılaştır.

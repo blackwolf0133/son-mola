@@ -1,0 +1,154 @@
+{
+ "id": "004",
+ "title": "Kırk Birinci Yolcu",
+ "year": "02:10",
+ "instagram_caption": "Molada yolcuları saydım. Bir kişi fazlaydı ve bileti yoktu. 🚌\n\nSence o adam otobüse ne zaman binmişti?\n\nHer akşam 17:45'te yeni bir hikâye. Takip et 🌫️\n\n#korkuhikayesi #gecehikayesi #ürpertici #çöpadam #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "BİR KİŞİ FAZLA",
+   "voice_delay": 0.0,
+   "say": "Molada yolcuları iki kez saydım. Bir kişi fazlaydı.",
+   "text": "Molada yolcuları iki kez saydım. Bir kişi fazlaydı.",
+   "bg": "karanlik",
+   "sis": 0.35,
+   "zoom": 0.13,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": [
+    {
+     "type": "pop",
+     "text": "+1",
+     "x": 0.5,
+     "y": 0.42,
+     "size": 170,
+     "f": 0.05
+    }
+   ]
+  },
+  {
+   "say": "Ben muavinim. O gece iki onda, sisli bir dağ yolunda, ıssız bir tesiste mola verdik.",
+   "text": "Ben muavinim. O gece iki onda, sisli bir dağ yolunda, ıssız bir tesiste mola verdik.",
+   "bg": "tesis_dis",
+   "sis": 0.2,
+   "zoom": 0.05,
+   "actors": [
+    {
+     "id": "muavin",
+     "x": 0.38,
+     "y": 0.93,
+     "pose": "relax",
+     "face": "sleepy",
+     "scale": 0.88
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Otuz sekiz yolcuyla çıkmıştık. Kapıda saydım: otuz dokuz.",
+   "text": "38 yolcuyla çıkmıştık. Kapıda saydım: 39.",
+   "bg": "peron",
+   "sis": 0.15,
+   "actors": [
+    {
+     "id": "muavin",
+     "x": 0.55,
+     "y": 0.93,
+     "pose": "point",
+     "face": "think",
+     "scale": 0.88,
+     "talk": true
+    }
+   ],
+   "props": [
+    {
+     "type": "pop",
+     "text": "39",
+     "x": 0.5,
+     "y": 0.28,
+     "size": 110,
+     "f": 0.75
+    }
+   ]
+  },
+  {
+   "say": "En arkada, ıslak paltolu yaşlı bir adam sessizce cama bakıyordu. Bileti yoktu.",
+   "text": "En arkada, ıslak paltolu yaşlı bir adam sessizce cama bakıyordu. Bileti yoktu.",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.66
+   },
+   "sis": 0.5,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "muavin",
+     "x": 0.25,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.7
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Nereden bindiğini sordum. Gülümsedi: 'Ben hiç inmedim ki.'",
+   "text": "Nereden bindiğini sordum. Gülümsedi: “Ben hiç inmedim ki.”",
+   "bg": "karanlik",
+   "sis": 0.4,
+   "sis_to": 0.7,
+   "zoom": 0.12,
+   "actors": [
+    {
+     "id": "muavin",
+     "x": 0.35,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.9
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Şoför dikiz aynasına baktı ve sarardı. Aynada arka koltuk bomboştu.",
+   "text": "Şoför dikiz aynasına baktı ve sarardı. Aynada arka koltuk bomboştu.",
+   "bg": "yol",
+   "sis": 0.55,
+   "zoom": 0.14,
+   "sarsinti": true,
+   "sarsinti_t": 2.6,
+   "karart": [
+    3.2,
+    4.0
+   ],
+   "actors": [],
+   "props": [
+    {
+     "type": "far",
+     "x": 0.5,
+     "y": 0.55,
+     "scale": 0.6,
+     "delay": 0.2
+    }
+   ]
+  },
+  {
+   "say": "Sen olsan o koltuğa yaklaşır mıydın?",
+   "text": "Sen olsan o koltuğa yaklaşır mıydın?",
+   "bg": "karanlik",
+   "sis": 0.3,
+   "zoom": 0.08,
+   "actors": [],
+   "props": [
+    {
+     "type": "lamba",
+     "x": 0.5,
+     "y": 0.3
+    }
+   ]
+  }
+ ]
+}

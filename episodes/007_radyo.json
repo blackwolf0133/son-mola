@@ -1,0 +1,143 @@
+{
+ "id": "007",
+ "title": "Radyo",
+ "year": "04:20",
+ "instagram_caption": "Lokantada radyo bir kazayı anlattı. Okunan plaka benim arabamındı. 📻\n\nSence o lokantaya kimler gelir?\n\nHer akşam 17:45'te yeni bir hikâye. Takip et 🌫️\n\n#korkuhikayesi #yolhikayesi #ürpertici #çöpadam #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "BENİM PLAKAM",
+   "voice_delay": 0.0,
+   "say": "Radyo bir kazayı anlattı. Plaka benim arabamındı.",
+   "text": "Radyo bir kazayı anlattı. Plaka benim arabamındı.",
+   "bg": "karanlik",
+   "sis": 0.3,
+   "zoom": 0.13,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": [
+    {
+     "type": "pop",
+     "text": "KAZA",
+     "x": 0.5,
+     "y": 0.4,
+     "size": 150,
+     "f": 0.05
+    }
+   ]
+  },
+  {
+   "say": "Gece dört yirmide, yol kenarında bir lokantaya sıcak bir çorba içmeye girdim.",
+   "text": "Gece dört yirmide, yol kenarında bir lokantaya sıcak bir çorba içmeye girdim.",
+   "bg": "tesis_ic",
+   "sis": 0.05,
+   "actors": [
+    {
+     "id": "ben",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "relax",
+     "face": "sleepy",
+     "scale": 0.88
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Ocağın başındaki aşçı radyonun sesini açtı. Yüzü bembeyazdı.",
+   "text": "Ocağın başındaki aşçı radyonun sesini açtı. Yüzü bembeyazdı.",
+   "bg": "tesis_ic",
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "asci",
+     "x": 0.62,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.86,
+     "flip": true
+    },
+    {
+     "id": "ben",
+     "x": 0.24,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.84
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Radyodaki spiker, on dakika önce virajda devrilen gri bir arabadan bahsediyordu.",
+   "text": "Radyodaki spiker, 10 dakika önce virajda devrilen gri bir arabadan bahsediyordu.",
+   "bg": "yol",
+   "sis": 0.6,
+   "zoom": 0.1,
+   "actors": [],
+   "props": [
+    {
+     "type": "far",
+     "x": 0.5,
+     "y": 0.62,
+     "scale": 0.45,
+     "delay": 0.3
+    }
+   ]
+  },
+  {
+   "say": "Sonra plakayı okudu. Benim plakamdı. Arabam ise kapının önünde, sapasağlam duruyordu.",
+   "text": "Sonra plakayı okudu. Benim plakamdı. Arabam ise kapının önünde, sapasağlam duruyordu.",
+   "bg": "tesis_dis",
+   "sis": 0.35,
+   "zoom": 0.12,
+   "actors": [
+    {
+     "id": "ben",
+     "x": 0.36,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.88
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Aşçı kepçeyi bırakıp fısıldadı: 'Buraya gelenler hep o virajdan sonra gelir.'",
+   "text": "Aşçı kepçeyi bırakıp fısıldadı: “Buraya gelenler hep o virajdan sonra gelir.”",
+   "bg": "tesis_ic",
+   "sis": 0.2,
+   "zoom": 0.14,
+   "karart": [
+    3.6,
+    4.3
+   ],
+   "actors": [
+    {
+     "id": "asci",
+     "x": 0.6,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "sad",
+     "scale": 0.86,
+     "flip": true,
+     "talk": true
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Sen olsan o lokantadan çıkıp arabana biner miydin?",
+   "text": "Sen olsan o lokantadan çıkıp arabana biner miydin?",
+   "bg": "tesis_dis",
+   "isik": false,
+   "sis": 0.6,
+   "zoom": 0.06,
+   "actors": [],
+   "props": []
+  }
+ ]
+}

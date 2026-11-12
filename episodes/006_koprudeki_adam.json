@@ -1,0 +1,127 @@
+{
+ "id": "006",
+ "title": "Köprüdeki Adam",
+ "year": "01:15",
+ "instagram_caption": "Köprüdeki adam her gece el sallıyordu. Bana değil, arka koltuğa. 🌉\n\nSence minibüse kim binmişti?\n\nHer akşam 17:45'te yeni bir hikâye. Takip et 🌫️\n\n#korkuhikayesi #gecehikayesi #ürpertici #çöpadam #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "ARKANA BAKMA",
+   "voice_delay": 0.0,
+   "say": "Köprüdeki adam bana el sallamıyordu. Arkamdakini uyarıyordu.",
+   "text": "Köprüdeki adam bana el sallamıyordu. Arkamdakini uyarıyordu.",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.6
+   },
+   "sis": 0.65,
+   "zoom": 0.13,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": []
+  },
+  {
+   "say": "Gece yarısı minibüs sürüyorum. Her gece bir on beşte o köprüden geçerim.",
+   "text": "Gece yarısı minibüs sürüyorum. Her gece 01:15'te o köprüden geçerim.",
+   "bg": "yol",
+   "sis": 0.3,
+   "actors": [],
+   "props": [
+    {
+     "type": "far",
+     "x": 0.5,
+     "y": 0.6,
+     "scale": 0.5
+    }
+   ]
+  },
+  {
+   "say": "Her gece aynı adam, köprünün tam ortasında durmuş bana el sallıyordu.",
+   "text": "Her gece aynı adam, köprünün tam ortasında durmuş bana el sallıyordu.",
+   "bg": "yol",
+   "sis": 0.55,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "adam",
+     "x": 0.5,
+     "y": 0.64,
+     "pose": "point",
+     "face": "neutral",
+     "scale": 0.42
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "O gece dayanamadım, köprünün ortasında durdum. Camı indirdim.",
+   "text": "O gece dayanamadım, köprünün ortasında durdum. Camı indirdim.",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.7
+   },
+   "sis": 0.45,
+   "actors": [
+    {
+     "id": "sofor",
+     "x": 0.28,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.72
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Adam bana değil, arka koltuğa bakıyordu. 'İnme,' dedi. 'O seninle binmedi.'",
+   "text": "Adam bana değil, arka koltuğa bakıyordu. “İnme,” dedi. “O seninle binmedi.”",
+   "bg": "karanlik",
+   "sis": 0.35,
+   "sis_to": 0.6,
+   "zoom": 0.12,
+   "actors": [
+    {
+     "id": "sofor",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.9
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Minibüste benden başka yolcu yoktu. Ama arkadan biri derin bir nefes aldı.",
+   "text": "Minibüste benden başka yolcu yoktu. Ama arkadan biri derin bir nefes aldı.",
+   "bg": "karanlik",
+   "sis": 0.5,
+   "zoom": 0.15,
+   "sarsinti": true,
+   "sarsinti_t": 2.5,
+   "karart": [
+    2.8,
+    3.6
+   ],
+   "actors": [],
+   "props": [
+    {
+     "type": "lamba",
+     "x": 0.5,
+     "y": 0.25
+    }
+   ]
+  },
+  {
+   "say": "Sen olsan dikiz aynasına bakar mıydın?",
+   "text": "Sen olsan dikiz aynasına bakar mıydın?",
+   "bg": "yol",
+   "sis": 0.75,
+   "zoom": 0.06,
+   "actors": [],
+   "props": []
+  }
+ ]
+}

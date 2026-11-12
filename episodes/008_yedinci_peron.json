@@ -1,0 +1,155 @@
+{
+ "id": "008",
+ "title": "Yedinci Peron",
+ "year": "00:00",
+ "instagram_caption": "Boş otogarda anons benim adımı okudu. Bilet almamıştım. 🚏\n\nSence o otobüs nereye gidiyordu?\n\nHer akşam 17:45'te yeni bir hikâye. Takip et 🌫️\n\n#korkuhikayesi #otogar #ürpertici #çöpadam #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "ADIMI OKUDU",
+   "voice_delay": 0.0,
+   "say": "Otogarda anons benim adımı okudu. Ama bilet almamıştım.",
+   "text": "Otogarda anons benim adımı okudu. Ama bilet almamıştım.",
+   "bg": "peron",
+   "sis": 0.55,
+   "zoom": 0.13,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": []
+  },
+  {
+   "say": "Gece yarısı, bomboş otogarda tek başıma sabah otobüsünü bekliyordum.",
+   "text": "Gece yarısı, bomboş otogarda tek başıma sabah otobüsünü bekliyordum.",
+   "bg": "peron",
+   "sis": 0.2,
+   "actors": [
+    {
+     "id": "ben",
+     "x": 0.36,
+     "y": 0.93,
+     "pose": "relax",
+     "face": "sleepy",
+     "scale": 0.86
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Hoparlör cızırdadı: 'Yedi numaralı perondan kalkacak son yolcu, lütfen otobüse.' Sonra adımı söyledi.",
+   "text": "Hoparlör cızırdadı: “7 numaralı perondan kalkacak son yolcu, lütfen otobüse.” Sonra adımı söyledi.",
+   "bg": "peron",
+   "sis": 0.25,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "ben",
+     "x": 0.36,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.86
+    }
+   ],
+   "props": [
+    {
+     "type": "pop",
+     "text": "PERON 7",
+     "x": 0.5,
+     "y": 0.25,
+     "size": 90,
+     "f": 0.7
+    }
+   ]
+  },
+  {
+   "say": "Yedinci peronda farları yanan eski bir otobüs bekliyordu. Yolcular dimdik oturuyor, hiç kıpırdamıyordu.",
+   "text": "7. peronda farları yanan eski bir otobüs bekliyordu. Yolcular dimdik oturuyor, hiç kıpırdamıyordu.",
+   "bg": "yol",
+   "sis": 0.5,
+   "zoom": 0.1,
+   "actors": [],
+   "props": [
+    {
+     "type": "far",
+     "x": 0.5,
+     "y": 0.6,
+     "scale": 0.7,
+     "delay": 0.2
+    }
+   ]
+  },
+  {
+   "say": "Kapı açıldı. Şoför hiç kımıldamadan beni bekledi. Binmedim.",
+   "text": "Kapı açıldı. Şoför hiç kımıldamadan beni bekledi. Binmedim.",
+   "bg": "karanlik",
+   "sis": 0.4,
+   "zoom": 0.12,
+   "sarsinti": true,
+   "sarsinti_t": 3.0,
+   "actors": [
+    {
+     "id": "ben",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "sad",
+     "face": "shock",
+     "scale": 0.9
+    }
+   ],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.7,
+     "y": 0.9,
+     "scale": 1.0,
+     "aralik": true,
+     "f": 0.2
+    }
+   ]
+  },
+  {
+   "say": "Sabah danışmadaki memura sordum. 'Bu otogarda altı peron var,' dedi.",
+   "text": "Sabah danışmadaki memura sordum. “Bu otogarda 6 peron var,” dedi.",
+   "bg": "peron",
+   "gunduz": true,
+   "sis": 0.2,
+   "actors": [
+    {
+     "id": "ben",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.86
+    }
+   ],
+   "props": [
+    {
+     "type": "tabela",
+     "x": 0.74,
+     "y": 0.92,
+     "scale": 0.8,
+     "text": "PERON|1 - 6",
+     "ok": "sag"
+    }
+   ]
+  },
+  {
+   "say": "Sen olsan o otobüse biner miydin?",
+   "text": "Sen olsan o otobüse biner miydin?",
+   "bg": "yol",
+   "sis": 0.7,
+   "zoom": 0.06,
+   "actors": [],
+   "props": [
+    {
+     "type": "far",
+     "x": 0.5,
+     "y": 0.6,
+     "scale": 0.5
+    }
+   ]
+  }
+ ]
+}

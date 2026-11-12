@@ -1,0 +1,134 @@
+{
+ "id": "005",
+ "title": "Para Üstü",
+ "year": "03:40",
+ "instagram_caption": "Issız benzinlikte para üstüm tezgâhta dizili bekliyordu. Hâlâ sıcaktı. ⛽\n\nSen olsan o parayı cebine koyar mıydın?\n\nHer akşam 17:45'te yeni bir hikâye. Takip et 🌫️\n\n#korkuhikayesi #benzinlik #ürpertici #çöpadam #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "KİMSE YOKTU",
+   "voice_delay": 0.0,
+   "say": "Pompa kendi kendine çalıştı. Oysa istasyonda kimse yoktu.",
+   "text": "Pompa kendi kendine çalıştı. Oysa istasyonda kimse yoktu.",
+   "bg": "tesis_dis",
+   "isik": false,
+   "sis": 0.6,
+   "zoom": 0.13,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": []
+  },
+  {
+   "say": "Tır şoförüyüm. Gece üç kırkta, depo boşalınca ıssız bir benzinlikte durdum.",
+   "text": "Tır şoförüyüm. Gece üç kırkta, depo boşalınca ıssız bir benzinlikte durdum.",
+   "bg": "tesis_dis",
+   "sis": 0.25,
+   "actors": [
+    {
+     "id": "sofor",
+     "x": 0.42,
+     "y": 0.93,
+     "pose": "stretch",
+     "face": "sleepy",
+     "scale": 0.9
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Hoparlörden kısık, yorgun bir ses geldi: 'Fulle mi abi?'",
+   "text": "Hoparlörden kısık, yorgun bir ses geldi: “Fulle mi abi?”",
+   "bg": "tesis_dis",
+   "sis": 0.3,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "sofor",
+     "x": 0.42,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.9
+    }
+   ],
+   "props": [
+    {
+     "type": "pop",
+     "text": "FULLE Mİ?",
+     "x": 0.5,
+     "y": 0.25,
+     "size": 90,
+     "f": 0.6
+    }
+   ]
+  },
+  {
+   "say": "Kulübeye baktım. Işık yanıyordu, radyo çalıyordu ama tezgâhta kimse yoktu.",
+   "text": "Kulübeye baktım. Işık yanıyordu, radyo çalıyordu ama tezgâhta kimse yoktu.",
+   "bg": "tesis_ic",
+   "sis": 0.1,
+   "zoom": 0.08,
+   "actors": [],
+   "props": [
+    {
+     "type": "lamba",
+     "x": 0.5,
+     "y": 0.18
+    }
+   ]
+  },
+  {
+   "say": "Parayı tezgâha bıraktım, pompaya döndüm. Geri geldiğimde para üstü dizilmişti. Hâlâ sıcaktı.",
+   "text": "Parayı tezgâha bıraktım, pompaya döndüm. Geri geldiğimde para üstü dizilmişti. Hâlâ sıcaktı.",
+   "bg": "tesis_ic",
+   "sis": 0.15,
+   "zoom": 0.12,
+   "karart": [
+    3.5,
+    4.2
+   ],
+   "actors": [
+    {
+     "id": "sofor",
+     "x": 0.3,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.88
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Sabah patronu arayıp anlattım. 'O istasyon on yıldır kapalı,' dedi.",
+   "text": "Sabah patronu arayıp anlattım. “O istasyon 10 yıldır kapalı,” dedi.",
+   "bg": "karanlik",
+   "sis": 0.2,
+   "zoom": 0.1,
+   "actors": [],
+   "props": [
+    {
+     "type": "telefon",
+     "x": 0.5,
+     "y": 0.46,
+     "scale": 2.0,
+     "rot": -4,
+     "text": "PATRON",
+     "alt": "arama sürüyor…",
+     "delay": 0.1
+    }
+   ]
+  },
+  {
+   "say": "Sen olsan o para üstünü cebine koyar mıydın?",
+   "text": "Sen olsan o para üstünü cebine koyar mıydın?",
+   "bg": "tesis_dis",
+   "isik": false,
+   "sis": 0.7,
+   "zoom": 0.06,
+   "actors": [],
+   "props": []
+  }
+ ]
+}

@@ -1,0 +1,145 @@
+{
+ "id": "009",
+ "title": "Telsiz",
+ "year": "02:50",
+ "instagram_caption": "Tır parkında kapım çalındı. Telsizdeki ses açma dedi ve o ses benim sesimdi. 📡\n\nSen olsan hangisine inanırdın?\n\nHer akşam 17:45'te yeni bir hikâye. Takip et 🌫️\n\n#korkuhikayesi #tırcı #ürpertici #çöpadam #sonmola",
+ "scenes": [
+  {
+   "kanca": true,
+   "kanca_yazi": "KAPIYI AÇMA",
+   "voice_delay": 0.0,
+   "say": "Telsizdeki ses 'Kapıyı açma' dedi. Ses benim sesimdi.",
+   "text": "Telsizdeki ses “Kapıyı açma” dedi. Ses benim sesimdi.",
+   "bg": "karanlik",
+   "sis": 0.3,
+   "zoom": 0.13,
+   "sarsinti": true,
+   "sarsinti_t": 2.0,
+   "actors": [],
+   "props": [
+    {
+     "type": "telefon",
+     "x": 0.5,
+     "y": 0.5,
+     "scale": 2.0,
+     "rot": -5,
+     "text": "TELSİZ",
+     "alt": "kanal 9",
+     "titre": true
+    }
+   ]
+  },
+  {
+   "say": "Gece üçe on kala, ıssız bir tır parkında kabinde yorgun argın uzanmıştım.",
+   "text": "Gece üçe on kala, ıssız bir tır parkında kabinde yorgun argın uzanmıştım.",
+   "bg": "tesis_dis",
+   "isik": false,
+   "sis": 0.3,
+   "actors": [
+    {
+     "id": "sofor",
+     "x": 0.4,
+     "y": 0.93,
+     "pose": "relax",
+     "face": "sleepy",
+     "scale": 0.88
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Kapıma tam üç kez vuruldu. Dışarıda koyu bir sis vardı, kimse görünmüyordu.",
+   "text": "Kapıma tam üç kez vuruldu. Dışarıda koyu bir sis vardı, kimse görünmüyordu.",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.68
+   },
+   "sis": 0.7,
+   "zoom": 0.1,
+   "actors": [
+    {
+     "id": "sofor",
+     "x": 0.26,
+     "y": 0.93,
+     "pose": "think",
+     "face": "think",
+     "scale": 0.72
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Sonra telsiz cızırdadı: 'Açma kardeşim. O ben değilim.'",
+   "text": "Sonra telsiz cızırdadı: “Açma kardeşim. O ben değilim.”",
+   "bg": "karanlik",
+   "sis": 0.25,
+   "zoom": 0.1,
+   "actors": [],
+   "props": [
+    {
+     "type": "telefon",
+     "x": 0.5,
+     "y": 0.48,
+     "scale": 1.8,
+     "rot": 4,
+     "text": "TELSİZ",
+     "alt": "kanal 9",
+     "titre": true,
+     "delay": 0.2
+    }
+   ]
+  },
+  {
+   "say": "Ses çok tanıdıktı. Aynı tonla, aynı nefesle konuşuyordu. Benim sesimdi.",
+   "text": "Ses çok tanıdıktı. Aynı tonla, aynı nefesle konuşuyordu. Benim sesimdi.",
+   "bg": "karanlik",
+   "sis": 0.35,
+   "zoom": 0.12,
+   "actors": [
+    {
+     "id": "sofor",
+     "x": 0.45,
+     "y": 0.93,
+     "pose": "shock",
+     "face": "shock",
+     "scale": 0.92
+    }
+   ],
+   "props": []
+  },
+  {
+   "say": "Telsizi kapattım. Kapıya bir kez daha vuruldu. Bu sefer içeriden.",
+   "text": "Telsizi kapattım. Kapıya bir kez daha vuruldu. Bu sefer içeriden.",
+   "bg": "karanlik",
+   "sis": 0.4,
+   "zoom": 0.15,
+   "sarsinti": true,
+   "sarsinti_t": 2.8,
+   "karart": [
+    3.0,
+    3.8
+   ],
+   "actors": [],
+   "props": [
+    {
+     "type": "kapi",
+     "x": 0.5,
+     "y": 0.9,
+     "scale": 1.1
+    }
+   ]
+  },
+  {
+   "say": "Sen olsan hangisine inanırdın, kapıya mı telsize mi?",
+   "text": "Sen olsan hangisine inanırdın, kapıya mı telsize mi?",
+   "bg": "pencere",
+   "golge": {
+    "x": 0.5
+   },
+   "sis": 0.8,
+   "zoom": 0.06,
+   "actors": [],
+   "props": []
+  }
+ ]
+}

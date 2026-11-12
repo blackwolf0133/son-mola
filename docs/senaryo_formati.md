@@ -68,3 +68,17 @@ gh api -H "Accept: application/octet-stream" "repos/blackwolf0133/cop-adamla-tar
 ```
 Bu kanalın dosyası: **sonmola.md**. Rapordaki tutan kanca kalıplarını, konu açılarını ve formatları kendi kurallarımıza uyarlayarak kullan;
 başka içerik üreticilerinin metnini, videosunu ya da hikâyesini kopyalama. Rapor yoksa ya da eskiyse (14 günden eski) bu adımı atla.
+
+## Antoloji formatı (12 Kasım)
+İlk 3 dizi bölümünde izleyicinin neredeyse tamamı kanalı ilk kez gördü, hikâyenin ortasına girdi ve 7-8 sn'de kaydırdı
+(izlenme 157 → 130 → 118). Bu yüzden SON MOLA artık bir **antoloji**: her bölüm kendi içinde başlayıp biten ayrı bir kısa korku hikâyesi.
+- Ortak tema: gece yolculuğu ve yol kenarı molaları (otobüs molası, benzinlik, yol kenarı lokantası, köprü, terk edilmiş tesis, otogar, tır parkı…).
+- Her bölümde yeni, sıradan karakterler (şoför, muavin, yolcu, benzinlikçi, çaycı); birinci tekil şahıs anlatım ("O gece…").
+  Eski dizinin karakterlerine/sırlarına (Deniz, Ece, Kerem, 16:44…) atıf YOK. Arşiv: `episodes/arsiv_dizi/` (daily.py okumaz).
+- 6-7 sahne, 65-80 kelime, kapanış kartı dahil 30-40 sn (42 sn'yi aşma).
+- Yapı: KANCA (en ürpertici an, ≤12 kelime, sonucu vermeden) → kim, nerede, gece kaçta (1 cümle) → tuhaflık büyür (2-3 sahne)
+  → ters köşe / son olay (gösterilmez, ima edilir) → izleyiciye tek soru ("Sen olsan…?"). Mümkünse son cümle kancadaki bir kelimeyi yankılasın (tekrar izleme).
+- "Devamı yarın" yok. Tehlike gösterilmez (sis, ses, siluet, boş koltuk, çalan telefon). Şiddet/kan yok; gerçek marka, başka film/dizi göndermesi yok.
+- `year` = hikâyenin saati ("03:40"); sol üst etiket olarak görünür. Actor `id` serbest (ör. "sofor", "muavin"); poz/yüz listesi aynı.
+- Açıklama: 1. satır kısa ürpertici cümle (cevapsız) + açık uçlu soru + "Her akşam 17:45'te yeni bir hikâye. Takip et 🌫️" + tam 5 etiket, sonuncusu #sonmola. "Bölüm N/30" yazma.
+- Not: kapanış kartı motor tarafında hâlâ "BÖLÜM N+1 · YARIN 17:45" yazar; antolojiyle uyumlu.
