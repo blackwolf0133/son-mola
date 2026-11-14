@@ -9,6 +9,7 @@ Komutlar:
 """
 import argparse
 import datetime as dt
+import saat_kapisi
 import glob
 import json
 import os
@@ -76,19 +77,13 @@ def cmd_render(_):
     if not q:
         print("::error::Sırada bölüm yok! episodes/ klasörüne yeni bölüm ekleyin.")
         sys.exit(1)
-    # GitHub zamanlayıcısı saatlerce gecikebiliyor: otomatik tetiklemede Türkiye saati 17:00-21:00
-    # dışındaysa paylaşma; yedek alarm elle başlatır.
-    hour_tr = (dt.datetime.utcnow() + dt.timedelta(hours=3)).hour
-    if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and not (17 <= hour_tr < 21):
-        print(f"Zamanlayıcı geç tetiklendi (TR saat {hour_tr}:xx), gece paylaşımı yapılmıyor.")
-        set_output("skip", "true")
-        return
     if os.environ.get("FORCE") != "1" and not os.path.exists(os.path.join(ROOT, "assets", "yayinda")):
         print("Dizi henüz yayında değil (assets/yayinda dosyası yok). Ses ve ilk bölüm onaylanınca açılacak.")
         set_output("skip", "true")
         return
-    if os.environ.get("FORCE") != "1" and any(p.get("date") == today_tr() for p in load_state()["posted"]):
-        print(f"Bugün ({today_tr()}) zaten paylaşım yapılmış, ikinci video üretilmiyor.")
+    _git, _slot, _neden = saat_kapisi.karar()
+    if not _git:
+        print(_neden)
         set_output("skip", "true")
         return
     set_output("skip", "false")
@@ -186,7 +181,7 @@ def cmd_publish(a):
     today = json.load(open(TODAY, encoding="utf-8"))
     res = paylas_tekrarli(publisher, today["path"], a.video_url, today["caption"])
     st = load_state()
-    st["posted"].append({"id": today["id"], "title": today["title"], "date": today_tr(),
+    st["posted"].append({"id": today["id"], "title": today["title"], "date": today_tr(), "slot": saat_kapisi.gecerli_slot()[0] or "",
                          "media_id": res["media_id"], "permalink": res.get("permalink")})
     save_state(st)
     print(f"Paylaşıldı: {today['title']} -> {res.get('permalink')}")
