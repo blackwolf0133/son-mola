@@ -1,11 +1,11 @@
 # Son Mola · bölüm JSON formatı
 
-Dosya: `episodes/NNN_kisa_ad.json`. Sıradaki paylaşılmamış bölüm her gün 17:45'te paylaşılır.
+Dosya: `episodes/NNN_kisa_ad.json`. Sıradaki paylaşılmamış bölüm her gün 20:00'de paylaşılır.
 
 ```json
 {
   "id": "004", "title": "Fazla Bardak", "year": "16:44",
-  "instagram_caption": "1-2 cümle ürpertici özet 🌫️\n\nBölüm 4/30\n\nYarın 17:45'te devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #kısadizi #çöpadam #sonmola",
+  "instagram_caption": "1-2 cümle ürpertici özet 🌫️\n\nBölüm 4/30\n\nYarın 20:00'de devamı. Kaçırmamak için takip et 🌫️\n\n#gizem #korkuhikayesi #kısadizi #çöpadam #sonmola",
   "scenes": [ { "say": "...", "text": "...", "bg": "tesis_ic", "actors": [], "props": [] } ]
 }
 ```
@@ -55,7 +55,7 @@ bölümün en ürpertici anından bir kesit (cevabı vermeden), sonra geri sarma
 `kapi` (`aralik`), `defter`, `resim` (Ece'nin çizimi), `fener`, `lamba`, `far` (sisteki farlar), `pop` (kırmızı büyük yazı, `f` = sesin yüzde kaçında).
 Zamanlama: `delay` (sn) ya da `f` (konuşmanın oranı).
 
-Kapanış kartı ("BÖLÜM N+1 · YARIN 17:45") ve gerilim müziği otomatik eklenir.
+Kapanış kartı ("BÖLÜM N+1 · YARIN 20:00") ve gerilim müziği otomatik eklenir.
 
 ## Haftalık trend raporu (last30days)
 Her pazartesi blackwolf0133/cop-adamla-tarih deposundaki "Trend araştırma" iş akışı son 30 günün trendlerini 6 kanal için tarar
@@ -80,8 +80,8 @@ başka içerik üreticilerinin metnini, videosunu ya da hikâyesini kopyalama. R
   → ters köşe / son olay (gösterilmez, ima edilir) → izleyiciye tek soru ("Sen olsan…?"). Mümkünse son cümle kancadaki bir kelimeyi yankılasın (tekrar izleme).
 - "Devamı yarın" yok. Tehlike gösterilmez (sis, ses, siluet, boş koltuk, çalan telefon). Şiddet/kan yok; gerçek marka, başka film/dizi göndermesi yok.
 - `year` = hikâyenin saati ("03:40"); sol üst etiket olarak görünür. Actor `id` serbest (ör. "sofor", "muavin"); poz/yüz listesi aynı.
-- Açıklama: 1. satır kısa ürpertici cümle (cevapsız) + açık uçlu soru + "Her akşam 17:45'te yeni bir hikâye. Takip et 🌫️" + tam 5 etiket, sonuncusu #sonmola. "Bölüm N/30" yazma.
-- Not: kapanış kartı motor tarafında hâlâ "BÖLÜM N+1 · YARIN 17:45" yazar; antolojiyle uyumlu.
+- Açıklama: 1. satır kısa ürpertici cümle (cevapsız) + açık uçlu soru + "Her akşam 20:00'de yeni bir hikâye. Takip et 🌫️" + tam 5 etiket, sonuncusu #sonmola. "Bölüm N/30" yazma.
+- Not: kapanış kartı motor tarafında hâlâ "BÖLÜM N+1 · YARIN 20:00" yazar; antolojiyle uyumlu.
 
 ---
 

@@ -3,8 +3,8 @@ name: Günlük paylaşım
 
 on:
   schedule:
-    # 14:13 UTC = 17:13 Türkiye. Üretim ~15 dk + paylaşım ~5 dk: video 17:45 civarı yayında.
-    - cron: "13 14 * * *"
+    # 16:28 UTC = 19:28 Türkiye. Üretim ~15 dk + paylaşım ~5 dk: video 20:00 civarı yayında.
+    - cron: "28 16 * * *"
   workflow_dispatch:
     inputs:
       sadece_video:

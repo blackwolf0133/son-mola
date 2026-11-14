@@ -1,4 +1,4 @@
-"""SON MOLA (@sonmola.dizi) - günlük otomasyon (her gün 17:45).
+"""SON MOLA (@sonmola.dizi) - günlük otomasyon (her gün 20:00).
 
 Komutlar:
   python daily.py status                 -> sırada kaç bölüm var, son paylaşılanlar
