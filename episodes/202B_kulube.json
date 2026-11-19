@@ -1,0 +1,91 @@
+{
+  "id": "202B",
+  "slug": "kulube",
+  "title": "Kulübe",
+  "dizi_adi": "Turnike",
+  "gece": 2,
+  "dal": "B",
+  "seed": 52022,
+  "kanca_yazi": "Kırık kart, yine de girdin",
+  "scenes": [
+    {
+      "text": "Kartını ikiye kırdın. Kart okuyucu yine öttü. Senin adın, içeri girdi.",
+      "prompt": "A plastic access card snapped in two on a dark security booth desk, the red light of a card reader glowing through the window behind",
+      "sicak": true
+    },
+    {
+      "text": "Gece üçü on iki geçe. Fabrika kapısındaki bekçi kulübesi.",
+      "prompt": "Inside a small dark security booth at the gate of an abandoned textile factory at night, a desk lamp, a thermos and a tea glass, rain-streaked window",
+      "sicak": true
+    },
+    {
+      "text": "Kapıyı kilitledin. Işığı söndürdün. Nefesini tuttun ve camdan turnikeyi izledin.",
+      "prompt": "View from inside a dark security booth through a rain-streaked window at night, a factory turnstile outside lit only by a red card reader light"
+    },
+    {
+      "text": "Gölgeler turnikeden tek tek geçti. Saydın. Yirmi bir.",
+      "prompt": "Faint human shadows passing one by one through a factory turnstile at night, no bodies visible, only long shadows on wet concrete under a red light",
+      "sis": 0.3
+    },
+    {
+      "text": "Yirmi ikincisi geçmedi. Turnikenin önünde durdu. Ve yüzünü kulübeye döndü.",
+      "prompt": "A tall dark silhouette standing motionless beside a factory turnstile at night, facing toward the viewer, featureless, fog around its feet",
+      "sis": 0.4
+    },
+    {
+      "text": "Telefon titredi. Altı yıldır sessiz grup, şimdi sana yazıyordu.",
+      "prompt": "Inside a small dark security booth at the gate of an abandoned textile factory at night, a desk lamp, a thermos and a tea glass, rain-streaked window",
+      "telefon": {
+        "baslik": "Gece Vardiyası",
+        "alt": "22 kişi",
+        "mesajlar": [
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Kartın kırıldı. Sorun değil."
+          },
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Biz seni çoktan içeri aldık."
+          }
+        ]
+      }
+    },
+    {
+      "text": "Kulübedeki dahili telefon çaldı. Yıllardır kablosu kopuk olan telefon. Sadece fabrikanın içinden aranabilen telefon.",
+      "prompt": "An old beige landline phone on a security booth desk at night, ringing, its handset trembling, lamp light"
+    },
+    {
+      "text": "Açmadın. On iki kez çaldı, sustu. Camdaki gölge de gitmişti.",
+      "prompt": "An empty factory gate at night seen through a booth window, the turnstile alone under the red light, fog drifting",
+      "sis": 0.3
+    },
+    {
+      "text": "Masana döndüğünde önünde açık bir defter vardı. Vardiya defteri. Son satır boştu, kalemi hazırdı.",
+      "prompt": "An old open logbook lying on a security booth desk under a lamp, handwritten lines too blurry to read, the last line empty, a pen across it",
+      "sicak": true
+    },
+    {
+      "text": "Kilitlemediğin arka kapı ise ardına kadar açıktı. Dışarıda köy yolu, karanlık ve soğuk.",
+      "prompt": "The back door of a small security booth wide open at night, a dark country road disappearing into fog beyond",
+      "sis": 0.3
+    },
+    {
+      "text": "Sen olsan ne yapardın? Defteri imzalar mıydın, yoksa arka kapıdan kaçar mıydın?",
+      "prompt": "A lone figure seen from behind in a dark booth, between a lit desk with an open logbook and an open back door to a foggy road",
+      "sis": 0.2
+    }
+  ],
+  "secim": {
+    "A": "Defteri imzala",
+    "B": "Arka kapıdan kaç"
+  },
+  "varsayilan": "A",
+  "caption": "Kartını kırıp kulübeye kilitlendin. Yirmi bir gölge geçti, yirmi ikincisi durup sana baktı. 🏭🚪",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gecevardiyasi",
+    "#gerilim",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

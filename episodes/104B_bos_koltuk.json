@@ -1,0 +1,81 @@
+{
+  "id": "104B",
+  "slug": "bos_koltuk",
+  "title": "Boş Koltuk",
+  "dizi_adi": "Son Sefer",
+  "gece": 4,
+  "dal": "B",
+  "seed": 51042,
+  "kanca_yazi": "Camdan sana el salladın",
+  "scenes": [
+    {
+      "text": "Binmedin. Kapı kapandı. On üç numaralı camdan sana el sallayan, sendin.",
+      "prompt": "A coach bus pulling away into fog at night, one window lit faintly with a dark silhouette raising a hand, seen from outside, no face",
+      "sis": 0.3
+    },
+    {
+      "text": "Gece dört. Dinlenme tesisi, bomboş otopark, soğuk bir rüzgâr.",
+      "prompt": "Dark wet asphalt of an empty highway rest stop parking lot at night, thick fog under a single street lamp, no people",
+      "sis": 0.4
+    },
+    {
+      "text": "Otobüs sisin içinde kayboldu. Lokantanın ışığı söndü. Bütün gece tek başına, bir bankta bekledin.",
+      "prompt": "A roadside diner at night with its lights just switched off, dark windows, fog rolling across an empty parking lot",
+      "sis": 0.4
+    },
+    {
+      "text": "Sabaha karşı uzaktaki köy camisinden ezan yükseldi. Sis yavaş yavaş çekildi.",
+      "prompt": "A small village mosque minaret in the distance at dawn over misty hills, the fog lifting from a highway, soft blue light"
+    },
+    {
+      "text": "İlk otobüsle eve döndün. Annen kapıyı açtı. Yüzünde tuhaf bir şaşkınlık vardı. Sana bir yabancıya bakar gibi baktı.",
+      "prompt": "An apartment door opening in morning light, a woman's silhouette in the doorway seen from behind the visitor, face hidden"
+    },
+    {
+      "text": "“Sen az önce çıkmadın mı? Ayakkabılarını giydin, ‘otobüse yetişeceğim’ dedin.”",
+      "prompt": "A shoe rack by an apartment door in morning light, one pair of shoes missing, an empty gap among the others"
+    },
+    {
+      "text": "Odana girdin. Yatağın hâlâ sıcaktı. Yastıkta bir baş izi vardı. Pencere ardına kadar açıktı.",
+      "prompt": "An unmade bed in a bedroom in pale morning light, the window wide open with lace curtains blowing, cold air"
+    },
+    {
+      "text": "Telefon titredi. Yolcu grubu.",
+      "prompt": "A bedroom in pale morning light, open window, empty unmade bed",
+      "telefon": {
+        "baslik": "Gece Seferi Yolcuları",
+        "alt": "38 kişi",
+        "mesajlar": [
+          {
+            "kim": "Firma Bilgilendirme",
+            "metin": "23:15 seferimiz bu gece de yola çıkacaktır."
+          },
+          {
+            "kim": "Firma Bilgilendirme",
+            "metin": "Koltuk 13 dolmuştur."
+          }
+        ],
+        "bildirim": "Koltuk 13: Sağ ol. Bu sefer ben inmeyeceğim."
+      }
+    },
+    {
+      "text": "Onu bir daha hiç görmedin. Annen de o geceden hiç bahsetmedi. Ama her gece, üçe on kala, salondaki duvar saati durur.",
+      "prompt": "An old wooden pendulum wall clock in a dark living room at night, the pendulum frozen still, faint streetlight"
+    },
+    {
+      "text": "Ve telefonuna tek bir kelime düşer, senin numarandan: “Vardım.”",
+      "prompt": "A phone screen glowing face up on a dark bedside table at night, its light falling on a crocheted blanket",
+      "sis": 0.1
+    }
+  ],
+  "son_kart": "SON",
+  "son_alt": "Yeni hikâye yarın akşam",
+  "caption": "Binmedin. Otobüs gitti, camdan sana el sallayan sendin. Sabah annen sordu: “Sen az önce çıkmadın mı?” 🚌🕰️",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gerilim",
+    "#gecehikayesi",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

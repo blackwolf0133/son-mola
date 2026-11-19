@@ -1,0 +1,102 @@
+{
+  "id": "103A",
+  "slug": "kendi_sesin",
+  "title": "Kendi Sesin",
+  "dizi_adi": "Son Sefer",
+  "gece": 3,
+  "dal": "A",
+  "seed": 51031,
+  "kanca_yazi": "Telefonu sen açtın",
+  "scenes": [
+    {
+      "text": "Kendi numaranı aradın. Üçüncü çalışta açıldı. Karşıdan senin sesin geldi.",
+      "prompt": "A lone figure seen from behind holding a phone to their ear at a foggy empty rest stop at night, a single street lamp above",
+      "sis": 0.3
+    },
+    {
+      "text": "Gece üç buçuk. Aynı dinlenme tesisi, aynı sis.",
+      "prompt": "Dark wet asphalt of an empty highway rest stop parking lot at night, thick fog under a single street lamp, no people",
+      "sis": 0.4
+    },
+    {
+      "text": "Sesin sakindi. Arkada bir saat tıkırdıyordu. Annenin salondaki o eski duvar saati. Çocukken uyumanı bekleyen saat.",
+      "prompt": "An old wooden pendulum wall clock in a dark Turkish living room at night, lace curtains, faint streetlight through the window",
+      "sicak": true
+    },
+    {
+      "text": "“Neden indin? Koltuk boş kalmasın diye ben oturdum. Şimdi evdeyim. Sen dönmeye çalışma.”",
+      "prompt": "A dark bedroom doorway at night, a neatly made bed with a crocheted blanket, a shape under the covers seen from behind, no face"
+    },
+    {
+      "text": "Sonra hat kesildi. Aile grubunda senin canlı konumun açıldı. Sen açmamıştın.",
+      "prompt": "Dark wet asphalt of an empty highway rest stop parking lot at night, thick fog under a single street lamp, no people",
+      "telefon": {
+        "baslik": "Ailem",
+        "alt": "4 kişi",
+        "mesajlar": [
+          {
+            "ben": true,
+            "metin": "Canlı konum: Ev"
+          },
+          {
+            "kim": "Annem",
+            "metin": "Gelmişsin çok şükür, üstünü örttüm"
+          }
+        ]
+      }
+    },
+    {
+      "text": "Konumun evi gösteriyordu. Odanı. Ama sen buradaydın. Sisin içinde, üşüyerek, tek başına.",
+      "prompt": "A lone figure seen from behind on an empty foggy highway shoulder at night, tiny under a single lamp",
+      "sis": 0.4
+    },
+    {
+      "text": "Sonra sisin içinden iki far belirdi. Motor sesi yoktu. Yavaşça yaklaştı.",
+      "prompt": "Two bus headlights slowly emerging from thick fog at an empty rest stop at night, wet asphalt reflecting the light",
+      "sis": 0.4
+    },
+    {
+      "text": "Otobüs geri gelmişti. Kapısı açıldı. On üç numaralı koltuk boştu.",
+      "prompt": "The open front door of an intercity coach bus at night, dim blue aisle lights inside, rows of dark seats, one window seat empty, fog drifting in",
+      "sis": 0.2
+    },
+    {
+      "text": "Telefonun son kez titredi.",
+      "prompt": "Dark wet asphalt of an empty highway rest stop parking lot at night, thick fog under a single street lamp, no people",
+      "telefon": {
+        "baslik": "Gece Seferi Yolcuları",
+        "alt": "38 kişi",
+        "mesajlar": [
+          {
+            "kim": "Firma Bilgilendirme",
+            "metin": "23:15 seferimiz kalkmak üzeredir."
+          }
+        ],
+        "bildirim": "Koltuk 14: Son çağrı. Binmezsen yerin onundur."
+      }
+    },
+    {
+      "text": "Muavin kapıda bekliyordu. Yüzü karanlıktaydı. Tek kelime etmeden içeriyi işaret etti.",
+      "prompt": "Silhouette of a bus attendant standing in the doorway of a coach bus at night, backlit by the dim interior, face completely in shadow, fog around",
+      "sis": 0.3
+    },
+    {
+      "text": "Sen olsan ne yapardın? Otobüse geri mi binerdin, yoksa sabaha kadar burada mı beklerdin?",
+      "prompt": "A lone figure seen from behind facing an open coach bus door at a foggy rest stop at night, the bus engine idling, red tail lights glowing",
+      "sis": 0.3
+    }
+  ],
+  "secim": {
+    "A": "Otobüse geri bin",
+    "B": "Sabaha kadar bekle"
+  },
+  "varsayilan": "A",
+  "caption": "Kendi numaranı aradın ve telefonu sen açtın. Konumun evi gösteriyordu, sen hâlâ moladaydın. 📞🌫️",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gerilim",
+    "#gecehikayesi",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

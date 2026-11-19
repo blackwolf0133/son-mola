@@ -1,0 +1,101 @@
+{
+  "id": "102B",
+  "slug": "tir",
+  "title": "Tır",
+  "dizi_adi": "Son Sefer",
+  "gece": 2,
+  "dal": "B",
+  "seed": 51022,
+  "kanca_yazi": "Şoför sana hiç bakmadı",
+  "scenes": [
+    {
+      "text": "Tıra el salladın. Durdu. Kapısı açıldı, ama şoför sana bir kez bile bakmadı.",
+      "prompt": "The open passenger door of a big truck cab at night on a foggy highway shoulder, dashboard lights glowing, the driver only a dark silhouette facing forward",
+      "sis": 0.2
+    },
+    {
+      "text": "Gece üçe on var. Sisli otoyolda bir tırın kabini.",
+      "prompt": "Inside a dark truck cab at night, the windshield showing a foggy empty highway lit by headlights, dashboard glow",
+      "sis": 0.3
+    },
+    {
+      "text": "Kabin sıcaktı. Torpidonun üstünde bir çay bardağı titriyordu. Radyo hışırdıyor, arada eski bir türkü yarım kalıyordu.",
+      "prompt": "A small tulip-shaped tea glass trembling on a truck dashboard at night, an old radio with a faint green light, foggy windshield",
+      "sicak": true
+    },
+    {
+      "text": "Şoför tek cümle kurdu: “Kırk yıldır bu yolu yaparım. O otobüs yola çıkmaz. Ama yolcu alır.”",
+      "prompt": "Silhouette of a truck driver from behind, hands on a large steering wheel, a foggy road ahead in the headlights, face never visible"
+    },
+    {
+      "text": "Yan aynada sisin içinden iki far belirdi. Otobüs, tam arkanızdaydı.",
+      "prompt": "A truck side mirror at night reflecting the two headlights of a coach bus emerging from thick fog behind, wet highway",
+      "sis": 0.3
+    },
+    {
+      "text": "Sonra telefonun titredi. Aile grubuna annenden bir mesaj düştü.",
+      "prompt": "Dark interior of a truck cab at night, dim dashboard glow, fog outside the windows",
+      "telefon": {
+        "baslik": "Ailem",
+        "alt": "4 kişi",
+        "mesajlar": [
+          {
+            "kim": "Annem",
+            "metin": "Vardın mı yavrum? Uyuyamadım."
+          },
+          {
+            "ben": true,
+            "metin": "Vardım anne, uyuyorum. Sabah ararım."
+          }
+        ]
+      }
+    },
+    {
+      "text": "O mesajı sen yazmadın. Ama senin numarandan gitmişti, üstelik annen okumuştu.",
+      "prompt": "A figure seen from behind in a truck passenger seat at night, staring at a glowing phone, fog streaming past the side window",
+      "sis": 0.2
+    },
+    {
+      "text": "Şoför aynaya baktı. “Senin yerine biri bindi. Şimdi o, senin evine gidiyor.”",
+      "prompt": "A truck rear-view mirror at night showing only fog and distant headlights, the driver's shadowed hand on the wheel"
+    },
+    {
+      "text": "Telefon bir kez daha titredi. Bu sefer yolcu grubundan.",
+      "prompt": "Dark interior of a truck cab at night, dim dashboard glow, fog outside the windows",
+      "telefon": {
+        "baslik": "Gece Seferi Yolcuları",
+        "alt": "38 kişi",
+        "mesajlar": [
+          {
+            "kim": "Firma Bilgilendirme",
+            "metin": "Otobüsümüz garajdan hiç çıkmamıştır."
+          }
+        ],
+        "bildirim": "Koltuk 14: Annen ne güzel kadın. Kapıyı açtı bile."
+      }
+    },
+    {
+      "text": "Tır durdu. “İn. Burası senin durağın.” Karşında aynı dinlenme tesisi vardı. Sanki hiç gitmemiştin.",
+      "prompt": "A big truck stopped beside a foggy roadside rest stop at night, the same old diner lights glowing, a lone figure seen from behind stepping down onto the asphalt",
+      "sis": 0.3
+    },
+    {
+      "text": "Sen olsan ne yapardın? Kendi numaranı mı arardın, yoksa annene gerçeği mi yazardın?",
+      "prompt": "A lone figure seen from behind standing on wet asphalt at a foggy rest stop at night, a glowing phone in hand, truck tail lights vanishing into the fog",
+      "sis": 0.3
+    }
+  ],
+  "secim": {
+    "A": "Kendi numaranı ara",
+    "B": "Annene gerçeği yaz"
+  },
+  "varsayilan": "A",
+  "caption": "Tır seni aldı, kırk dakika yol yaptı… ve aynı tesiste bıraktı. Bu arada senin numarandan annene “Vardım” yazıldı. 🚛🌫️",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gerilim",
+    "#gecehikayesi",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

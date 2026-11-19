@@ -1,0 +1,90 @@
+{
+  "id": "202A",
+  "slug": "soyunma_odasi",
+  "title": "Soyunma Odası",
+  "dizi_adi": "Turnike",
+  "gece": 2,
+  "dal": "A",
+  "seed": 52021,
+  "kanca_yazi": "Arkandaki biri için öttü",
+  "scenes": [
+    {
+      "text": "Turnikeden geçtin. Kart okuyucu öttü. Ama senin için değil. Arkandaki biri için.",
+      "prompt": "A rusty factory turnstile at night seen from inside the gate, the red card reader light glowing, a faint second shadow on the concrete behind a lone figure seen from behind",
+      "sis": 0.2
+    },
+    {
+      "text": "Gece üçü on iki geçe. Fabrikanın karanlık üretim katı.",
+      "prompt": "The dark production floor of an abandoned textile factory at night, rows of old looms, faint light through high dusty windows",
+      "sis": 0.3
+    },
+    {
+      "text": "Tezgâh sesleri her yerden geliyordu. Ama yaklaştığın her makine, sen varınca susuyordu. İplikler hâlâ sallanıyordu.",
+      "prompt": "A narrow aisle between old weaving looms in a dark factory at night, threads still swaying as if just stopped, a flashlight beam cutting through dust",
+      "sis": 0.2
+    },
+    {
+      "text": "Soyunma odasında yirmi iki dolap vardı. Yirmi birinin kapağı açık, içi boştu.",
+      "prompt": "A dim factory locker room at night, a long row of old metal lockers with their doors hanging open, empty inside, one at the end closed, a flashlight beam"
+    },
+    {
+      "text": "Yirmi ikincisi kilitliydi. Üstünde taze tebeşirle senin adın yazıyordu.",
+      "prompt": "A single closed metal locker in a dark locker room, fresh white chalk dust on its door and on the floor beneath it, flashlight light, nothing readable"
+    },
+    {
+      "text": "Telefon titredi. Altı yıldır sessiz grup, şimdi seni karşılıyordu.",
+      "prompt": "The dark production floor of an abandoned textile factory at night, rows of old looms, faint light through high dusty windows",
+      "telefon": {
+        "baslik": "Gece Vardiyası",
+        "alt": "22 kişi",
+        "mesajlar": [
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Hoş geldin. Dolabın hazır."
+          },
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Sabah ezanına kadar kimse çıkmaz."
+          }
+        ]
+      }
+    },
+    {
+      "text": "Arkandan ağır bir kapı kapandı. Zincir şıngırdadı. Ana giriş kilitlenmişti.",
+      "prompt": "A heavy steel factory door slammed shut in the dark, a chain swinging on its handle, dust in the air"
+    },
+    {
+      "text": "Koridorun ucunda amirin odası. Masa lambası yanıyor, vardiya defteri açık, kalem üstünde.",
+      "prompt": "A small foreman's office at the end of a dark factory corridor, a green desk lamp lit, a large open logbook with a pen lying across it, empty chair",
+      "sicak": true
+    },
+    {
+      "text": "Son satır boştu. Üstündeki yirmi bir satırda yirmi bir imza vardı. Seninkini bekliyordu.",
+      "prompt": "Close view of an old open logbook under a desk lamp, handwritten lines too blurry to read, the last line empty, a pen resting on it",
+      "sicak": true
+    },
+    {
+      "text": "Odanın arka kapısı ise aralıktı. Dışarıda köy yolu, karanlık ve soğuk.",
+      "prompt": "A back door of a factory office slightly ajar at night, cold blue moonlight and a dark country road visible through the gap, fog",
+      "sis": 0.3
+    },
+    {
+      "text": "Sen olsan ne yapardın? Defteri imzalar mıydın, yoksa arka kapıdan kaçar mıydın?",
+      "prompt": "A lone figure seen from behind standing between a lit desk with an open logbook and a half-open back door to a dark road, factory office at night",
+      "sis": 0.2
+    }
+  ],
+  "secim": {
+    "A": "Defteri imzala",
+    "B": "Arka kapıdan kaç"
+  },
+  "varsayilan": "A",
+  "caption": "Turnikeden geçtin, okuyucu arkandaki biri için öttü. İçeride yirmi iki dolap vardı ve biri senin adını taşıyordu. 🏭🔒",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gecevardiyasi",
+    "#gerilim",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

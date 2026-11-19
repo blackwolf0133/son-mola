@@ -1,0 +1,120 @@
+{
+  "id": "103B",
+  "slug": "annene_yazdin",
+  "title": "Annene Yazdın",
+  "dizi_adi": "Son Sefer",
+  "gece": 3,
+  "dal": "B",
+  "seed": 51032,
+  "kanca_yazi": "Annen: “Yanımdasın.”",
+  "scenes": [
+    {
+      "text": "Annene yazdın: “O ben değilim.” Cevap hemen geldi: “Saçmalama, yanımdasın.”",
+      "prompt": "A lone figure seen from behind typing on a glowing phone at a foggy rest stop at night, shoulders hunched against the cold",
+      "sis": 0.3
+    },
+    {
+      "text": "Gece üç buçuk. Aynı dinlenme tesisi, aynı sis, aynı soğuk.",
+      "prompt": "Dark wet asphalt of an empty highway rest stop parking lot at night, thick fog under a single street lamp, no people",
+      "sis": 0.4
+    },
+    {
+      "text": "Parmakların titreyerek yazdın. Her harfi iki kez yanlış bastın.",
+      "prompt": "Dark wet asphalt of an empty highway rest stop parking lot at night, thick fog under a single street lamp, no people",
+      "telefon": {
+        "baslik": "Ailem",
+        "alt": "4 kişi",
+        "mesajlar": [
+          {
+            "ben": true,
+            "metin": "Anne o ben değilim. Ben hâlâ moladayım."
+          },
+          {
+            "kim": "Annem",
+            "metin": "Saçmalama yavrum, yanımdasın."
+          },
+          {
+            "kim": "Annem",
+            "metin": "Çayını bile içtin."
+          }
+        ]
+      }
+    },
+    {
+      "text": "Ellerin buz kesti. Annenle konuşan, senin ağzınla konuşuyordu. Senin çayını içiyor, senin yatağında uyuyordu.",
+      "prompt": "A dim Turkish kitchen at night seen from the doorway, two tea glasses on the table, one empty, a figure's silhouette sitting with their back turned",
+      "sicak": true
+    },
+    {
+      "text": "Bir dakika hiçbir şey olmadı. Sonra annen yeniden yazmaya başladı. Yazdı, sildi, yazdı.",
+      "prompt": "Dark wet asphalt of an empty highway rest stop parking lot at night, thick fog under a single street lamp, no people",
+      "telefon": {
+        "baslik": "Ailem",
+        "alt": "4 kişi",
+        "mesajlar": [
+          {
+            "kim": "Annem",
+            "metin": "Sen kimsin?"
+          },
+          {
+            "kim": "Annem",
+            "metin": "Neden onun numarasından yazıyorsun?"
+          }
+        ]
+      }
+    },
+    {
+      "text": "Artık annen sana inanmıyordu. Evdeki sendin. Sen ise kapıda kalmış bir yabancı. Grubun içinde bile.",
+      "prompt": "A lone figure seen from behind standing small and isolated in a vast foggy parking lot at night, phone screen glowing",
+      "sis": 0.4
+    },
+    {
+      "text": "Sonra sisin içinden iki far belirdi. Motor sesi yoktu. Yavaşça yaklaştı.",
+      "prompt": "Two bus headlights slowly emerging from thick fog at an empty rest stop at night, wet asphalt reflecting the light",
+      "sis": 0.4
+    },
+    {
+      "text": "Otobüs geri gelmişti. Kapısı açıldı. On üç numaralı koltuk boştu.",
+      "prompt": "The open front door of an intercity coach bus at night, dim blue aisle lights inside, rows of dark seats, one window seat empty, fog drifting in",
+      "sis": 0.2
+    },
+    {
+      "text": "Telefonun son kez titredi.",
+      "prompt": "Dark wet asphalt of an empty highway rest stop parking lot at night, thick fog under a single street lamp, no people",
+      "telefon": {
+        "baslik": "Gece Seferi Yolcuları",
+        "alt": "38 kişi",
+        "mesajlar": [
+          {
+            "kim": "Firma Bilgilendirme",
+            "metin": "23:15 seferimiz kalkmak üzeredir."
+          }
+        ],
+        "bildirim": "Koltuk 14: Son çağrı. Binmezsen yerin onundur."
+      }
+    },
+    {
+      "text": "Muavin kapıda bekliyordu. Yüzü karanlıktaydı. Tek kelime etmeden içeriyi işaret etti.",
+      "prompt": "Silhouette of a bus attendant standing in the doorway of a coach bus at night, backlit by the dim interior, face completely in shadow, fog around",
+      "sis": 0.3
+    },
+    {
+      "text": "Sen olsan ne yapardın? Otobüse geri mi binerdin, yoksa sabaha kadar burada mı beklerdin?",
+      "prompt": "A lone figure seen from behind facing an open coach bus door at a foggy rest stop at night, the bus engine idling, red tail lights glowing",
+      "sis": 0.3
+    }
+  ],
+  "secim": {
+    "A": "Otobüse geri bin",
+    "B": "Sabaha kadar bekle"
+  },
+  "varsayilan": "A",
+  "caption": "Annene “O ben değilim” yazdın. Annen sordu: “Sen kimsin?” 📱🌫️",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gerilim",
+    "#gecehikayesi",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

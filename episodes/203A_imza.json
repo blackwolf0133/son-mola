@@ -1,0 +1,102 @@
+{
+  "id": "203A",
+  "slug": "imza",
+  "title": "İmza",
+  "dizi_adi": "Turnike",
+  "gece": 3,
+  "dal": "A",
+  "seed": 52031,
+  "kanca_yazi": "Bütün tezgâhlar sustu",
+  "scenes": [
+    {
+      "text": "Defteri imzaladın. Kalemi bıraktığın anda bütün tezgâhlar aynı anda sustu.",
+      "prompt": "A hand seen from behind signing an old logbook under a desk lamp at night, the pen pressing the last line, writing unreadable",
+      "sicak": true
+    },
+    {
+      "text": "Gece dört. Altı yıldır kapalı, çoktan unutulmuş eski dokuma fabrikası.",
+      "prompt": "The dark production floor of an abandoned textile factory at night, rows of old looms, faint light through high dusty windows",
+      "sis": 0.3
+    },
+    {
+      "text": "Sonra ışıklar bir bir yandı. Fabrika altı yıl önceki gibiydi. Temiz, sıcak, çay kokulu. Ama bomboş.",
+      "prompt": "A textile factory floor suddenly lit with warm overhead lamps at night, clean old looms in neat rows, spotless, completely empty of people",
+      "sicak": true
+    },
+    {
+      "text": "Telefonun titredi. Gruptan biri ayrıldı. Sonra bir başkası. Sonra hepsi.",
+      "prompt": "The dark production floor of an abandoned textile factory at night, rows of old looms, faint light through high dusty windows",
+      "telefon": {
+        "baslik": "Gece Vardiyası",
+        "alt": "2 kişi",
+        "mesajlar": [
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Vardiya tamam. Hepsi evine gitti."
+          },
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Bundan sonra vardiya sende."
+          }
+        ],
+        "bildirim": "Gece Vardiyası: 20 kişi gruptan ayrıldı"
+      }
+    },
+    {
+      "text": "Grupta sadece sen ve amir kaldınız. Bundan sonra vardiya sende. Ne vardiyası? Kimin yerine?",
+      "prompt": "A lone figure seen from behind standing in the middle of a brightly lit empty factory floor at night, rows of silent looms on both sides"
+    },
+    {
+      "text": "Defterdeki imzana baktın. Mürekkep hâlâ ıslaktı. Ama satırın tarihi altı yıl öncesiydi. Fabrikanın kapandığı geceydi.",
+      "prompt": "Close view of wet ink glistening on an old yellowed logbook page under lamp light, all writing blurred and unreadable",
+      "sicak": true
+    },
+    {
+      "text": "Daha ne olduğunu anlamadan, fabrikanın sahibinden bir mesaj geldi.",
+      "prompt": "An abandoned textile factory at first light, pale blue sky, fog in the yard, a tall brick chimney",
+      "telefon": {
+        "baslik": "Patron",
+        "alt": "çevrimiçi",
+        "mesajlar": [
+          {
+            "kim": "Patron",
+            "metin": "Sabah alıcılar geliyor. Fabrika satıldı."
+          },
+          {
+            "kim": "Patron",
+            "metin": "Anahtarları teslim et, işin bitti."
+          }
+        ],
+        "bildirim": "Vardiya Amiri: Satılırsa biz nereye gideriz?"
+      }
+    },
+    {
+      "text": "Satılırsa onlar nereye giderdi? Ve sen, imzaladığın o vardiyayla nereye giderdin? Kime ne diyecektin?",
+      "prompt": "The foreman's office at dawn, the desk lamp still on, the logbook closed, pale light through a dusty window",
+      "sis": 0.2
+    },
+    {
+      "text": "Ufuk ağarıyordu. Turnike sessizdi. Cebindeki anahtar destesi giderek ağırlaşıyordu. Sanki her anahtar birinin eviydi.",
+      "prompt": "A heavy ring of old iron keys held in a hand at dawn, seen from above, factory yard and fog below",
+      "sis": 0.2
+    },
+    {
+      "text": "Sen olsan ne yapardın? Anahtarları teslim mi ederdin, yoksa saklar mıydın?",
+      "prompt": "A lone figure seen from behind at the factory gate at dawn, a ring of keys hanging from one hand, the empty turnstile beside them",
+      "sis": 0.3
+    }
+  ],
+  "secim": {
+    "A": "Anahtarları teslim et",
+    "B": "Anahtarları sakla"
+  },
+  "varsayilan": "A",
+  "caption": "Defteri imzaladın, tezgâhlar sustu, gruptan yirmi kişi ayrıldı. Şimdi vardiya sende… ve fabrika sabah satılıyor. 🏭✍️",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gecevardiyasi",
+    "#gerilim",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

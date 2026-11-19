@@ -1,0 +1,103 @@
+{
+  "id": "102A",
+  "slug": "lokanta",
+  "title": "Lokanta",
+  "dizi_adi": "Son Sefer",
+  "gece": 2,
+  "dal": "A",
+  "seed": 51021,
+  "kanca_yazi": "Otuz sekiz bardak, hepsi dolu",
+  "scenes": [
+    {
+      "text": "Lokantaya girdin. Otuz sekiz çay bardağı diziliydi. Hepsi dolu, hepsi buğulu.",
+      "prompt": "Inside an old empty Turkish roadside diner at night, a long counter with dozens of small tulip-shaped tea glasses lined up in a row, all full and steaming, dim yellow light, fog against the windows",
+      "sicak": true
+    },
+    {
+      "text": "Gece üçe on var. Dinlenme tesisindeki eski lokanta.",
+      "prompt": "An old roadside diner at a foggy highway rest stop at night, warm light in its windows, empty plastic chairs outside, wet asphalt",
+      "sicak": true
+    },
+    {
+      "text": "Tezgâhın arkasında yaşlı bir adam bardak siliyordu. Başını hiç kaldırmadan, kuru bir sesle konuştu.",
+      "prompt": "Silhouette of an old man seen from behind a diner counter, wiping a tea glass with a cloth, head bowed, face hidden in shadow, a dented samovar steaming beside him",
+      "sicak": true
+    },
+    {
+      "text": "“Otobüsün mü gitti? Merak etme, o hep geri gelir. Ama inenleri bir daha almaz.”",
+      "prompt": "Close view of an old samovar and a tray of tea glasses on a worn diner counter at night, steam rising, a foggy window behind",
+      "sicak": true
+    },
+    {
+      "text": "Bardaklardan sadece biri boştu. On üçüncü bardak. Kenarında hâlâ birinin dudak izi vardı.",
+      "prompt": "A single empty tea glass among a row of full steaming tea glasses on a dark counter, cold light falling on the empty one",
+      "sis": 0.1
+    },
+    {
+      "text": "Tam o sırada telefonun titredi. Aile grubuna annenden bir mesaj düştü.",
+      "prompt": "Dark wet asphalt of an empty highway rest stop parking lot at night, thick fog under a single street lamp, no people",
+      "telefon": {
+        "baslik": "Ailem",
+        "alt": "4 kişi",
+        "mesajlar": [
+          {
+            "kim": "Annem",
+            "metin": "Vardın mı yavrum? Uyuyamadım."
+          },
+          {
+            "ben": true,
+            "metin": "Vardım anne, uyuyorum. Sabah ararım."
+          }
+        ]
+      }
+    },
+    {
+      "text": "O mesajı sen yazmadın. Telefon cebindeydi. Ama mesaj senin numarandan gitmişti, üstelik okunmuştu.",
+      "prompt": "A lone figure seen from behind standing frozen inside a dim diner, holding a glowing phone, fogged windows all around",
+      "sis": 0.2
+    },
+    {
+      "text": "Adam bardağı bıraktı. “Senin yerine biri bindi. Şimdi o, senin evine gidiyor.”",
+      "prompt": "An old man's hand setting down a tea glass on a counter, his figure in shadow, a foggy highway visible through the window behind",
+      "sicak": true
+    },
+    {
+      "text": "Telefon bir kez daha titredi. Bu sefer yolcu grubundan.",
+      "prompt": "Dark wet asphalt of an empty highway rest stop parking lot at night, thick fog under a single street lamp, no people",
+      "telefon": {
+        "baslik": "Gece Seferi Yolcuları",
+        "alt": "38 kişi",
+        "mesajlar": [
+          {
+            "kim": "Firma Bilgilendirme",
+            "metin": "Otobüsümüz garajdan hiç çıkmamıştır."
+          }
+        ],
+        "bildirim": "Koltuk 14: Annen ne güzel kadın. Kapıyı açtı bile."
+      }
+    },
+    {
+      "text": "Dışarı çıktın. Arkanda lokantanın ışığı söndü. Sis yine kalınlaşmıştı. Yolun ucunda tek bir far bile yoktu.",
+      "prompt": "Exit door of a roadside diner opening onto a foggy empty rest stop at night, a lone figure seen from behind stepping out",
+      "sis": 0.3
+    },
+    {
+      "text": "Sen olsan ne yapardın? Kendi numaranı mı arardın, yoksa annene gerçeği mi yazardın?",
+      "prompt": "A lone figure seen from behind standing on wet asphalt at a foggy rest stop at night, a glowing phone in hand, an empty highway disappearing into the fog",
+      "sis": 0.3
+    }
+  ],
+  "secim": {
+    "A": "Kendi numaranı ara",
+    "B": "Annene gerçeği yaz"
+  },
+  "varsayilan": "A",
+  "caption": "Lokantada otuz sekiz bardak çay vardı, biri boştu. Sonra senin numarandan annene “Vardım” yazıldı. 🫖🌫️",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gerilim",
+    "#gecehikayesi",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "201",
+  "slug": "yirmi_bir_kart",
+  "title": "Yirmi Bir Kart",
+  "dizi_adi": "Turnike",
+  "gece": 1,
+  "seed": 52011,
+  "kanca_yazi": "Kapalı fabrikada yirmi bir giriş",
+  "scenes": [
+    {
+      "text": "Fabrika altı yıldır kapalı. Ama bu gece içeri yirmi bir kişi kart bastı.",
+      "prompt": "A rusty metal turnstile at the gate of an abandoned textile factory at night, a small card reader glowing red beside it, the dark factory building looming behind in light fog",
+      "sis": 0.2
+    },
+    {
+      "text": "Gece üçü on bir geçe. Şehir dışında, satılmayı bekleyen eski bir dokuma fabrikası.",
+      "prompt": "A large abandoned textile factory on the outskirts of a Turkish town at night, rows of dark broken windows, a tall brick chimney, a single gate lamp, fog",
+      "sis": 0.3
+    },
+    {
+      "text": "Sen bekçisin. Kulübede tek başınasın. Turnikenin kart okuyucusu yıllardır sessiz.",
+      "prompt": "Inside a small dark security booth at the gate of an abandoned textile factory at night, a desk lamp, a thermos and a tea glass, rain-streaked window",
+      "sicak": true
+    },
+    {
+      "text": "Ama gece yarısından beri birkaç dakikada bir ötüyor. Ve turnikeden tek bir kişi bile geçmiyor.",
+      "prompt": "Close view of an old card reader on a factory turnstile at night, its small red light blinking, the empty turnstile arm still, darkness beyond"
+    },
+    {
+      "text": "Kayıtlara baktın. Yirmi bir isim. Hepsi, fabrikanın eski gece vardiyası.",
+      "prompt": "An old computer monitor glowing in a dark security booth at night, light reflecting on a desk with a logbook and a cold tea glass, the screen seen from a low angle so nothing is readable"
+    },
+    {
+      "text": "Sonra telefonunda bir grup canlandı.",
+      "prompt": "Inside a small dark security booth at the gate of an abandoned textile factory at night, a desk lamp, a thermos and a tea glass, rain-streaked window",
+      "telefon": {
+        "baslik": "Gece Vardiyası",
+        "alt": "22 kişi",
+        "mesajlar": [
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Herkes kartını bastı. Bir kişi eksik."
+          },
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Bekçi, sen de gel. Tezgâhlar sensiz açılmıyor."
+          }
+        ]
+      }
+    },
+    {
+      "text": "Bu grup altı yıldır sessizdi. Fabrika kapanınca çıkmayı unutmuştun.",
+      "prompt": "A figure seen from behind sitting in a dim security booth, staring at a glowing phone, the dark factory visible through the window",
+      "sicak": true
+    },
+    {
+      "text": "Karanlık binanın içinden bir ses yükseldi. Dokuma tezgâhları, tek tek çalışmaya başladı.",
+      "prompt": "The vast dark production floor of an abandoned textile factory at night, rows of old weaving looms covered in dust, faint moonlight through high windows, threads trembling",
+      "sis": 0.3
+    },
+    {
+      "text": "Kart okuyucunun ekranında yeni bir satır belirdi. Senin adın. Saat üçü on iki geçe.",
+      "prompt": "A card reader glowing red in the dark at a factory turnstile, its light bright, a long shadow of the turnstile on wet concrete"
+    },
+    {
+      "text": "Ama saat daha üçü on bir geçiyordu. O kayıt, bir dakika sonrasındandı.",
+      "prompt": "An old round wall clock in a dark security booth at night, its second hand blurred, a desk lamp's glow"
+    },
+    {
+      "text": "Sen olsan ne yapardın? Turnikeden geçip içeri mi girerdin, yoksa kartını kırıp kulübeye mi kilitlenirdin?",
+      "prompt": "A lone figure seen from behind standing between a lit security booth and a dark factory turnstile at night, fog on the ground, the red card reader light glowing",
+      "sis": 0.3
+    }
+  ],
+  "secim": {
+    "A": "Turnikeden geçip içeri gir",
+    "B": "Kartını kır, kilitlen"
+  },
+  "varsayilan": "A",
+  "caption": "Kapalı fabrikanın turnikesinden bu gece yirmi bir kişi geçti, ama kimseyi görmedin. Ve son kayıtta senin adın vardı, bir dakika sonrası için. 🏭🔴",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gecevardiyasi",
+    "#gerilim",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

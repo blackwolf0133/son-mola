@@ -1,0 +1,86 @@
+{
+  "id": "204B",
+  "slug": "yirmi_iki",
+  "title": "Yirmi İki",
+  "dizi_adi": "Turnike",
+  "gece": 4,
+  "dal": "B",
+  "seed": 52042,
+  "kanca_yazi": "Fabrika bir daha satılmadı",
+  "scenes": [
+    {
+      "text": "Anahtarları sakladın. Alıcılar gitti. Fabrika bir daha hiç satılmadı.",
+      "prompt": "Two men in dark suits seen from behind walking away from an old factory gate toward a black car in grey morning light"
+    },
+    {
+      "text": "Sabah yedi. Fabrikanın önü, boş yol, kilitli turnike.",
+      "prompt": "An abandoned textile factory at first light, pale blue sky, fog in the yard, a tall brick chimney",
+      "sis": 0.3
+    },
+    {
+      "text": "Patron aradı, bağırdı, seni işten kovdu. Kimse maaş vermedi. Sen yine de her gece kulübeye gittin.",
+      "prompt": "Inside a small dark security booth at the gate of an abandoned textile factory at night, a desk lamp, a thermos and a tea glass, rain-streaked window",
+      "sicak": true
+    },
+    {
+      "text": "Çünkü her gece üçü on bir geçe kart okuyucu ötüyordu. Sen gitmezsen tezgâhlar açılmıyordu.",
+      "prompt": "A factory turnstile at night, the card reader's red light blinking, the dark factory behind faintly humming with distant light",
+      "sis": 0.2
+    },
+    {
+      "text": "Aylar geçti. Kış geldi, gitti. Grup hep aynıydı.",
+      "prompt": "Inside a small dark security booth at the gate of an abandoned textile factory at night, a desk lamp, a thermos and a tea glass, rain-streaked window",
+      "telefon": {
+        "baslik": "Gece Vardiyası",
+        "alt": "22 kişi",
+        "mesajlar": [
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Herkes geldi mi?"
+          },
+          {
+            "ben": true,
+            "metin": "Geldim amirim."
+          },
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Aferin. Kartını bastın."
+          }
+        ]
+      }
+    },
+    {
+      "text": "Bir gece kulübede yeni bir bekçi gördün. Genç, ürkek, üşümüş. Telefonuna bakıyordu.",
+      "prompt": "A young security guard seen from behind sitting in a lit booth at night, hunched over a glowing phone, seen from outside through a rainy window"
+    },
+    {
+      "text": "Ona seslenmek istedin. Sesin çıkmadı. Cama vurdun. Cam titremedi bile.",
+      "prompt": "A hand pressed against the outside of a rain-streaked booth window at night, the glass perfectly still, warm light inside",
+      "sis": 0.2
+    },
+    {
+      "text": "Sonra fark ettin. Sen hep turnikenin öbür tarafındaydın. Elinde bir kart vardı. Ve hiç üşümüyordun.",
+      "prompt": "A lone faint figure seen from behind standing on the inside of a factory turnstile at night, holding a card, fog around their feet, the dark factory ahead",
+      "sis": 0.4
+    },
+    {
+      "text": "Kart okuyucu öttü. Kulübedeki genç bekçi irkildi, başını kaldırdı ve ekrana baktı.",
+      "prompt": "The red light of a card reader blinking at a factory gate at night, a lit booth window beside it"
+    },
+    {
+      "text": "Yirmi iki giriş. Sonra telefonu titredi: “Herkes geldi. Bekçi, sen de gel.” Ve sen, onu beklemeye başladın.",
+      "prompt": "A dark factory gate at night with the turnstile empty and the red card reader glowing, a lit booth window, fog, the abandoned factory looming",
+      "sis": 0.3
+    }
+  ],
+  "son_kart": "SON",
+  "son_alt": "Yeni hikâye yarın akşam",
+  "caption": "Anahtarları sakladın, fabrika hiç satılmadı. Her gece vardiyaya gittin… ta ki kulübede yeni bir bekçi görene kadar. 🏭🕯️",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gecevardiyasi",
+    "#gerilim",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

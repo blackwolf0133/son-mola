@@ -1,0 +1,106 @@
+{
+  "id": "203B",
+  "slug": "kacis",
+  "title": "Kaçış",
+  "dizi_adi": "Turnike",
+  "gece": 3,
+  "dal": "B",
+  "seed": 52032,
+  "kanca_yazi": "Bütün pencereler aynı anda yandı",
+  "scenes": [
+    {
+      "text": "Arka kapıdan kaçtın. Arkanda fabrikanın bütün pencereleri aynı anda yandı.",
+      "prompt": "A large old factory seen from a dark country road at night, every single window suddenly lit yellow, a lone figure seen from behind running away in the foreground",
+      "sis": 0.2
+    },
+    {
+      "text": "Gece dört. Fabrikadan köye inen dar, karanlık, taşlı yol.",
+      "prompt": "A narrow dark country road winding down from a hill toward a sleeping Turkish village at night, poplar trees, fog",
+      "sis": 0.4
+    },
+    {
+      "text": "Koştun. Ama tezgâh sesi uzaklaşmadı. Sanki seninle birlikte, hemen arkanda koşuyordu.",
+      "prompt": "A lone figure seen from behind running on a foggy country road at night, bare trees on both sides, no light but the moon",
+      "sis": 0.4
+    },
+    {
+      "text": "Telefon titredi. Grup, senin kaçışını konuşuyordu.",
+      "prompt": "A dark country road at night, fog, distant lit factory windows on a hill",
+      "telefon": {
+        "baslik": "Gece Vardiyası",
+        "alt": "22 kişi",
+        "mesajlar": [
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Bekçi kaçtı."
+          },
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Önemli değil. Defteri onun yerine biz imzaladık."
+          }
+        ]
+      }
+    },
+    {
+      "text": "Köyün ilk evlerine vardın. Kahvehane kapalıydı. Sokaklar bomboştu. Bir köpek bile havlamadı.",
+      "prompt": "An empty village square in Turkey at night, a closed coffeehouse with chairs stacked, a single street lamp, stray fog",
+      "sis": 0.3
+    },
+    {
+      "text": "Elini cebinden çıkardın. Parmakların mürekkep olmuştu. Hiçbir şeye dokunmamıştın. Ama sanki bir şey imzalamıştın.",
+      "prompt": "A hand held open under a street lamp at night, fingertips stained with dark ink, fog behind"
+    },
+    {
+      "text": "Tepeye dönüp baktın. Fabrikanın bütün ışıkları yanıyordu. Altı yıl önceki gibi. Bacadan duman bile çıkıyordu.",
+      "prompt": "View from a village up to a hilltop factory at night, all its windows glowing warm, a tall chimney, fog in the valley",
+      "sis": 0.3
+    },
+    {
+      "text": "Daha nefesin düzelmeden, fabrikanın sahibinden bir mesaj geldi.",
+      "prompt": "An abandoned textile factory at first light, pale blue sky, fog in the yard, a tall brick chimney",
+      "telefon": {
+        "baslik": "Patron",
+        "alt": "çevrimiçi",
+        "mesajlar": [
+          {
+            "kim": "Patron",
+            "metin": "Sabah alıcılar geliyor. Fabrika satıldı."
+          },
+          {
+            "kim": "Patron",
+            "metin": "Anahtarları teslim et, işin bitti."
+          }
+        ],
+        "bildirim": "Vardiya Amiri: Satılırsa biz nereye gideriz?"
+      }
+    },
+    {
+      "text": "Satılırsa onlar nereye giderdi? Ve senin adını taşıyan o imza, seni onlarla birlikte nereye götürürdü?",
+      "prompt": "A village road at dawn, pale blue light, a lone figure seen from behind looking up at a distant factory on a hill",
+      "sis": 0.3
+    },
+    {
+      "text": "Ufuk ağarıyordu. Turnike uzaktaydı. Cebindeki anahtar destesi giderek ağırlaşıyordu.",
+      "prompt": "A heavy ring of old iron keys held in an ink-stained hand at dawn, village rooftops below in fog",
+      "sis": 0.2
+    },
+    {
+      "text": "Sen olsan ne yapardın? Anahtarları teslim mi ederdin, yoksa saklar mıydın?",
+      "prompt": "A lone figure seen from behind on a hill road at dawn, keys hanging from one hand, a factory chimney in the distance",
+      "sis": 0.3
+    }
+  ],
+  "secim": {
+    "A": "Anahtarları teslim et",
+    "B": "Anahtarları sakla"
+  },
+  "varsayilan": "A",
+  "caption": "Arka kapıdan kaçtın ama parmakların mürekkepliydi. Defteri senin yerine onlar imzalamıştı. 🏭🏃",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gecevardiyasi",
+    "#gerilim",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

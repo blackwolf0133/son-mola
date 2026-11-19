@@ -1,0 +1,81 @@
+{
+  "id": "104A",
+  "slug": "varis",
+  "title": "Varış",
+  "dizi_adi": "Son Sefer",
+  "gece": 4,
+  "dal": "A",
+  "seed": 51041,
+  "kanca_yazi": "“Artık varabiliriz.”",
+  "scenes": [
+    {
+      "text": "Otobüse bindin. On dört numara sana döndü: “Hoş geldin. Artık varabiliriz.”",
+      "prompt": "Inside a dark coach bus at night, blue aisle lights, a woman with long dark hair seen from behind in a window seat, her head turned slightly, face hidden by hair",
+      "sis": 0.2
+    },
+    {
+      "text": "Gece dört. Sisli otoyol, aynı otobüs, aynı koltuk. Yolcuların hepsi uyuyordu.",
+      "prompt": "A coach bus driving on an empty foggy highway at night seen from far behind, red tail lights",
+      "sis": 0.4
+    },
+    {
+      "text": "Kadın yine camdan dışarı bakıyordu. Ama camdaki yansıması, sana dönmüştü. Gülümsüyordu.",
+      "prompt": "A dark bus window at night with a faint blurred reflection of long dark hair in the glass, fog outside, the reflection seems turned the other way",
+      "sis": 0.2
+    },
+    {
+      "text": "Gözlerin kendiliğinden kapandı. Açtığında şafak sökmüştü. Otogardaydın. Kimse inmedi, sadece sen.",
+      "prompt": "A Turkish intercity bus terminal at dawn, rows of parked coaches, cold blue light, a lone figure seen from behind stepping off a bus"
+    },
+    {
+      "text": "Eve koştun. Annen kapıyı açtı, sana sıkıca sarıldı. “Nerede kaldın yavrum, sabaha kadar hiç uyumadım.”",
+      "prompt": "An apartment doorway at dawn, warm light from inside, two figures embracing seen from the side in silhouette, faces hidden",
+      "sicak": true
+    },
+    {
+      "text": "Odanın kapısı açıktı. Yatağın düzdü, kimse yoktu. Telefonunda o mesaj da silinmişti. Derin bir nefes aldın.",
+      "prompt": "A neatly made bed in a quiet bedroom at dawn, a crocheted blanket, soft pale light through lace curtains, empty"
+    },
+    {
+      "text": "Tam uyuyacakken yolcu grubuna bir mesaj düştü.",
+      "prompt": "A quiet bedroom at dawn, pale light, empty bed",
+      "telefon": {
+        "baslik": "Gece Seferi Yolcuları",
+        "alt": "38 kişi",
+        "mesajlar": [
+          {
+            "kim": "Firma Bilgilendirme",
+            "metin": "23:15 seferimiz bu gece de yapılacaktır."
+          },
+          {
+            "kim": "Firma Bilgilendirme",
+            "metin": "Koltuk 13: boş. Koltuk 14: boş."
+          }
+        ]
+      }
+    },
+    {
+      "text": "On dört boş mu? O kadın otobüste kalmamıştı. Seninle birlikte inmişti. Peki şimdi neredeydi?",
+      "prompt": "An empty coach bus seat by a window in pale morning light, a single long dark hair on the fabric"
+    },
+    {
+      "text": "Lavaboda yüzünü soğuk suyla yıkadın. Başını yavaşça kaldırıp buğulu aynaya baktın.",
+      "prompt": "A small bathroom sink with dripping water, a mirror fogged with steam, a figure seen from behind leaning over the sink, no face"
+    },
+    {
+      "text": "Omzunun arkasında uzun siyah saçlar vardı. Kulağına tanıdık bir fısıltı geldi: “Daha varmadık.”",
+      "prompt": "A steamed bathroom mirror reflecting only a shoulder and, behind it, a curtain of long dark hair in the fog of steam, no face visible",
+      "sis": 0.3
+    }
+  ],
+  "son_kart": "SON",
+  "son_alt": "Yeni hikâye yarın akşam",
+  "caption": "Otobüse geri bindin ve sonunda eve vardın. Ama on dört numaralı koltuk da boşalmıştı. 🚌🪞",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gerilim",
+    "#gecehikayesi",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

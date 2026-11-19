@@ -1,0 +1,79 @@
+{
+  "id": "204A",
+  "slug": "yeni_yer",
+  "title": "Yeni Yer",
+  "dizi_adi": "Turnike",
+  "gece": 4,
+  "dal": "A",
+  "seed": 52041,
+  "kanca_yazi": "Evinin kapısında kart okuyucu",
+  "scenes": [
+    {
+      "text": "Anahtarları teslim ettin. O gece, kendi evinin kapısında bir kart okuyucu öttü.",
+      "prompt": "An apartment entrance door at night with a small card reader glowing red beside it that does not belong there, dim hallway light",
+      "sis": 0.1
+    },
+    {
+      "text": "Sabah yedi. Fabrikanın önü, siyah bir araba ve takım elbiseli iki adam.",
+      "prompt": "Two men in dark suits seen from behind standing by a black car at the gate of an old factory in grey morning light, faces not visible"
+    },
+    {
+      "text": "Anahtarları uzattın. Adamlardan biri fabrikaya baktı ve sordu: “İçeride kimse kalmadı, değil mi?”",
+      "prompt": "A ring of old iron keys passing from one hand to another in grey morning light, factory gate blurred behind"
+    },
+    {
+      "text": "“Kimse yok” dedin. Kendi sesin sana yabancı geldi. Adam tuhaf bir şekilde gülümsedi.",
+      "prompt": "An empty factory turnstile in morning light, its card reader dark and dead, fog clearing"
+    },
+    {
+      "text": "Eve döndün. Bütün gün deliksiz uyudun. Gece uyandığında saat üçü on bir geçiyordu.",
+      "prompt": "A dark bedroom at night, a digital clock glow on a bedside table, rumpled blanket, streetlight through curtains"
+    },
+    {
+      "text": "Mutfaktan bir ses geliyordu. Hafif, düzenli, tanıdık. Bir dokuma tezgâhının sesi. Sonra bir tane daha.",
+      "prompt": "A dark apartment hallway at night leading to a kitchen doorway, a faint flicker of light inside, threads of shadow moving on the wall",
+      "sis": 0.2
+    },
+    {
+      "text": "Telefon titredi. Altı yıllık grup, yeniden kalabalıktı.",
+      "prompt": "A dark apartment hallway at night, a faint light at the end",
+      "telefon": {
+        "baslik": "Gece Vardiyası",
+        "alt": "22 kişi",
+        "mesajlar": [
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Yeni yerimize geçtik. Biraz dar ama sığarız."
+          },
+          {
+            "kim": "Vardiya Amiri",
+            "metin": "Herkes kartını bastı."
+          }
+        ]
+      }
+    },
+    {
+      "text": "Kapının yanında, sabah orada olmayan bir şey vardı. Küçük, kırmızı ışıklı, eski bir kart okuyucu.",
+      "prompt": "A small card reader with a glowing red light mounted beside an apartment front door at night, dim hallway, out of place"
+    },
+    {
+      "text": "Ekranında yirmi bir isim vardı. Ve en altta, senin adın.",
+      "prompt": "Close view of the red glow of a card reader in a dark hallway, the light reflecting on a wooden door, nothing readable"
+    },
+    {
+      "text": "Saat üçü on iki geçe, kendi evine giriş yaptın. Mutfaktaki tezgâh hızlandı.",
+      "prompt": "A dark apartment at night seen from the front door, the red light of a card reader blinking once, a long hallway into shadow",
+      "sis": 0.2
+    }
+  ],
+  "son_kart": "SON",
+  "son_alt": "Yeni hikâye yarın akşam",
+  "caption": "Fabrika satıldı, anahtarları verdin. O gece evinin kapısında kırmızı ışıklı bir kart okuyucu belirdi. 🏠🔴",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gecevardiyasi",
+    "#gerilim",
+    "#senolsan",
+    "#sonmola"
+  ]
+}
