@@ -1,31 +1,27 @@
-"""SON MOLA (@sonmola.dizi) - günlük otomasyon (her gün 20:00).
+"""SON MOLA (@sonmola.dizi) - günlük otomasyon, seçimli "Sen olsan?" dizileri (19 Kasım).
 
-Komutlar:
-  python daily.py status                 -> sırada kaç bölüm var, son paylaşılanlar
-  python daily.py render                 -> sıradaki bölümün videosunu üretir (output/today.json)
-  python daily.py publish --video-url U  -> üretilen videoyu Instagram'a yükler ve kaydeder
-  python daily.py check                  -> Instagram bağlantısını test eder
-  python daily.py refresh-token          -> erişim anahtarını 60 gün uzatır
-"""
+Bölüm kimlikleri: dizi numarası + gece (+ dal). Örn. 1. dizi: 101 (1. gece), 102A / 102B (2. gece, iki dal),
+103A / 103B, 104A / 104B. Seçimli gecede (dal'lı bölüm) robot bir önceki paylaşılan bölümün yorumlarındaki
+A/B oylarını sayar, çoğunluğun dalını paylaşır, öbür dalı "atlanan" listesine yazar. Beraberlik/oy yoksa
+bölümdeki "varsayilan" (yoksa A). Dallar bir sonraki gecede aynı noktada birleşir (A ve B'nin sonu aynı seçimle biter)."""
 import argparse
 import datetime as dt
 import saat_kapisi
 import glob
 import json
+import re
 import os
 import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 STATE = os.path.join(ROOT, "state", "posted.json")
-TODAY = os.path.join(ROOT, "output", "today.json")
-VOICE = os.environ.get("COPTARIH_VOICE", os.path.join(ROOT, "models", "tr_TR-fahrettin-medium.onnx"))
+AI_NOTE = "Kurgudur. Görseller ve ses yapay zekâ ile üretildi."
 
 
 import time as _t
 _SURECIN_BASI = _t.time()
 
 def today_tr():
-    """Türkiye tarihi (UTC+3)."""
     return (dt.datetime.utcnow() + dt.timedelta(hours=3)).date().isoformat()
 
 
@@ -34,6 +30,7 @@ def set_output(key, val):
     if out:
         with open(out, "a") as fh:
             fh.write(f"{key}={val}\n")
+    print(f"{key}={val}")
 
 
 def load_state():
@@ -48,55 +45,129 @@ def save_state(st):
 
 
 def queue():
-    """Paylaşılmamış bölümler, dosya adı sırasıyla (001_..., 002_...)."""
-    done = {p["id"] for p in load_state()["posted"]}
+    st = load_state()
+    done = {p["id"] for p in st["posted"]} | set(st.get("atlanan", []))
     eps = []
     for path in sorted(glob.glob(os.path.join(ROOT, "episodes", "[0-9]*.json"))):
         ep = json.load(open(path, encoding="utf-8"))
         if ep["id"] not in done and not ep.get("skip"):
-            eps.append((path, ep))
+            eps.append((os.path.relpath(path, ROOT), ep))
     return eps
+
+
+def find(eid):
+    for path in glob.glob(os.path.join(ROOT, "episodes", f"{eid}_*.json")):
+        return path, json.load(open(path, encoding="utf-8"))
+    sys.exit(f"bölüm yok: {eid}")
+
+
+def ready_ids():
+    return set(os.environ.get("READY", "").split())
 
 
 def cmd_status(_):
     q = queue()
-    st = load_state()
     print(f"Sırada {len(q)} bölüm var.")
     for path, ep in q[:10]:
         print(f"  {ep['id']}  {ep['title']}")
-    if len(q) < 4:
-        print("::warning::Sırada 4'ten az bölüm kaldı - yeni senaryolar eklenmeli!")
-    for p in st["posted"][-5:]:
-        print(f"  [paylaşıldı {p['date']}] {p['id']} {p.get('permalink') or ''}")
+    if len(q) < 5:
+        print("::warning::Sırada 5'ten az bölüm kaldı - yeni senaryolar eklenmeli!")
 
 
-def cmd_render(_):
-    sys.path.insert(0, ROOT)
-    from engine import render as R
+def cmd_pick_prepare(_):
+    forced = os.environ.get("FORCE_ID", "").split()
+    if forced:
+        path, ep = find(forced[0])
+        set_output("id", ep["id"])
+        set_output("path", os.path.relpath(path, ROOT))
+        set_output("rest", " ".join(forced[1:]))
+        return
+    ready = ready_ids()
+    ahead = int(os.environ.get("AHEAD", "6"))  # 14 Kasım: günde 3 paylaşım -> 2 günlük stok
     q = queue()
-    if not q:
-        print("::error::Sırada bölüm yok! episodes/ klasörüne yeni bölüm ekleyin.")
-        sys.exit(1)
+    if sum(1 for _, ep in q if ep["id"] in ready) >= ahead:
+        print(f"Önceden hazır {ahead} bölüm var, yeni üretim gerekmiyor.")
+        set_output("id", "")
+        return
+    for path, ep in q:
+        if ep["id"] not in ready:
+            set_output("id", ep["id"])
+            set_output("path", path)
+            return
+    print("::warning::Hazırlanacak bölüm kalmadı!")
+    set_output("id", "")
+
+
+def cmd_pick_publish(_):
     if os.environ.get("FORCE") != "1" and not os.path.exists(os.path.join(ROOT, "assets", "yayinda")):
-        print("Dizi henüz yayında değil (assets/yayinda dosyası yok). Ses ve ilk bölüm onaylanınca açılacak.")
-        set_output("skip", "true")
+        print("Kanal henüz yayında değil (assets/yayinda yok).")
+        set_output("id", "")
         return
     _git, _slot, _neden = saat_kapisi.karar()
     if not _git:
         print(_neden)
-        set_output("skip", "true")
+        set_output("id", "")
         return
-    set_output("skip", "false")
-    path, ep = q[0]
-    os.makedirs(os.path.join(ROOT, "output"), exist_ok=True)
-    out = os.path.join(ROOT, "output", f"{ep['id']}.mp4")
-    R.render_episode(path, out, VOICE, workdir=os.path.join(ROOT, "build", ep["id"]))
-    json.dump({"id": ep["id"], "path": out, "title": ep["title"],
-               "caption": ep.get("instagram_caption", ep["title"])},
-              open(TODAY, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-    print(f"Hazır: {out}")
-    if len(q) - 1 < 4:
-        print(f"::warning::Bu bölümden sonra sırada {len(q) - 1} bölüm kalacak.")
+    ready = ready_ids()
+    q = queue()
+    if not q:
+        print("::error::Sırada bölüm yok!")
+        sys.exit(1)
+    eid = q[0][1]["id"]
+    if q[0][1].get("dal"):
+        eid = dal_sec(q)
+    if eid not in ready:
+        print(f"::error::Sıradaki bölüm ({eid}) henüz hazır değil.")
+        set_output("id", "")
+        sys.exit(1)
+    set_output("id", eid)
+
+
+def kardesler(q, ep):
+    """Aynı gecenin dalları (ör. 102A ve 102B): sayısal önek aynı, "dal" alanı dolu."""
+    on = re.match(r"\d+", ep["id"]).group(0)
+    return [e for _, e in q if e.get("dal") and re.match(r"\d+", e["id"]).group(0) == on]
+
+
+def dal_sec(q):
+    """Önceki paylaşılan bölümün yorumlarındaki A/B oylarına göre bu gecenin dalını seç."""
+    ep = q[0][1]
+    dallar = {e["dal"]: e["id"] for e in kardesler(q, ep)}
+    st = load_state()
+    onceki = st["posted"][-1] if st["posted"] else None
+    sonuc = None
+    if onceki and onceki.get("media_id") and os.environ.get("IG_ACCESS_TOKEN"):
+        try:
+            sys.path.insert(0, os.path.join(ROOT, "tools"))
+            import oy_say
+            sonuc = oy_say.oylar(onceki["media_id"])
+            print(f"Oylar ({onceki['id']}): A={sonuc['A']} B={sonuc['B']} (toplam yorum {sonuc['toplam_yorum']})")
+        except Exception as e:  # noqa: BLE001
+            print(f"::warning::Oylar okunamadı: {e}")
+    if sonuc and sonuc["A"] != sonuc["B"]:
+        harf = "A" if sonuc["A"] > sonuc["B"] else "B"
+    else:
+        harf = ep.get("varsayilan", "A")
+        print(f"Oy yok/berabere: varsayılan dal {harf}")
+    if harf not in dallar:
+        harf = sorted(dallar)[0]
+    secilen = dallar[harf]
+    set_output("atlanan", " ".join(v for k, v in dallar.items() if v != secilen))
+    set_output("oy", json.dumps(sonuc or {}, ensure_ascii=False))
+    print(f"Seçilen dal: {secilen}")
+    return secilen
+
+
+def caption(ep):
+    ek = ""
+    if ep.get("secim"):
+        ek = (f"\n\nSen olsan ne yapardın?\nA) {ep['secim']['A']}\nB) {ep['secim']['B']}\n"
+              "Yorumlara A ya da B yaz 👇 En çok seçilen yol yarın akşam gerçek olacak.")
+    return f"{ep['caption']}{ek}\n\n{AI_NOTE}\n\n{' '.join(ep.get('hashtags', [])[:5])}"
+
+
+def cmd_caption(a):
+    print(caption(find(a.id)[1]))
 
 
 
@@ -123,23 +194,53 @@ def guvenli_kodla(video_path):
         return None
 
 
+def guvenli_yukle(path, video_url):
+    """Yeniden kodlanmış videoyu aynı GitHub sürümüne koyar, herkese açık adresini döndürür (olmazsa None).
+    Meta en güvenilir şekilde videoyu adresten çekiyor; doğrudan dosya yükleme bu hesaplarda sık 400 veriyor."""
+    import subprocess, time
+    m = re.search(r"/releases/download/([^/]+)/([^/?]+)$", video_url or "")
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if not (m and repo and os.environ.get("GH_TOKEN") and path):
+        return None
+    tag, ad = m.group(1), os.path.splitext(m.group(2))[0] + "_g.mp4"
+    hedef = os.path.join(os.path.dirname(path) or ".", ad)
+    try:
+        if os.path.abspath(hedef) != os.path.abspath(path):
+            import shutil
+            shutil.copy(path, hedef)
+        subprocess.run(["gh", "release", "upload", tag, hedef, "--clobber", "--repo", repo], check=True, timeout=300)
+        url = video_url.rsplit("/", 1)[0] + "/" + ad
+        print(f"Yeniden kodlanmış video yüklendi: {url}", flush=True)
+        time.sleep(20)
+        return url
+    except Exception as e:
+        print(f"::warning::Yeniden kodlanmış video sürüme konamadı: {e}", flush=True)
+        return None
+
+
 def paylas_tekrarli(publisher, video_path, video_url, caption, deneme=4):
     """Meta videoyu arada bir işleyemiyor (ProcessingFailedError / Transcoding Error / 2207082).
     Hata yayınlamadan ÖNCEKİ aşamadaysa yeni bir yükleme kaydıyla tekrar dener:
-    1. deneme: adresten, 2. deneme: dosyadan, 3-4. deneme: yeniden kodlanmış dosyadan.
-    media_publish aşamasındaki hatalar tekrar denenmez (çift paylaşım olmasın)."""
+    1. deneme: asıl video adresten; sonra Instagram'ın en sorunsuz kabul ettiği biçime yeniden kodlanmış video
+    (önce adresten, olmazsa dosyadan). media_publish aşamasındaki hatalar tekrar denenmez (çift paylaşım olmasın)."""
     import time
-    guvenli = None
+    guvenli, g_url = None, None
     for n in range(deneme):
         path, url = video_path, video_url
-        if n == 1 and video_path:
-            url = None
-        elif n >= 2:
+        # 14 Kasım: Kayıp 006 asıl haliyle 3 kez reddedildi, yeniden kodlanmış hali adresten hemen geçti.
+        # Bu yüzden ilk deneme de yeniden kodlanmış videoyla; 2. deneme asıl video.
+        if n != 1:
             if guvenli is None:
                 guvenli = guvenli_kodla(video_path) or ""
+                if guvenli:
+                    g_url = guvenli_yukle(guvenli, video_url)
             if guvenli:
-                path, url = guvenli, None
+                path = guvenli
+                url = g_url if (g_url and n != 2) else None
         try:
+            if n in (0, 3) and g_url:
+                # Önce klasik yol: yeniden kodlanmış videoyu Meta adresten indirsin (15 Kasım testinde tek çalışan yol)
+                return publisher.publish_reel(video_path=None, video_url=g_url, caption=caption, klasik=True)
             return publisher.publish_reel(video_path=path, video_url=url, caption=caption)
         except publisher.PublishError as e:
             if "media_publish" in str(e) or n == deneme - 1:
@@ -178,14 +279,23 @@ def hikaye_paylas(publisher, video_path, video_url):
 
 def cmd_publish(a):
     import publisher
-    today = json.load(open(TODAY, encoding="utf-8"))
-    res = paylas_tekrarli(publisher, today["path"], a.video_url, today["caption"])
+    _, ep = find(a.id)
+    res = paylas_tekrarli(publisher, a.video_path, a.video_url, caption(ep))
     st = load_state()
-    st["posted"].append({"id": today["id"], "title": today["title"], "date": today_tr(), "slot": saat_kapisi.gecerli_slot()[0] or "",
+    if ep.get("dal"):
+        q = queue()
+        st0 = load_state()
+        st0.setdefault("atlanan", [])
+        for e in kardesler(q, ep):
+            if e["id"] != ep["id"] and e["id"] not in st0["atlanan"]:
+                st0["atlanan"].append(e["id"])
+        save_state(st0)
+    st = load_state()
+    st["posted"].append({"id": ep["id"], "title": ep["title"], "date": today_tr(), "slot": saat_kapisi.gecerli_slot()[0] or "",
                          "media_id": res["media_id"], "permalink": res.get("permalink")})
     save_state(st)
-    print(f"Paylaşıldı: {today['title']} -> {res.get('permalink')}")
-    hid = hikaye_paylas(publisher, today["path"], a.video_url)
+    print(f"Paylaşıldı: {ep['title']} -> {res.get('permalink')}")
+    hid = hikaye_paylas(publisher, a.video_path, a.video_url)
     if hid:
         st = load_state()
         st["posted"][-1]["story_id"] = hid
@@ -195,23 +305,21 @@ def cmd_publish(a):
 def cmd_check(_):
     import publisher
     me, lim = publisher.check_account()
-    print("Hesap:", me.get("username"), "| kimlik:", me.get("id"), "| Paylaşım kotası:", lim)
+    print("Hesap:", me.get("username"), "| Paylaşım kotası:", lim)
 
 
 def cmd_refresh(_):
     import publisher
     if os.environ.get("IG_ACCESS_TOKEN", "").startswith("EAA"):
-        print("Sistem kullanıcı anahtarı süresizdir, yenileme gerekmez.")
+        print("Bu anahtar türü süresiz, yenileme gerekmez.")
         return
     tok, exp = publisher.refresh_token()
     if not tok:
         print("::error::Token yenilenemedi")
         sys.exit(1)
-    days = (exp or 0) // 86400
-    print(f"Token yenilendi, {days} gün geçerli.")
+    print(f"Token yenilendi, {(exp or 0) // 86400} gün geçerli.")
     out = os.environ.get("GITHUB_OUTPUT")
     if out:
-        # Token loglara yazılmasın diye maskele
         print(f"::add-mask::{tok}")
         with open(out, "a") as fh:
             fh.write(f"token={tok}\n")
@@ -221,11 +329,12 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status")
-    sub.add_parser("render")
-    p = sub.add_parser("publish")
-    p.add_argument("--video-url", default=None)
+    sub.add_parser("pick-prepare")
+    sub.add_parser("pick-publish")
+    p = sub.add_parser("caption"); p.add_argument("id")
+    p = sub.add_parser("publish"); p.add_argument("id"); p.add_argument("--video-url"); p.add_argument("--video-path")
     sub.add_parser("check")
     sub.add_parser("refresh-token")
     a = ap.parse_args()
-    {"status": cmd_status, "render": cmd_render, "publish": cmd_publish,
-     "check": cmd_check, "refresh-token": cmd_refresh}[a.cmd](a)
+    {"status": cmd_status, "pick-prepare": cmd_pick_prepare, "pick-publish": cmd_pick_publish,
+     "caption": cmd_caption, "publish": cmd_publish, "check": cmd_check, "refresh-token": cmd_refresh}[a.cmd](a)

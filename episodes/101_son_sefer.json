@@ -1,0 +1,79 @@
+{
+  "id": "101",
+  "slug": "son_sefer",
+  "title": "Son Sefer",
+  "dizi_adi": "Son Sefer",
+  "gece": 1,
+  "seed": 51013,
+  "kanca_yazi": "Otobüs hiç yola çıkmamış…",
+  "scenes": [
+    {
+      "text": "Otobüs hiç yola çıkmamış. Peki sen üç saattir neyin içindeydin?",
+      "prompt": "An intercity coach bus driving away into thick fog on an empty highway at night, red tail lights fading, a lonely roadside rest stop with a flickering neon light in the foreground",
+      "sis": 0.3
+    },
+    {
+      "text": "Gece iki kırk. Otobüs ıssız bir dinlenme tesisinde durdu. Muavin yirmi dakika mola dedi.",
+      "prompt": "A deserted highway rest stop at night, a parked coach bus with its door open, wet asphalt reflecting cold fluorescent lights, mountains in fog behind"
+    },
+    {
+      "text": "Bir çay aldın, telefonuna baktın. Döndüğünde otobüs yoktu.",
+      "prompt": "An empty bus parking area at a rest stop at night, a single small glass of steaming tea on a wet bench, puddles reflecting a flickering lamp",
+      "sicak": true
+    },
+    {
+      "text": "Önce sinirlendin. Sonra yolcu grubuna bir mesaj düştü.",
+      "prompt": "Dark wet asphalt of an empty parking lot at night, fog drifting under a single street lamp, no people",
+      "telefon": {
+        "baslik": "Gece Seferi Yolcuları",
+        "alt": "38 kişi",
+        "mesajlar": [
+          {"kim": "Firma Bilgilendirme", "metin": "Sayın yolcularımız, 23:15 seferimiz iptal edilmiştir."},
+          {"kim": "Firma Bilgilendirme", "metin": "Otobüsümüz garajdan hiç çıkmamıştır. Anlayışınız için teşekkür ederiz."}
+        ]
+      }
+    },
+    {
+      "text": "Garajdan hiç çıkmamış. Ama sen o otobüse binmiştin. On üç numaralı koltuğa oturmuştun.",
+      "prompt": "Inside a dark empty coach bus at night, rows of seats lit only by small blue aisle lights, one seat by the window slightly turned, fog outside the windows",
+      "sis": 0.2
+    },
+    {
+      "text": "Yanındaki koltukta bir kadın vardı. Yol boyu hiç konuşmadı. Hep camdan dışarı baktı.",
+      "prompt": "Silhouette of a woman with long dark hair seen from behind sitting by a coach bus window at night, her reflection faint in the glass, foggy road outside, no face visible"
+    },
+    {
+      "text": "Sonra telefonun titredi.",
+      "prompt": "A rest stop at night seen from far away, a lone figure standing under a lamp in fog, holding a glowing phone, seen from behind",
+      "telefon": {
+        "baslik": "Gece Seferi Yolcuları",
+        "alt": "38 kişi",
+        "mesajlar": [
+          {"kim": "Firma Bilgilendirme", "metin": "Otobüsümüz garajdan hiç çıkmamıştır. Anlayışınız için teşekkür ederiz."}
+        ],
+        "bildirim": "Koltuk 14: Neden indin? Daha varmadık."
+      }
+    },
+    {
+      "text": "Tesiste tek bir yer açık: ışığı yanan eski bir lokanta. Yolun kenarında ise bir tır, motorunu çalıştırıyor.",
+      "prompt": "An old roadside diner at night with warm yellow light in its windows, a large truck idling at the edge of the highway with headlights on, thick fog between them",
+      "sicak": true
+    },
+    {
+      "text": "Sen olsan ne yapardın? Lokantaya mı girerdin, yoksa tıra mı el sallardın?",
+      "prompt": "A crossroads at a foggy rest stop at night, on the left a lit diner door, on the right a truck's headlights on the road, empty asphalt between them"
+    }
+  ],
+  "secim": {
+    "A": "Işığı yanan lokantaya gir",
+    "B": "Yoldaki tıra el salla"
+  },
+  "caption": "Mola bitti, otobüs gitmişti. Sonra firmadan mesaj geldi: otobüs garajdan hiç çıkmamış. 🚌🌫️",
+  "hashtags": [
+    "#korkuhikayeleri",
+    "#gerilim",
+    "#gecehikayesi",
+    "#senolsan",
+    "#sonmola"
+  ]
+}

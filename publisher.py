@@ -95,8 +95,8 @@ def _wait_container(host, container_id, token, timeout=900):
     raise PublishError(f"Video işleme zaman aşımı. Son durum: {last}")
 
 
-HESAP = os.environ.get("IG_USERNAME", "sonmola.dizi").strip().lstrip("@").lower()
-VARSAYILAN_KIMLIK = "17841447821857845" if HESAP == "sonmola.dizi" else ""   # @sonmola.dizi Instagram kimliği
+HESAP = os.environ.get("IG_USERNAME", "kayip.vakalar").strip().lstrip("@").lower()
+VARSAYILAN_KIMLIK = os.environ.get("IG_KIMLIK", "17841469827899238")   # @kayip.vakalar Instagram kimliği
 
 
 def _kullanici_adi(uid, token, mode):
@@ -106,7 +106,7 @@ def _kullanici_adi(uid, token, mode):
 
 def resolve_user_id(token, mode):
     """Paylaşılacak Instagram hesabının kimliği. Aynı anahtar başka kanallara da erişebildiği için
-    hesap HER ZAMAN kullanıcı adıyla (IG_USERNAME, varsayılan sonmola.dizi) doğrulanır; eşleşmezse paylaşım yapılmaz."""
+    hesap HER ZAMAN kullanıcı adıyla (IG_USERNAME, varsayılan kayip.vakalar) doğrulanır; eşleşmezse paylaşım yapılmaz."""
     uid = os.environ.get("IG_USER_ID", "").strip() or VARSAYILAN_KIMLIK
     if uid:
         ad = _kullanici_adi(uid, token, mode)
@@ -148,7 +148,7 @@ def resolve_user_id(token, mode):
 
 
 def publish_reel(video_path=None, video_url=None, caption="", mode=None,
-                 user_id=None, token=None, share_to_feed=True):
+                 user_id=None, token=None, share_to_feed=True, klasik=False):
     """Reel paylaşır, {"media_id", "permalink"} döndürür."""
     token = token or os.environ["IG_ACCESS_TOKEN"]
     mode = mode or detect_mode(token)
@@ -160,7 +160,13 @@ def publish_reel(video_path=None, video_url=None, caption="", mode=None,
               "share_to_feed": "true" if share_to_feed else "false", "access_token": token}
 
     upload_error = None
-    if mode == "facebook":
+    if klasik and video_url:
+        # 15 Kasım testi: @kayip.vakalar'da büyük dosyalar rupload ile hiç işlenmedi (2207082), ama
+        # klasik yol (Meta videoyu adresten kendisi indiriyor) aynı videoyu 60 sn'de işledi.
+        params["video_url"] = video_url
+        c = _request("POST", f"{base}/{user_id}/media", params)
+        cid = c["id"]
+    elif mode == "facebook":
         # 1) Yükleme oturumu aç
         params["upload_type"] = "resumable"
         c = _request("POST", f"{base}/{user_id}/media", params)

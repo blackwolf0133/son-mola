@@ -1,4 +1,4 @@
-# Her gün sıradaki bölümü üretir ve Instagram'a Reel olarak paylaşır.
+# SON MOLA: hazır olan sıradaki bölümü paylaşır (her akşam ~21:30). Seçimli gecede yorumlardaki A/B oylarına göre dal seçer.
 name: Günlük paylaşım
 
 on:
@@ -7,13 +7,14 @@ on:
     - cron: "4,19,34,49 * * * *"
   workflow_dispatch:
     inputs:
-      sadece_video:
-        description: "Sadece videoyu üret, paylaşma (deneme)"
+      zorla:
+        description: "Bugün paylaşım yapılmış olsa da paylaş"
         type: boolean
         default: false
 
 permissions:
-  contents: write   # paylaşım kaydı + videoyu GitHub Releases'e koymak için
+  contents: write
+  actions: write
 
 concurrency:
   group: gunluk-paylasim
@@ -29,167 +30,70 @@ jobs:
       - uses: actions/checkout@v4
       - id: k
         env:
-          FORCE: ${{ inputs.sadece_video && '1' || '' }}
+          FORCE: ${{ inputs.zorla && '1' || '' }}
         run: python3 saat_kapisi.py
 
-  uret:
+  paylas:
     needs: kapi
     if: needs.kapi.outputs.git == '1'
-    runs-on: ubuntu-latest
-    timeout-minutes: 50
-    outputs:
-      bolum: ${{ steps.uret.outputs.bolum }}
-      skip: ${{ steps.uret.outputs.skip }}
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-
-      - name: Sistem paketleri ve yazı tipleri
-        run: |
-          AOPT="-o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o Acquire::Retries=2 -o DPkg::Lock::Timeout=60"
-          # ffmpeg: Ubuntu apt sunucuları yavaşlayınca takılmamak için GitHub'dan hazır derleme
-          if ! command -v ffmpeg >/dev/null; then
-            for i in 1 2 3; do curl -fsSL --max-time 240 https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz -o /tmp/ff.tar.xz && break; sleep 5; done
-            tar xJf /tmp/ff.tar.xz -C /tmp 2>/dev/null && sudo cp /tmp/ffmpeg-master-latest-linux64-gpl/bin/ff* /usr/local/bin/ || true
-          fi
-          command -v ffmpeg >/dev/null || { echo "::error::ffmpeg kurulamadı"; exit 1; }
-          # cairo: önce apt (en fazla ~4 dk), olmazsa conda-forge
-          if ! pkg-config --exists cairo 2>/dev/null; then
-            sudo timeout 100 apt-get update -q $AOPT || echo "::warning::apt update yavaş"
-            sudo timeout 150 apt-get install -y -q --no-install-recommends $AOPT libcairo2-dev pkg-config || echo "::warning::apt'tan cairo kurulamadı"
-          fi
-          if ! pkg-config --exists cairo 2>/dev/null; then
-            echo "::warning::cairo conda-forge'dan kuruluyor"
-            curl -fsSL --max-time 120 https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj -C /tmp bin/micromamba
-            /tmp/bin/micromamba create -y -q -p "$HOME/cairo" -c conda-forge cairo pkg-config
-            echo "$HOME/cairo/bin" >> "$GITHUB_PATH"
-            echo "PKG_CONFIG_PATH=$HOME/cairo/lib/pkgconfig" >> "$GITHUB_ENV"
-            echo "LDFLAGS=-Wl,-rpath,$HOME/cairo/lib" >> "$GITHUB_ENV"
-            export PATH="$HOME/cairo/bin:$PATH" PKG_CONFIG_PATH="$HOME/cairo/lib/pkgconfig"
-          fi
-          pkg-config --exists cairo || { echo "::error::cairo kurulamadı"; exit 1; }
-          sudo timeout 90 apt-get install -y -q --no-install-recommends $AOPT espeak-ng || echo "::warning::espeak-ng kurulamadı (yedek ses yok)"
-          mkdir -p ~/.fonts && cp fonts/*.ttf ~/.fonts/ && fc-cache -f
-
-      - name: Python paketleri
-        run: |
-          pip install -r requirements.txt
-          pip install faster-whisper || echo "::warning::faster-whisper kurulamadı, okunuş kontrolü atlanacak"
-
-      - name: Gemini sesi
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          # Gemini çalışmazsa bölümün tamamı Piper ile okunur (yarım yamalak karışık ses olmaz).
-          if [ -n "$GEMINI_API_KEY" ]; then
-            echo "TTS_ENGINE=gemini" >> "$GITHUB_ENV"
-            echo "Gemini sesiyle seslendirilecek: $(cat assets/voice/gemini_ses 2>/dev/null || echo Enceladus)"
-            echo "GEMINI_VOICE=$(cat assets/voice/gemini_ses 2>/dev/null || echo Enceladus)" >> "$GITHUB_ENV"
-          else
-            echo "::warning::GEMINI_API_KEY yok, Piper sesi kullanılacak"
-          fi
-
-      - name: Ses modeli (önbellek)
-        uses: actions/cache@v4
-        with:
-          path: models
-          key: piper-tr-fahrettin-v1
-
-      - name: Ses modelini indir
-        run: |
-          mkdir -p models
-          if [ ! -f models/tr_TR-fahrettin-medium.onnx ]; then
-            curl -sSL https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-tr_TR-fahrettin-medium.tar.bz2 | tar xj -C /tmp
-            cp /tmp/vits-piper-tr_TR-fahrettin-medium/tr_TR-fahrettin-medium.onnx* models/
-          fi
-
-      - name: Sıra durumu
-        run: python daily.py status
-
-      - name: Videoyu üret
-        id: uret
-        env:
-          FORCE: ${{ inputs.sadece_video && '1' || '' }}
-          PYTHONUNBUFFERED: "1"
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TEMPO: "1.07"   # Enceladus yavaş okuyor; hafif hızlandırma (süre ~55-58 sn)
-        run: |
-          python daily.py render
-          if grep -q "skip=true" "$GITHUB_OUTPUT"; then exit 0; fi
-          echo "bolum=$(python -c "import json;print(json.load(open('output/today.json'))['id'])")" >> "$GITHUB_OUTPUT"
-          mkdir -p site/videos
-          cp output/today.json site/
-          cp "$(python -c "import json;print(json.load(open('output/today.json'))['path'])")" site/videos/
-          echo '<meta charset="utf-8"><h1>Son Mola</h1>' > site/index.html
-
-      - name: Önizleme (deneme modunda)
-        if: ${{ inputs.sadece_video && steps.uret.outputs.skip != 'true' }}
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          ID="${{ steps.uret.outputs.bolum }}"
-          gh release create "onizleme-${ID}-$(date +%Y%m%d%H%M)" "site/videos/${ID}.mp4" --prerelease --title "Önizleme ${ID}" --notes "Deneme videosu" --repo "${{ github.repository }}"
-
-      - name: Videoyu indirilebilir olarak sakla
-        if: ${{ steps.uret.outputs.skip != 'true' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: video-${{ steps.uret.outputs.bolum }}
-          path: |
-            site/today.json
-            site/videos/*.mp4
-          retention-days: 14
-
-
-  paylas:
-    needs: uret
-    if: ${{ !inputs.sadece_video && needs.uret.outputs.skip != 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Videoyu al
-        uses: actions/download-artifact@v4
-        with:
-          name: video-${{ needs.uret.outputs.bolum }}
-          path: site
-
-      - name: Videoyu herkese açık adrese koy (GitHub Releases)
-        id: yayin
+      - run: pip install -r requirements.txt
+      - name: Sıradaki hazır bölüm
+        id: sec
         env:
           GH_TOKEN: ${{ github.token }}
+          FORCE: ${{ inputs.zorla && '1' || '' }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
         run: |
-          ID="${{ needs.uret.outputs.bolum }}"
-          TAG="video-${ID}-$(date +%Y%m%d%H%M)"
-          gh release create "$TAG" "site/videos/${ID}.mp4" --title "Bölüm ${ID}" --notes "Otomatik paylaşım videosu" --repo "${{ github.repository }}"
-          echo "url=https://github.com/${{ github.repository }}/releases/download/${TAG}/${ID}.mp4" >> "$GITHUB_OUTPUT"
-          # Eski video sürümlerini temizle (son 10 kalsın)
-          gh release list --repo "${{ github.repository }}" --limit 100 --json tagName --jq '.[].tagName' | grep '^video-' | tail -n +11 | while read t; do gh release delete "$t" --cleanup-tag -y --repo "${{ github.repository }}"; done || true
-
-      - name: Instagram'a paylaş
+          export READY="$(gh release list --repo "${{ github.repository }}" --limit 100 --json tagName --jq '.[].tagName' | grep '^hazir-' | sed 's/^hazir-//' | tr '\n' ' ')"
+          echo "Hazır olanlar: $READY"
+          python daily.py pick-publish
+      - name: Videoyu indir
+        if: steps.sec.outputs.id != ''
         env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download "hazir-${{ steps.sec.outputs.id }}" -D out --repo "${{ github.repository }}"
+      - name: ffmpeg (hikâye 60 sn sınırı için kırpma)
+        if: steps.sec.outputs.id != ''
+        continue-on-error: true
+        timeout-minutes: 6
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            curl -fsSL --max-time 240 https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz -o /tmp/ff.tar.xz \
+              && tar xJf /tmp/ff.tar.xz -C /tmp && sudo cp /tmp/ffmpeg-master-latest-linux64-gpl/bin/ff* /usr/local/bin/
+          fi
+          ffmpeg -version | head -1
+      - name: Instagram'a paylaş
+        if: steps.sec.outputs.id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_MODE: ${{ vars.IG_MODE }}
         run: |
-          mkdir -p output
-          python -c "import json; t=json.load(open('site/today.json')); t['path']='site/videos/'+t['id']+'.mp4'; json.dump(t, open('output/today.json','w'), ensure_ascii=False)"
-          python daily.py publish --video-url "${{ steps.yayin.outputs.url }}"
-
-      - name: Paylaşım kaydını depoya yaz
-        if: always()
+          ID="${{ steps.sec.outputs.id }}"
+          python daily.py publish "$ID" --video-path "out/${ID}.mp4" \
+            --video-url "https://github.com/${{ github.repository }}/releases/download/hazir-${ID}/${ID}.mp4"
+      - name: Kaydı yaz
+        if: steps.sec.outputs.id != ''
         run: |
           git config user.name "son-mola-bot"
           git config user.email "bot@users.noreply.github.com"
           git add state/posted.json
-          git commit -m "Paylaşıldı: bölüm ${{ needs.uret.outputs.bolum }}" || echo "değişiklik yok"
+          git commit -m "Paylaşıldı: bölüm ${{ steps.sec.outputs.id }}" || echo "değişiklik yok"
           git pull --rebase -q && git push
+      - name: Sürümü arşivle ve yenisini hazırlat
+        if: steps.sec.outputs.id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ID="${{ steps.sec.outputs.id }}"
+          gh release delete "hazir-${ID}" --cleanup-tag -y --repo "${{ github.repository }}" || true
+          for X in ${{ steps.sec.outputs.atlanan }}; do gh release delete "hazir-${X}" --cleanup-tag -y --repo "${{ github.repository }}" || true; gh release delete "cizim-${X}" --cleanup-tag -y --repo "${{ github.repository }}" || true; done
+          gh workflow run hazirla.yml --repo "${{ github.repository }}"
