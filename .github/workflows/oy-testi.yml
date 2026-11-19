@@ -1,0 +1,26 @@
+# Seçimli dizi için: robot yorumlardaki A/B oylarını okuyabiliyor mu? (Paylaşım YOK, salt okuma)
+name: Oy testi
+on:
+  workflow_dispatch:
+    inputs:
+      media:
+        description: "media_id (boşsa son paylaşılan)"
+        default: ""
+jobs:
+  oku:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          M="${{ inputs.media }}"
+          [ -z "$M" ] && M=$(python -c "import json;print(json.load(open('state/posted.json'))['posted'][-1]['media_id'])")
+          echo "media: $M"
+          python tools/oy_say.py "$M"
+          # karşılaştırma için Kayıp'ın değil, bu hesabın birkaç eski videosu
+          for m in $(python -c "import json;print(' '.join(p['media_id'] for p in json.load(open('state/posted.json'))['posted'][-4:-1]))"); do python tools/oy_say.py $m || true; done
