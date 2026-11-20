@@ -95,8 +95,8 @@ def _wait_container(host, container_id, token, timeout=900):
     raise PublishError(f"Video işleme zaman aşımı. Son durum: {last}")
 
 
-HESAP = os.environ.get("IG_USERNAME", "kayip.vakalar").strip().lstrip("@").lower()
-VARSAYILAN_KIMLIK = os.environ.get("IG_KIMLIK", "17841469827899238")   # @kayip.vakalar Instagram kimliği
+HESAP = os.environ.get("IG_USERNAME", "sonmola.dizi").strip().lstrip("@").lower()
+VARSAYILAN_KIMLIK = os.environ.get("IG_KIMLIK", "17841447821857845")   # @sonmola.dizi Instagram kimliği (20 Kasım düzeltmesi: Kayıp'tan kopyalanırken yanlış hesap kaldı)
 
 
 def _kullanici_adi(uid, token, mode):
@@ -106,7 +106,7 @@ def _kullanici_adi(uid, token, mode):
 
 def resolve_user_id(token, mode):
     """Paylaşılacak Instagram hesabının kimliği. Aynı anahtar başka kanallara da erişebildiği için
-    hesap HER ZAMAN kullanıcı adıyla (IG_USERNAME, varsayılan kayip.vakalar) doğrulanır; eşleşmezse paylaşım yapılmaz."""
+    hesap HER ZAMAN kullanıcı adıyla (IG_USERNAME, varsayılan sonmola.dizi) doğrulanır; eşleşmezse paylaşım yapılmaz."""
     uid = os.environ.get("IG_USER_ID", "").strip() or VARSAYILAN_KIMLIK
     if uid:
         ad = _kullanici_adi(uid, token, mode)
