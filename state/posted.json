@@ -52,6 +52,15 @@
       "media_id": "18110998909958795",
       "permalink": "https://www.instagram.com/reel/Df-YBqciI8C/",
       "story_id": "18027364139943429"
+    },
+    {
+      "id": "102A",
+      "title": "Lokanta",
+      "date": "2026-11-22",
+      "slot": "21:20",
+      "media_id": "17905328517371379",
+      "permalink": "https://www.instagram.com/reel/DgDcXvNiAXF/",
+      "story_id": "18115092200333606"
     }
   ],
   "yanlis_hesaba": [
@@ -65,5 +74,8 @@
       "story_id": "17978786789938501",
       "not_": "20 Kasım: Kayıp'tan kopyalanan publisher yüzünden @kayip.vakalar'a gitti"
     }
+  ],
+  "atlanan": [
+    "102B"
   ]
 }
