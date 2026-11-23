@@ -1,0 +1,17 @@
+name: Meta durum
+on: workflow_dispatch
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          T: ${{ secrets.IG_ACCESS_TOKEN }}
+          U: ${{ secrets.IG_USER_ID }}
+        run: |
+          echo "token başı: ${T:0:3}"
+          G=https://graph.facebook.com/v26.0
+          curl -s "$G/me?fields=id,name&access_token=$T"; echo
+          curl -s "$G/me/permissions?access_token=$T" | head -c 600; echo
+          curl -s "$G/debug_token?input_token=$T&access_token=$T" | head -c 900; echo
+          curl -s "$G/17841447821857845?fields=username,media_count&access_token=$T"; echo
+          curl -s "$G/17841447821857845/content_publishing_limit?access_token=$T"; echo
