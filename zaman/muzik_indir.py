@@ -15,7 +15,7 @@ SORGULAR = ["sad piano", "melancholic piano", "emotional piano", "nostalgic pian
 def ara(sorgu):
     q = urllib.parse.urlencode({
         "query": sorgu,
-        "filter": 'license:"Creative Commons 0" duration:[40 TO 240] avg_rating:[3.5 TO 5]',
+        "filter": 'license:"Creative Commons 0" duration:[40 TO 240]',
         "fields": "id,name,username,duration,previews,avg_rating,num_downloads,tags",
         "sort": "rating_desc", "page_size": 40, "token": ANAHTAR})
     with urllib.request.urlopen("https://freesound.org/apiv2/search/text/?" + q, timeout=30) as r:
@@ -37,6 +37,7 @@ def main(bolum, cikti):
         except Exception as e:
             print("arama hatası:", e)
             continue
+        print(f"'{s}': {len(sonuc)} uygun sonuç")
         if not sonuc:
             continue
         sec = rnd.choice(sonuc[:12])
