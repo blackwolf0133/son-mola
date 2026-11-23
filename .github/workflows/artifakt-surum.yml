@@ -1,0 +1,26 @@
+# Bir iş akışının çıktısını (artifact) indirip sürüme koyar (oturumdan indirilebilsin diye)
+name: Artifakt sürüme
+on:
+  workflow_dispatch:
+    inputs:
+      run: {description: "run id", required: true}
+      ad: {description: "artifact adı", required: true}
+      etiket: {description: "sürüm etiketi", required: true}
+permissions:
+  contents: write
+  actions: read
+jobs:
+  koy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.ad }}
+          run-id: ${{ inputs.run }}
+          github-token: ${{ github.token }}
+          path: a
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ls -la a
+          gh release create "${{ inputs.etiket }}" a/* --repo "${{ github.repository }}" --title "${{ inputs.etiket }}" --notes "deneme" || gh release upload "${{ inputs.etiket }}" a/* --clobber --repo "${{ github.repository }}"
