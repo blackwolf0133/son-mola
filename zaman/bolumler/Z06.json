@@ -1,0 +1,143 @@
+{
+ "id": "Z06",
+ "baslik": "İlkokul sınıfın",
+ "set": "oda",
+ "fps": 30,
+ "kare": 1020,
+ "kanca": "İlkokul sınıfın.\n44 yıl, aynı pencere.",
+ "yerler": {
+  "saat": [
+   1.2,
+   2.49,
+   2.35,
+   0
+  ],
+  "ampul": [
+   0.3,
+   -0.3,
+   3.1,
+   0
+  ],
+  "avize": [
+   0.3,
+   -0.3,
+   3.1,
+   0
+  ],
+  "soba": [
+   -1.95,
+   1.85,
+   0,
+   0
+  ],
+  "saksi": [
+   -2.5,
+   -0.64,
+   0.97,
+   0
+  ]
+ },
+ "donemler": [
+  {
+   "yil": 1982,
+   "bas": 1,
+   "bit": 270,
+   "duvar": [
+    0.8,
+    0.88,
+    0.8
+   ],
+   "gece": false,
+   "esyalar": [
+    "kara_tahta",
+    "siralar_ahsap",
+    "ogretmen_masasi",
+    "soba",
+    "harita",
+    "saat",
+    "ampul",
+    "saksi",
+    "perde"
+   ],
+   "yazi": "Önlükler mavi, yakalar beyaz.\nSoba da sırayla yakılırdı."
+  },
+  {
+   "yil": 1998,
+   "bas": 271,
+   "bit": 480,
+   "duvar": [
+    0.9,
+    0.86,
+    0.7
+   ],
+   "gece": false,
+   "esyalar": [
+    "kara_tahta",
+    "siralar_ahsap",
+    "ogretmen_masasi",
+    "harita",
+    "saat",
+    "ampul",
+    "saksi",
+    "perde"
+   ],
+   "yazi": "Teneffüs zili çalınca\nherkes kapıya koşardı."
+  },
+  {
+   "yil": 2013,
+   "bas": 481,
+   "bit": 690,
+   "duvar": [
+    0.92,
+    0.92,
+    0.88
+   ],
+   "gece": false,
+   "esyalar": [
+    "akilli_tahta",
+    "siralar_yeni",
+    "ogretmen_masasi",
+    "harita",
+    "saat",
+    "avize",
+    "perde",
+    "cocuk_cizimleri"
+   ],
+   "yazi": "Kara tahta gitti.\nTebeşir tozu da gitti."
+  },
+  {
+   "yil": 2026,
+   "bas": 691,
+   "bit": 1020,
+   "duvar": [
+    0.9,
+    0.88,
+    0.84
+   ],
+   "gece": false,
+   "son": true,
+   "esyalar": [
+    "akilli_tahta",
+    "siralar_yeni",
+    "ogretmen_masasi",
+    "saat",
+    "perde",
+    "cocuk_cizimleri",
+    "toz"
+   ],
+   "yazi": "Sıralarda başka çocuklar var.\nPencere hâlâ aynı yere bakıyor."
+  }
+ ],
+ "kapanis": [
+  "Senin adın da bir sıraya\nkazınmış olabilir.",
+  "İlkokul öğretmeninin\nadını hatırlıyor musun?"
+ ],
+ "aciklama": "Bir ilkokul sınıfı, 44 yıl. Kara tahta, tebeşir tozu, odun sobası... İlkokul öğretmeninin adını hatırlıyor musun? Yorumlara yaz, sınıf arkadaşını etiketle 👇",
+ "hashtags": [
+  "#ilkokul",
+  "#nostalji",
+  "#öğretmen",
+  "#zamandurağı",
+  "#keşfet"
+ ]
+}

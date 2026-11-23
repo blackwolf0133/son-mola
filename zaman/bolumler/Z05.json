@@ -1,0 +1,139 @@
+{
+ "id": "Z05",
+ "baslik": "Mahallenin bakkalı",
+ "set": "oda",
+ "fps": 30,
+ "kare": 1020,
+ "kanca": "Mahallenin bakkalı.\n45 yıl, aynı tezgâh.",
+ "yerler": {
+  "saat": [
+   2.2,
+   2.49,
+   1.9,
+   0
+  ],
+  "ampul": [
+   0.4,
+   0.2,
+   3.1,
+   0
+  ],
+  "avize": [
+   0.4,
+   0.2,
+   3.1,
+   0
+  ],
+  "kedi": [
+   1.6,
+   -1.6,
+   0,
+   120
+  ],
+  "foto1": [
+   -2.5,
+   1.6,
+   1.7,
+   0
+  ]
+ },
+ "donemler": [
+  {
+   "yil": 1981,
+   "bas": 1,
+   "bit": 270,
+   "duvar": [
+    0.88,
+    0.82,
+    0.62
+   ],
+   "gece": true,
+   "esyalar": [
+    "raf_bakkal",
+    "tezgah_bakkal",
+    "gazoz_kasasi",
+    "ampul",
+    "saat",
+    "kedi",
+    "saksi",
+    "foto1"
+   ],
+   "yazi": "Veresiye defteri vardı.\nHerkesin adı yazılıydı."
+  },
+  {
+   "yil": 1996,
+   "bas": 271,
+   "bit": 480,
+   "duvar": [
+    0.82,
+    0.86,
+    0.78
+   ],
+   "gece": true,
+   "esyalar": [
+    "raf_bakkal",
+    "tezgah_bakkal",
+    "gazoz_kasasi",
+    "dondurma_dolabi",
+    "ampul",
+    "saat",
+    "kedi",
+    "saksi",
+    "foto1"
+   ],
+   "yazi": "Bir lira verip\n\"üstü kalsın\" derdin."
+  },
+  {
+   "yil": 2012,
+   "bas": 481,
+   "bit": 690,
+   "duvar": [
+    0.92,
+    0.92,
+    0.9
+   ],
+   "gece": true,
+   "esyalar": [
+    "raf_market",
+    "tezgah_bakkal",
+    "dondurma_dolabi",
+    "avize",
+    "saat",
+    "foto1"
+   ],
+   "yazi": "Köşeye zincir market açıldı.\nMüşteri azaldı."
+  },
+  {
+   "yil": 2026,
+   "bas": 691,
+   "bit": 1020,
+   "duvar": [
+    0.76,
+    0.74,
+    0.7
+   ],
+   "gece": false,
+   "son": true,
+   "esyalar": [
+    "raf_bos",
+    "tabela_kiralik",
+    "saat",
+    "foto1",
+    "toz"
+   ],
+   "yazi": "Raflar boşaldı.\nCama bir kâğıt asıldı."
+  }
+ ],
+ "kapanis": [
+  "Ama o defterde\nhâlâ senin adın var.",
+  "Senin mahallenin bakkalı\nkimdi? Adını yaz."
+ ],
+ "aciklama": "Mahallenin bakkalı, 45 yıl. Veresiye defteri, şeker kavanozları, cam şişe gazozlar... Senin mahallenin bakkalı kimdi? Adını yorumlara yaz 👇",
+ "hashtags": [
+  "#bakkal",
+  "#nostalji",
+  "#mahalle",
+  "#zamandurağı",
+  "#keşfet"
+ ]
+}

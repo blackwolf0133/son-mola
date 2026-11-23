@@ -944,7 +944,11 @@ def _oyuncak(k):
 
 @esya("kitaplik", 4)
 def _kitaplik(k):
-    kutu(0, 0, 0, 0.32, 0.9, 1.6, ahsap_ac, bevel=0.02, ust=k)
+    kutu(-0.14, 0, 0, 0.04, 0.9, 1.6, ahsap_ac, bevel=0.01, ust=k)
+    for sy in (-1, 1):
+        kutu(0, sy * 0.43, 0, 0.32, 0.04, 1.6, ahsap_ac, bevel=0.01, ust=k)
+    for r in range(5):
+        kutu(0, 0, r * 0.38 + 0.06 if r < 4 else 1.56, 0.32, 0.86, 0.04, ahsap_ac, bevel=0.005, ust=k)
     for r in range(4):
         z = 0.1 + r * 0.38
         x = -0.38
@@ -963,6 +967,164 @@ def _koli(k):
         o = kutu(x, y, z, s, s * 0.9, s * 0.95, km, bevel=0.015, ust=k)
         o.rotation_euler = (0, 0, random.uniform(-0.2, 0.2))
         kutu(x, y, z + s * 0.95, 0.08, s * 0.92, 0.005, bant, bevel=0, ust=k)
+
+
+
+
+# ---------------------------------------------------------------- BAKKAL eşyaları
+_URUN = [(0.9, 0.2, 0.15), (0.95, 0.8, 0.2), (0.2, 0.5, 0.85), (0.3, 0.65, 0.3), (0.95, 0.95, 0.9), (0.85, 0.45, 0.15)]
+
+
+def _raf_dolu(k, uzun, doluluk, ad):
+    rm = mat("bakkal_raf", (0.55, 0.36, 0.2), 0.6)
+    kutu(-0.2, 0, 0, 0.05, uzun, 2.2, rm, bevel=0.01, ust=k)
+    for sy in (-1, 1):
+        kutu(0, sy * (uzun / 2 - 0.03), 0, 0.45, 0.06, 2.2, rm, bevel=0.01, ust=k)
+    kutu(0, 0, 2.15, 0.45, uzun, 0.06, rm, bevel=0.01, ust=k)
+    r = random.Random(ad)
+    for kat in range(5):
+        z = 0.15 + kat * 0.42
+        kutu(0.03, 0, z - 0.03, 0.42, uzun - 0.06, 0.03, ahsap_ac, bevel=0.0, ust=k)
+        y = -uzun / 2 + 0.08
+        while y < uzun / 2 - 0.12:
+            w = r.uniform(0.08, 0.16)
+            if r.random() < doluluk:
+                c = r.choice(_URUN)
+                if r.random() < 0.5:
+                    kutu(0.05, y + w / 2, z, 0.3, w, r.uniform(0.15, 0.3), mat(f"urun{_URUN.index(c)}", c, 0.5), bevel=0.01, ust=k)
+                else:
+                    silindir(0.05, y + w / 2, z, w / 2, r.uniform(0.12, 0.28), mat(f"urun{_URUN.index(c)}", c, 0.5), n=10, ust=k)
+            y += w + 0.02
+
+
+@esya("raf_bakkal", 0)
+def _rb(k):
+    _raf_dolu(k, 3.6, 0.92, "rb")
+
+
+@esya("raf_market", 0)
+def _rm(k):
+    mr = mat("market_raf", (0.92, 0.92, 0.9), 0.3)
+    kutu(-0.2, 0, 0, 0.05, 3.6, 2.2, mr, bevel=0.01, ust=k)
+    for sy in (-1, 1):
+        kutu(0, sy * 1.77, 0, 0.45, 0.06, 2.2, mr, bevel=0.01, ust=k)
+    r = random.Random(3)
+    for kat in range(5):
+        z = 0.15 + kat * 0.42
+        kutu(0.03, 0, z - 0.03, 0.42, 3.54, 0.03, celik, bevel=0.0, ust=k)
+        for i in range(22):
+            c = _URUN[(i + kat) % len(_URUN)]
+            kutu(0.05, -1.65 + i * 0.155, z, 0.3, 0.13, 0.24, mat(f"urun{_URUN.index(c)}", c, 0.5), bevel=0.01, ust=k)
+
+
+@esya("raf_bos", 0)
+def _rbos(k):
+    _raf_dolu(k, 3.6, 0.06, "rbos")
+
+
+@esya("tezgah_bakkal", 2)
+def _tb(k):
+    kutu(0, 0, 0, 2.2, 0.7, 1.0, mat("tezgah_b", (0.5, 0.3, 0.16), 0.55), bevel=0.02, ust=k)
+    kutu(0, 0, 1.0, 2.3, 0.78, 0.05, mat("tezgah_ust", (0.85, 0.82, 0.75), 0.3), bevel=0.01, ust=k)
+    # terazi
+    kutu(-0.6, 0, 1.05, 0.4, 0.3, 0.1, mat("terazi", (0.85, 0.2, 0.15), 0.4), bevel=0.02, ust=k)
+    silindir(-0.6, 0.02, 1.15, 0.03, 0.25, celik, n=8, ust=k)
+    silindir(-0.6, 0.0, 1.42, 0.16, 0.03, celik, n=20, ust=k)
+    # şeker kavanozları
+    for i, c in enumerate([(0.95, 0.3, 0.4), (0.3, 0.7, 0.95), (0.95, 0.85, 0.2)]):
+        silindir(0.2 + i * 0.28, 0.1, 1.05, 0.11, 0.3, mat("kavanoz_cam", (0.85, 0.9, 0.92), 0.1), n=16, ust=k)
+        for j in range(5):
+            kure(0.2 + i * 0.28 + random.uniform(-0.05, 0.05), 0.1 + random.uniform(-0.05, 0.05), 1.1 + j * 0.04, 0.035, mat(f"seker{i}", c, 0.3), sub=1, ust=k)
+    # yazar kasa
+    kutu(-0.05, 0.05, 1.05, 0.35, 0.3, 0.2, mat("kasa", (0.2, 0.2, 0.22), 0.4), bevel=0.03, ust=k)
+    # veresiye defteri
+    kutu(0.85, -0.1, 1.05, 0.25, 0.35, 0.03, mat("defter_v", (0.15, 0.25, 0.5), 0.7), bevel=0.005, ust=k)
+
+
+@esya("gazoz_kasasi", 4)
+def _gk(k):
+    kas = mat("gazoz_kasa", (0.8, 0.15, 0.12), 0.6)
+    sise = mat("sise", (0.35, 0.65, 0.4), 0.1)
+    for j, z in enumerate((0, 0.32)):
+        kutu(0, j * 0.05, z, 0.6, 0.45, 0.3, kas, bevel=0.02, ust=k)
+        for a in range(4):
+            for b in range(3):
+                silindir(-0.21 + a * 0.14, -0.13 + b * 0.13 + j * 0.05, z + 0.3, 0.04, 0.12, sise, n=8, bevel=0, ust=k)
+
+
+@esya("tabela_kiralik", 10)
+def _tk(k):
+    kutu(0, 0, 0, 0.03, 0.9, 0.5, mat("kiralik", (0.95, 0.85, 0.2), 0.6), bevel=0.01, ust=k)
+    kutu(0.02, 0, 0.12, 0.01, 0.7, 0.08, siyah, bevel=0, ust=k)
+    kutu(0.02, 0, 0.3, 0.01, 0.5, 0.08, siyah, bevel=0, ust=k)
+
+
+@esya("dondurma_dolabi", 4)
+def _dd(k):
+    kutu(0, 0, 0, 1.1, 0.6, 0.85, mat("dondurma", (0.95, 0.95, 0.97), 0.3), bevel=0.04, ust=k)
+    kutu(0, 0, 0.85, 1.0, 0.5, 0.03, mat("dd_cam", (0.6, 0.8, 0.9), 0.05, emis=(0.7, 0.9, 1.0), guc=0.6), bevel=0.01, ust=k)
+    kutu(0, -0.305, 0.3, 0.8, 0.01, 0.3, mat("dd_logo", (0.15, 0.35, 0.8), 0.4), bevel=0, ust=k)
+
+
+# ---------------------------------------------------------------- SINIF eşyaları
+@esya("kara_tahta", 0)
+def _kt(k):
+    kutu(0, 0, 0, 0.06, 2.6, 1.2, mat("tahta_cerceve", (0.5, 0.32, 0.18), 0.6), bevel=0.01, ust=k)
+    kutu(0.04, 0, 0.06, 0.02, 2.48, 1.08, mat("kara", (0.12, 0.22, 0.17), 0.85), bevel=0, ust=k)
+    tebe = mat("tebesir", (0.95, 0.95, 0.92), 0.9)
+    for i, (y, z, w) in enumerate([(-0.6, 0.85, 0.9), (-0.7, 0.65, 0.7), (0.4, 0.75, 0.6), (-0.4, 0.45, 1.1)]):
+        kutu(0.055, y, z, 0.005, w, 0.04, tebe, bevel=0, ust=k)
+    kutu(0.12, 0, -0.04, 0.12, 2.5, 0.04, ahsap_ac, bevel=0.005, ust=k)
+
+
+@esya("akilli_tahta", 0)
+def _at(k):
+    kutu(0, 0, 0, 0.08, 2.4, 1.35, siyah, bevel=0.01, ust=k)
+    ekr = mat("akilli_ekran", (0.2, 0.4, 0.7), 0.2, emis=(0.35, 0.6, 1.0), guc=1.5)
+    kutu(0.045, 0, 0.06, 0.01, 2.28, 1.23, ekr, bevel=0, ust=k)
+
+
+def _siralar(k, renk, ad):
+    m = mat(ad, renk, 0.55)
+    for r in range(3):
+        for c in range(2):
+            x, y = -0.9 + c * 1.6, -1.2 + r * 1.05
+            kutu(x, y, 0.7, 1.15, 0.45, 0.05, m, bevel=0.01, ust=k)
+            kutu(x, y + 0.05, 0.25, 1.1, 0.35, 0.04, m, bevel=0.005, ust=k)
+            kutu(x, y + 0.42, 0.4, 1.15, 0.28, 0.05, m, bevel=0.01, ust=k)
+            kutu(x, y + 0.56, 0.45, 1.15, 0.04, 0.35, m, bevel=0.01, ust=k)
+            for s in (-1, 1):
+                kutu(x + s * 0.52, y + 0.2, 0, 0.05, 0.7, 0.72, siyah, bevel=0.0, ust=k)
+
+
+@esya("siralar_ahsap", 3)
+def _sa(k):
+    _siralar(k, (0.55, 0.36, 0.2), "sira_ahsap")
+
+
+@esya("siralar_yeni", 3)
+def _sy(k):
+    _siralar(k, (0.85, 0.75, 0.55), "sira_yeni")
+
+
+@esya("ogretmen_masasi", 3)
+def _om(k):
+    kutu(0, 0, 0, 1.3, 0.65, 0.76, ahsap, bevel=0.02, ust=k)
+    kutu(-0.3, 0, 0.76, 0.35, 0.25, 0.04, mat("yoklama", (0.2, 0.3, 0.6), 0.7), bevel=0.005, ust=k)
+    kure(0.35, 0.05, 0.84, 0.08, mat("elma", (0.85, 0.1, 0.1), 0.4), sub=2, ust=k)
+
+
+@esya("harita", 2)
+def _harita(k):
+    kutu(0, 0, 0, 0.03, 1.4, 0.9, mat("harita", (0.55, 0.75, 0.9), 0.7), bevel=0, ust=k)
+    kutu(0.02, 0.05, 0.25, 0.01, 1.0, 0.4, mat("kara_parca", (0.75, 0.68, 0.45), 0.7), bevel=0, ust=k)
+    silindir(0, 0, 0.9, 0.02, 1.5, ahsap, n=8, bevel=0, ust=k, rot=(math.pi / 2, 0, 0))
+
+
+@esya("cocuk_cizimleri", 6)
+def _cc(k):
+    for i, c in enumerate([(0.95, 0.85, 0.3), (0.6, 0.85, 0.95), (0.95, 0.6, 0.7), (0.7, 0.9, 0.6)]):
+        kutu(0, -0.25 + (i % 2) * 0.5, (i // 2) * 0.42, 0.02, 0.4, 0.32, mat(f"cizim{i}", c, 0.8), bevel=0, ust=k)
 
 
 # Eşyaların odadaki yerleri (x, y, z, dönüş)
@@ -997,6 +1159,14 @@ YER.update({
     "yatak": (1.85, 1.35, 0, 0), "calisma_masasi": (-1.6, 2.15, 0, 0), "bilgisayar_crt": (-1.5, 2.3, 0.77, 0),
     "laptop": (-1.5, 2.15, 0.77, 0), "poster1": (-ODA + 0.03, 1.4, 1.5, 0), "poster2": (-ODA + 0.03, -2.0, 1.4, 0),
     "oyuncak": (1.6, -0.2, 0, 0), "kitaplik": (-0.3, ODA - 0.2, 0, math.radians(-90)), "koliler": (0.6, -0.5, 0, 0),
+    "raf_bakkal": (0.2, ODA - 0.25, 0, math.radians(-90)), "raf_market": (0.2, ODA - 0.25, 0, math.radians(-90)),
+    "raf_bos": (0.2, ODA - 0.25, 0, math.radians(-90)), "tezgah_bakkal": (0.6, -0.6, 0, 0),
+    "gazoz_kasasi": (1.9, 0.9, 0, math.radians(15)), "tabela_kiralik": (-ODA + 0.15, -0.65, 1.4, 0),
+    "dondurma_dolabi": (-1.7, -1.6, 0, math.radians(90)),
+    "kara_tahta": (-0.2, ODA - 0.04, 0.95, math.radians(-90)), "akilli_tahta": (-0.2, ODA - 0.05, 0.9, math.radians(-90)),
+    "siralar_ahsap": (0.35, -0.6, 0, math.radians(180)), "siralar_yeni": (0.35, -0.6, 0, math.radians(180)),
+    "ogretmen_masasi": (1.75, 1.55, 0, 0), "harita": (-ODA + 0.03, 1.4, 1.35, 0),
+    "cocuk_cizimleri": (-ODA + 0.03, -2.0, 1.2, 0),
 })
 for _a, _v in B.get("yerler", {}).items():
     YER[_a] = tuple(_v[:3]) + (math.radians(_v[3]) if len(_v) > 3 else 0,)
