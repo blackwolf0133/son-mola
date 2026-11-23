@@ -1,0 +1,14 @@
+name: Müzik kataloğu
+on: workflow_dispatch
+permissions: {contents: write}
+jobs:
+  k:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env: {FREESOUND_API_KEY: "${{ secrets.FREESOUND_API_KEY }}", GH_TOKEN: "${{ github.token }}"}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+          python zaman/muzik_katalog.py
+          gh release delete muzik-katalog --cleanup-tag -y 2>/dev/null || true
+          gh release create muzik-katalog katalog.mp3 katalog.json --prerelease --title "Müzik kataloğu" --notes "aday parçalar"
