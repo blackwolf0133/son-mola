@@ -54,9 +54,13 @@ jobs:
           run-id: ${{ inputs.onceki_run || github.run_id }}
           github-token: ${{ github.token }}
       - name: Kurgu
+        env:
+          FREESOUND_API_KEY: ${{ secrets.FREESOUND_API_KEY }}
         run: |
           ls kareler | wc -l
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+          python zaman/muzik_indir.py zaman/bolumler/${{ inputs.bolum }}.json muzik.mp3 || true
+          [ -f muzik.mp3 ] && export DIS_MUZIK=$PWD/muzik.mp3
           pip install -q numpy pillow
           python zaman/kurgu.py zaman/bolumler/${{ inputs.bolum }}.json kareler ${{ inputs.bolum }}.mp4
           ffprobe -v error -show_entries format=duration:stream=width,height -of compact ${{ inputs.bolum }}.mp4

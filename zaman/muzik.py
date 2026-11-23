@@ -1,6 +1,7 @@
 """Zaman Durağı ses katmanı — tamamen sentetik (telifsiz):
 hüzünlü piyano (La minör), duvar saati tik-takı (son dönemde durur), soba çıtırtısı, final tek nota."""
 import json
+import os
 import subprocess
 import sys
 import wave
@@ -108,6 +109,12 @@ def uret(bolum, cikti):
             w.writeframes((x * 32767).astype(np.int16).tobytes())
 
     yaz(cikti + ".muz.wav", muz)
+    dis = os.environ.get("DIS_MUZIK", "")
+    if dis and os.path.exists(dis):
+        # gerçek telifsiz piyano: baştan al, sona yumuşak kapanış (sentetik final notası yerine)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", dis, "-t", "%.3f" % T, "-ac", "1", "-ar", str(SR),
+                        "-af", "afade=t=in:d=0.6,afade=t=out:st=%.2f:d=2.5" % (T - 2.5), cikti + ".muz.wav"], check=True)
+        print("Dış müzik kullanıldı:", dis)
     yaz(cikti + ".ort.wav", ortam)
     # piyanoya oda yankısı, ortamla karıştır, yüksek sesi standartlaştır
     _karistir(cikti, T)
