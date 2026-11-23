@@ -196,7 +196,8 @@ def dal_sec(q):
 
 def caption(ep):
     if ep["id"].startswith("Z"):
-        return f"{ep['caption']}\n\n{ZAMAN_NOTU}\n\n{' '.join(ep.get('hashtags', [])[:5])}"
+        from zaman import muzik_sec
+        return f"{ep['caption']}\n\n{ZAMAN_NOTU}\n{muzik_sec.kredi(ep)}\n\n{' '.join(ep.get('hashtags', [])[:5])}"
     ek = ""
     if ep.get("secim"):
         ek = (f"\n\nSen olsan ne yapardın?\nA) {ep['secim']['A']}\nB) {ep['secim']['B']}\n"

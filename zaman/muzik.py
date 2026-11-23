@@ -124,7 +124,7 @@ def _karistir(cikti, T):
     import os
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", cikti + ".muz.wav", "-i", cikti + ".ort.wav", "-filter_complex",
                     "[0]aecho=0.8:0.75:70|140|280|430:0.35|0.25|0.18|0.12,lowpass=f=6500,volume=1.0[m];"
-                    "[1]volume=0.55[o];[m][o]amix=inputs=2:normalize=0,afade=t=out:st=%.2f:d=1.2,"
+                    "[1]volume=0.45[o];[m][o]amix=inputs=2:normalize=0,afade=t=out:st=%.2f:d=1.2,"
                     "loudnorm=I=-15:TP=-1.5:LRA=9,aformat=channel_layouts=stereo" % (T - 1.2),
                     "-t", "%.3f" % T, "-ar", str(SR), cikti], check=True)
     for e in (".muz.wav", ".ort.wav"):
