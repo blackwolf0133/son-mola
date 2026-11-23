@@ -1,0 +1,120 @@
+{
+ "id": "Z01",
+ "baslik": "Anneannenin evi",
+ "set": "oda",
+ "fps": 30,
+ "kare": 1020,
+ "kanca": "Anneannenin evi.\n47 yıl, tek oda.",
+ "donemler": [
+  {
+   "yil": 1978,
+   "bas": 1,
+   "bit": 270,
+   "duvar": [
+    0.55,
+    0.7,
+    0.58
+   ],
+   "hali": "kirmizi",
+   "gece": true,
+   "esyalar": [
+    "soba",
+    "sedir",
+    "masa_dantel",
+    "saat",
+    "radyo",
+    "foto1",
+    "saksi",
+    "ampul",
+    "kilim",
+    "kedi",
+    "perde",
+    "dikis"
+   ],
+   "yazi": "Soba yanardı.\nÇay hiç bitmezdi."
+  },
+  {
+   "yil": 1993,
+   "bas": 271,
+   "bit": 480,
+   "duvar": [
+    0.86,
+    0.76,
+    0.58
+   ],
+   "hali": "mavi",
+   "gece": true,
+   "esyalar": [
+    "soba",
+    "kanepe_kahve",
+    "masa_dantel",
+    "saat",
+    "tv_tuplu",
+    "foto1",
+    "foto2",
+    "saksi",
+    "ampul",
+    "kilim",
+    "kedi",
+    "telefon",
+    "perde"
+   ],
+   "yazi": "Akşamları herkes\naynı ekrana bakardı."
+  },
+  {
+   "yil": 2009,
+   "bas": 481,
+   "bit": 690,
+   "duvar": [
+    0.92,
+    0.9,
+    0.86
+   ],
+   "hali": "bej",
+   "gece": true,
+   "esyalar": [
+    "petek",
+    "kanepe_bej",
+    "sehpa",
+    "saat",
+    "tv_duz",
+    "foto1",
+    "foto2",
+    "foto3",
+    "saksi",
+    "avize",
+    "kilim",
+    "perde"
+   ],
+   "yazi": "Torunlar büyüdü.\nEv yavaş yavaş sessizleşti."
+  },
+  {
+   "yil": 2025,
+   "bas": 691,
+   "bit": 1020,
+   "duvar": [
+    0.7,
+    0.66,
+    0.6
+   ],
+   "hali": "bej",
+   "gece": false,
+   "son": true,
+   "esyalar": [
+    "ortu_kanepe",
+    "ortu_tv",
+    "saat",
+    "foto1",
+    "saksi_kuru",
+    "toz",
+    "kilim"
+   ],
+   "yazi": "Şimdi sadece saat…\nbir de fotoğraflar kaldı."
+  }
+ ],
+ "kapanis": [
+  "Bazı evler boşalmaz.\nSadece bekler.",
+  "Sen anneannenin evinden\nen çok neyi özlüyorsun?"
+ ],
+ "aciklama": "Bir oda, 47 yıl. Soba, sedir, tüplü televizyon... Sonra sessizlik. Anneannenin evinden en çok neyi özlüyorsun? Yorumlara yaz, annene/anneannene gönder. 🤍"
+}
