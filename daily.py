@@ -16,6 +16,11 @@ import sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 STATE = os.path.join(ROOT, "state", "posted.json")
 AI_NOTE = "Kurgudur. Görseller ve ses yapay zekâ ile üretildi."
+# 23 Kasım: kanal "ZAMAN DURAĞI" formatına geçti (3D minyatür, yıllar içinde bir mekân).
+# kanal/format.txt = "zaman" iken bölümler zaman/bolumler/Z*.json'dan gelir.
+_FMT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "kanal", "format.txt")
+ZAMAN = os.path.exists(_FMT) and open(_FMT).read().strip() == "zaman"
+ZAMAN_NOTU = "3D animasyon · temsilidir."
 
 
 import time as _t
@@ -44,10 +49,23 @@ def save_state(st):
     json.dump(st, open(STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
 
+def _zaman_ep(path):
+    ep = json.load(open(path, encoding="utf-8"))
+    ep.setdefault("title", ep.get("baslik", ep["id"]))
+    ep.setdefault("caption", ep.get("aciklama", ""))
+    return ep
+
+
 def queue():
     st = load_state()
     done = {p["id"] for p in st["posted"]} | set(st.get("atlanan", []))
     eps = []
+    if ZAMAN:
+        for path in sorted(glob.glob(os.path.join(ROOT, "zaman", "bolumler", "Z*.json"))):
+            ep = _zaman_ep(path)
+            if ep["id"] not in done and not ep.get("skip"):
+                eps.append((os.path.relpath(path, ROOT), ep))
+        return eps
     for path in sorted(glob.glob(os.path.join(ROOT, "episodes", "[0-9]*.json"))):
         ep = json.load(open(path, encoding="utf-8"))
         if ep["id"] not in done and not ep.get("skip"):
@@ -56,6 +74,10 @@ def queue():
 
 
 def find(eid):
+    if ZAMAN and eid.startswith("Z"):
+        p = os.path.join(ROOT, "zaman", "bolumler", f"{eid}.json")
+        if os.path.exists(p):
+            return p, _zaman_ep(p)
     for path in glob.glob(os.path.join(ROOT, "episodes", f"{eid}_*.json")):
         return path, json.load(open(path, encoding="utf-8"))
     sys.exit(f"bölüm yok: {eid}")
@@ -76,6 +98,10 @@ def cmd_status(_):
 
 def cmd_pick_prepare(_):
     forced = os.environ.get("FORCE_ID", "").split()
+    if forced and ZAMAN and forced[0].startswith("Z"):
+        set_output("zaman_id", forced[0])
+        set_output("id", "")
+        return
     if forced:
         path, ep = find(forced[0])
         set_output("id", ep["id"])
@@ -89,8 +115,18 @@ def cmd_pick_prepare(_):
         print(f"Önceden hazır {ahead} bölüm var, yeni üretim gerekmiyor.")
         set_output("id", "")
         return
+    if ZAMAN:
+        ahead = int(os.environ.get("ZAMAN_AHEAD", "3"))
+        if sum(1 for _, ep in q if ep["id"] in ready) >= ahead:
+            print(f"Önceden hazır {ahead} Zaman bölümü var.")
+            set_output("id", "")
+            return
     for path, ep in q:
         if ep["id"] not in ready:
+            if ZAMAN:  # 3D render ayrı iş akışında (zaman-render.yml)
+                set_output("zaman_id", ep["id"])
+                set_output("id", "")
+                return
             set_output("id", ep["id"])
             set_output("path", path)
             return
@@ -159,6 +195,8 @@ def dal_sec(q):
 
 
 def caption(ep):
+    if ep["id"].startswith("Z"):
+        return f"{ep['caption']}\n\n{ZAMAN_NOTU}\n\n{' '.join(ep.get('hashtags', [])[:5])}"
     ek = ""
     if ep.get("secim"):
         ek = (f"\n\nSen olsan ne yapardın?\nA) {ep['secim']['A']}\nB) {ep['secim']['B']}\n"

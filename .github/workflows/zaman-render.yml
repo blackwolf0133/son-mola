@@ -8,6 +8,7 @@ on:
       ornek: {description: "Cycles örnek sayısı", default: "14"}
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: zaman-${{ inputs.bolum }}
   cancel-in-progress: true
@@ -50,9 +51,16 @@ jobs:
           pip install -q numpy pillow
           python zaman/kurgu.py zaman/bolumler/${{ inputs.bolum }}.json kareler ${{ inputs.bolum }}.mp4
           ffprobe -v error -show_entries format=duration:stream=width,height -of compact ${{ inputs.bolum }}.mp4
-      - name: Sürüme koy
+      - name: Sürüme koy (hazir-<ID>)
         env: {GH_TOKEN: "${{ github.token }}"}
         run: |
-          T="zaman-${{ inputs.bolum }}"
-          gh release view "$T" >/dev/null 2>&1 || gh release create "$T" --title "$T" --notes "Zaman Durağı bölümü"
-          gh release upload "$T" ${{ inputs.bolum }}.mp4 --clobber
+          ID="${{ inputs.bolum }}"
+          echo zaman > kanal/format.txt
+          python daily.py caption "$ID" > notes.txt || echo "$ID" > notes.txt
+          gh release delete "hazir-${ID}" --cleanup-tag -y --repo "${{ github.repository }}" 2>/dev/null || true
+          gh release create "hazir-${ID}" "${ID}.mp4" --prerelease --title "Hazır ${ID}" --notes-file notes.txt --repo "${{ github.repository }}"
+      - name: Sıradakini hazırlat
+        if: github.event_name == 'workflow_dispatch'
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          if [ "$(git show HEAD:kanal/format.txt 2>/dev/null)" = "zaman" ]; then gh workflow run hazirla.yml --repo "${{ github.repository }}"; fi

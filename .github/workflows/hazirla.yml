@@ -44,6 +44,11 @@ jobs:
           export READY="$(gh release list --repo "${{ github.repository }}" --limit 100 --json tagName --jq '.[].tagName' | grep '^hazir-' | sed 's/^hazir-//' | tr '\n' ' ')"
           echo "Hazır olanlar: $READY"
           python daily.py pick-prepare
+      - name: Zaman Durağı 3D render'ını başlat
+        if: steps.sec.outputs.zaman_id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run zaman-render.yml -f bolum="${{ steps.sec.outputs.zaman_id }}" --repo "${{ github.repository }}"
       - name: Çizim sürümünü aç
         if: steps.sec.outputs.id != '' && inputs.sahneler == ''
         env:
