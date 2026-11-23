@@ -5,9 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36"
-          for u in "https://filmmusic.io/en/tags/melancholy" "https://filmmusic.io/en/tags/nostalgic" "https://filmmusic.io/en/tags/sad" "https://incompetech.com/music/royalty-free/music.html" "https://freemusicarchive.org/genre/Soundtrack/"; do
-            curl -sL -A "$UA" -o p.html -w "%{http_code} $u\n" "$u"; wc -c < p.html
-            grep -oE 'https://[^"]+\.mp3' p.html | head -8
-            grep -oE 'href="/en/song/[^"]+"' p.html | sort -u | head -25
+          for n in Gymnopedie%20No%201 Heartbreaking Sad%20Trio Lasting%20Hope Bittersweet Rains%20Will%20Fall Healing At%20Rest Long%20Road%20Ahead Wounded Dreams%20Become%20Real Memories Lightless%20Dawn Despair%20and%20Triumph Thatched%20Villagers Dark%20Times Reminiscence Sovereign%20Quarter Danse%20Morialta Peaceful%20Desolation Eternal%20Hope Night%20Vigil Lonely%20Day Tragic%20Ending; do
+            curl -s -o /dev/null -w "%{http_code} %{size_download} $n\n" "https://incompetech.com/music/royalty-free/mp3-royaltyfree/$n.mp3"
           done
+          curl -s "https://incompetech.com/music/royalty-free/music.html" | grep -oiE 'feel[^<]{0,80}' | head -40
