@@ -1,0 +1,186 @@
+{
+ "id": "Z02",
+ "baslik": "Annenin mutfağı",
+ "set": "oda",
+ "fps": 30,
+ "kare": 1020,
+ "kanca": "Annenin mutfağı.\n38 yıl, aynı tezgâh.",
+ "yerler": {
+  "kedi": [
+   1.75,
+   0.9,
+   0,
+   200
+  ],
+  "saat": [
+   2.2,
+   2.49,
+   1.9,
+   0
+  ],
+  "buzdolabi_eski": [
+   0.3,
+   2.15,
+   0,
+   0
+  ],
+  "buzdolabi_yeni": [
+   0.3,
+   2.15,
+   0,
+   0
+  ],
+  "raf_kavanoz": [
+   1.25,
+   2.41,
+   1.55,
+   0
+  ],
+  "takvim": [
+   1.25,
+   2.52,
+   0.9,
+   0
+  ],
+  "ampul": [
+   0.6,
+   0.2,
+   3.1,
+   0
+  ],
+  "avize": [
+   0.6,
+   0.2,
+   3.1,
+   0
+  ],
+  "kilim": [
+   0.75,
+   -0.2,
+   0,
+   0
+  ]
+ },
+ "donemler": [
+  {
+   "yil": 1988,
+   "bas": 1,
+   "bit": 270,
+   "duvar": [
+    0.93,
+    0.86,
+    0.62
+   ],
+   "gece": true,
+   "esyalar": [
+    "tezgah_eski",
+    "ocak_tuplu",
+    "buzdolabi_eski",
+    "ust_dolap",
+    "raf_kavanoz",
+    "sofra_musamba",
+    "takvim",
+    "saat",
+    "ampul",
+    "saksi",
+    "perde",
+    "kedi",
+    "kilim"
+   ],
+   "yazi": "Sabah altıda\nilk o uyanırdı.",
+   "hali": "kirmizi"
+  },
+  {
+   "yil": 2001,
+   "bas": 271,
+   "bit": 480,
+   "duvar": [
+    0.7,
+    0.82,
+    0.86
+   ],
+   "gece": true,
+   "esyalar": [
+    "tezgah_eski",
+    "ocak_tuplu",
+    "buzdolabi_eski",
+    "ust_dolap",
+    "raf_kavanoz",
+    "sofra_musamba",
+    "takvim",
+    "saat",
+    "ampul",
+    "saksi",
+    "perde",
+    "kedi",
+    "kilim"
+   ],
+   "yazi": "Okul önlüğün\nhep ütülü olurdu.",
+   "hali": "mavi"
+  },
+  {
+   "yil": 2014,
+   "bas": 481,
+   "bit": 690,
+   "duvar": [
+    0.93,
+    0.92,
+    0.89
+   ],
+   "gece": true,
+   "esyalar": [
+    "tezgah_yeni",
+    "ocak_yeni",
+    "buzdolabi_yeni",
+    "raf_kavanoz",
+    "sofra_musamba",
+    "takvim",
+    "saat",
+    "avize",
+    "saksi",
+    "perde",
+    "kilim"
+   ],
+   "yazi": "Sen büyüdün, şehir değiştirdin.\nMutfak hep aynı saatte koktu.",
+   "hali": "bej"
+  },
+  {
+   "yil": 2026,
+   "bas": 691,
+   "bit": 1020,
+   "duvar": [
+    0.86,
+    0.84,
+    0.8
+   ],
+   "gece": false,
+   "son": true,
+   "esyalar": [
+    "tezgah_yeni",
+    "ocak_yeni",
+    "buzdolabi_yeni",
+    "raf_kavanoz",
+    "sofra_bos",
+    "saat",
+    "saksi",
+    "perde",
+    "toz",
+    "kilim"
+   ],
+   "yazi": "Masada hâlâ\nsenin bardağın duruyor.",
+   "hali": "bej"
+  }
+ ],
+ "kapanis": [
+  "Mutfak seni bekliyor.\nBu akşam annene bir telefon aç.",
+  "Annenin mutfağından\nhangi koku hâlâ aklında?"
+ ],
+ "aciklama": "38 yıl, aynı mutfak. Tüplü ocak, muşamba örtü, sabah altıda demlenen çay... Annenin mutfağından hangi koku hâlâ aklında? Yorumlara yaz, bu videoyu annene gönder. 🤍",
+ "hashtags": [
+  "#anne",
+  "#nostalji",
+  "#annemutfağı",
+  "#zamandurağı",
+  "#keşfet"
+ ]
+}

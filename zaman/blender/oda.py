@@ -603,6 +603,368 @@ def _toz(k):
         gurultu(p, "location", 60, 0.12)
 
 
+
+
+def mat_dama(ad, c1, c2, olcek=12.0, rough=0.4):
+    """Damalı (muşamba / fayans) malzeme."""
+    if ad in _M:
+        return _M[ad]
+    m = bpy.data.materials.new(ad)
+    m.use_nodes = True
+    nt = m.node_tree
+    b = nt.nodes["Principled BSDF"]
+    ch = nt.nodes.new("ShaderNodeTexChecker")
+    ch.inputs["Color1"].default_value = (*c1, 1)
+    ch.inputs["Color2"].default_value = (*c2, 1)
+    ch.inputs["Scale"].default_value = olcek
+    nt.links.new(ch.outputs["Color"], b.inputs["Base Color"])
+    b.inputs["Roughness"].default_value = rough
+    _M[ad] = m
+    return m
+
+
+# ---------------------------------------------------------------- MUTFAK eşyaları
+@esya("tezgah_eski", 0)
+def _tezgah_eski(k):
+    # sol duvar boyunca (pencere altı), yerel x = duvardan içeri, y = duvar boyunca
+    dol = mat("dolap_eski", (0.55, 0.36, 0.2), 0.6)
+    kutu(0.32, 0, 0, 0.62, 2.6, 0.82, dol, bevel=0.02, ust=k)
+    for i in range(4):
+        kutu(0.64, -0.97 + i * 0.65, 0.08, 0.02, 0.6, 0.68, mat("kapak_eski", (0.6, 0.4, 0.22), 0.55), bevel=0.01, ust=k)
+        kutu(0.66, -0.75 + i * 0.65, 0.6, 0.03, 0.03, 0.12, celik, bevel=0, ust=k)
+    kutu(0.32, 0, 0.82, 0.68, 2.64, 0.06, mat_dama("fayans_beyaz", (0.95, 0.95, 0.93), (0.82, 0.86, 0.88), 18, 0.2), bevel=0.01, ust=k)
+    # lavabo + musluk
+    kutu(0.3, 0.1, 0.84, 0.46, 0.6, 0.05, mat("lavabo", (0.75, 0.76, 0.78), 0.25, metal=0.8), bevel=0.02, ust=k)
+    silindir(0.08, 0.1, 0.88, 0.025, 0.28, celik, n=10, bevel=0, ust=k)
+    silindir(0.16, 0.1, 1.13, 0.02, 0.18, celik, n=10, bevel=0, ust=k, rot=(0, math.pi / 2, 0))
+    # duvar fayansı
+    kutu(0.02, 0, 0.88, 0.02, 2.6, 0.16, mat_dama("fayans_mavi", (0.55, 0.72, 0.85), (0.95, 0.95, 0.95), 20, 0.2), bevel=0, ust=k)
+
+
+@esya("tezgah_yeni", 0)
+def _tezgah_yeni(k):
+    dol = mat("dolap_yeni", (0.94, 0.94, 0.92), 0.25)
+    kutu(0.32, 0, 0, 0.62, 2.6, 0.86, dol, bevel=0.015, ust=k)
+    for i in range(4):
+        kutu(0.66, -0.75 + i * 0.65, 0.7, 0.02, 0.32, 0.02, celik, bevel=0, ust=k)
+    kutu(0.32, 0, 0.86, 0.68, 2.64, 0.05, mat("granit", (0.22, 0.22, 0.24), 0.3), bevel=0.01, ust=k)
+    kutu(0.3, 0.1, 0.88, 0.46, 0.6, 0.03, mat("evye", (0.8, 0.8, 0.82), 0.2, metal=0.9), bevel=0.02, ust=k)
+    silindir(0.08, 0.1, 0.9, 0.025, 0.35, celik, n=10, bevel=0, ust=k)
+    silindir(0.17, 0.1, 1.22, 0.02, 0.2, celik, n=10, bevel=0, ust=k, rot=(0, math.pi / 2, 0))
+
+
+@esya("ocak_tuplu", 2)
+def _ocak_tuplu(k):
+    kutu(0, 0, 0, 0.75, 0.6, 0.78, mat("ocak_masa", (0.85, 0.85, 0.82), 0.5), bevel=0.02, ust=k)
+    kutu(0, 0, 0.78, 0.62, 0.5, 0.1, mat("ocak", (0.92, 0.92, 0.9), 0.3), bevel=0.02, ust=k)
+    for x in (-0.15, 0.15):
+        for y in (-0.12, 0.12):
+            silindir(x, y, 0.88, 0.08, 0.02, siyah, n=14, bevel=0, ust=k)
+    # turuncu tüp (yanında)
+    tup = mat("tup", (0.95, 0.42, 0.08), 0.45)
+    silindir(0.6, 0.05, 0, 0.17, 0.6, tup, n=20, bevel=0.03, ust=k)
+    kure(0.6, 0.05, 0.6, 0.17, tup, sub=2, ust=k, olcek=(1, 1, 0.45))
+    silindir(0.6, 0.05, 0.66, 0.05, 0.08, celik, n=10, bevel=0, ust=k)
+    # tencere (buhar yerine kapak sallanır)
+    silindir(-0.15, -0.12, 0.9, 0.14, 0.16, celik, n=18, ust=k)
+    kapak = silindir(-0.15, -0.12, 1.06, 0.145, 0.02, celik, n=18, bevel=0, ust=k)
+    for f in range(1, FR, 9):
+        kf(kapak, "location", f, (-0.15, -0.12, 1.06 + (0.012 if (f // 9) % 2 else 0)))
+    # çaydanlık
+    silindir(0.15, 0.12, 0.9, 0.13, 0.16, celik, n=18, ust=k)
+    silindir(0.15, 0.12, 1.06, 0.09, 0.12, mat("demlik", (0.85, 0.85, 0.82), 0.4, metal=0.5), n=18, ust=k)
+
+
+@esya("ocak_yeni", 2)
+def _ocak_yeni(k):
+    kutu(0, 0, 0, 0.62, 0.62, 0.86, mat("ankastre", (0.15, 0.15, 0.16), 0.3, metal=0.5), bevel=0.01, ust=k)
+    kutu(0.0, -0.315, 0.12, 0.5, 0.01, 0.45, mat("firin_cam", (0.05, 0.05, 0.06), 0.1, emis=(1.0, 0.55, 0.2), guc=0.4), bevel=0, ust=k)
+    kutu(0, 0, 0.86, 0.62, 0.62, 0.03, mat("cam_ocak", (0.03, 0.03, 0.03), 0.08), bevel=0.005, ust=k)
+    silindir(0.12, 0.1, 0.89, 0.13, 0.15, celik, n=18, ust=k)
+
+
+@esya("buzdolabi_eski", 4)
+def _buz_eski(k):
+    b = mat("buz_eski", (0.93, 0.92, 0.86), 0.3)
+    kutu(0, 0, 0, 0.68, 0.66, 1.55, b, bevel=0.1, ust=k)
+    kutu(0, -0.335, 1.0, 0.6, 0.02, 0.02, mat("ayrim", (0.7, 0.7, 0.7), 0.4), bevel=0, ust=k)
+    kutu(0.25, -0.35, 0.7, 0.04, 0.04, 0.25, celik, bevel=0.01, ust=k)
+    # üstünde dantel + vazo
+    kutu(0, 0, 1.55, 0.5, 0.45, 0.006, dantel, bevel=0, ust=k)
+    silindir(0.05, 0, 1.556, 0.06, 0.2, mat("vazo", (0.2, 0.45, 0.6), 0.2), n=14, ust=k)
+
+
+@esya("buzdolabi_yeni", 4)
+def _buz_yeni(k):
+    b = mat("inox", (0.78, 0.79, 0.8), 0.25, metal=0.85)
+    kutu(0, 0, 0, 0.75, 0.7, 1.95, b, bevel=0.03, ust=k)
+    kutu(0, -0.355, 0.0, 0.01, 0.01, 1.95, siyah, bevel=0, ust=k)
+    for s in (-1, 1):
+        kutu(s * 0.06, -0.37, 0.75, 0.03, 0.03, 0.5, celik, bevel=0.01, ust=k)
+    for i, c in enumerate([(0.9, 0.3, 0.2), (0.2, 0.5, 0.9), (0.95, 0.8, 0.2)]):
+        kutu(0.2 + i * 0.05, -0.36, 1.2 + i * 0.12, 0.05, 0.01, 0.05, mat(f"magnet{i}", c, 0.4), bevel=0, ust=k)
+
+
+@esya("ust_dolap", 3)
+def _ust_dolap(k):
+    dol = mat("ust_dolap", (0.6, 0.4, 0.22), 0.55)
+    kutu(0, 0, 0, 1.8, 0.36, 0.7, dol, bevel=0.02, ust=k)
+    for i in range(3):
+        kutu(-0.6 + i * 0.6, -0.19, 0.05, 0.56, 0.02, 0.6, mat("kapak_eski", (0.6, 0.4, 0.22), 0.55), bevel=0.01, ust=k)
+
+
+@esya("raf_kavanoz", 3)
+def _raf(k):
+    kutu(0, 0, 0, 1.2, 0.26, 0.04, ahsap, bevel=0.01, ust=k)
+    renkler = [(0.75, 0.12, 0.08), (0.85, 0.6, 0.1), (0.35, 0.55, 0.2), (0.75, 0.12, 0.08), (0.9, 0.85, 0.6), (0.4, 0.2, 0.1)]
+    for i, c in enumerate(renkler):
+        silindir(-0.5 + i * 0.2, 0, 0.04, 0.065, 0.18, mat(f"kav{i}", c, 0.3), n=12, ust=k)
+        silindir(-0.5 + i * 0.2, 0, 0.22, 0.068, 0.03, mat("kav_kapak", (0.85, 0.75, 0.2), 0.3, metal=0.7), n=12, bevel=0, ust=k)
+
+
+@esya("sofra_musamba", 3)
+def _sofra(k):
+    silindir(0, 0, 0, 0.05, 0.72, ahsap, n=8, ust=k)
+    for s in (-1, 1):
+        for t in (-1, 1):
+            kutu(s * 0.42, t * 0.3, 0, 0.06, 0.06, 0.72, ahsap, bevel=0.01, ust=k)
+    kutu(0, 0, 0.72, 1.1, 0.8, 0.05, mat_dama("musamba", (0.85, 0.1, 0.1), (0.96, 0.95, 0.92), 14, 0.35), bevel=0.02, ust=k)
+    # ekmek, çay bardakları, peynir tabağı
+    kure(-0.25, 0.1, 0.84, 0.12, mat("ekmek", (0.82, 0.55, 0.25), 0.8), sub=2, ust=k, olcek=(1.8, 0.8, 0.6))
+    for (x, y) in [(0.25, 0.2), (0.32, -0.15), (-0.1, -0.25)]:
+        silindir(x, y, 0.77, 0.07, 0.012, beyaz, n=14, bevel=0, ust=k)
+        silindir(x, y, 0.782, 0.035, 0.12, cay, n=10, bevel=0, ust=k)
+    silindir(0.0, 0.15, 0.77, 0.12, 0.015, beyaz, n=18, bevel=0, ust=k)
+    kutu(0.0, 0.15, 0.785, 0.12, 0.08, 0.04, mat("peynir", (0.97, 0.96, 0.9), 0.6), bevel=0.01, ust=k)
+    # sandalyeler
+    for s, rz in ((-1, 0), (1, math.pi)):
+        sk = bos("sandalye", 0, s * 0.62, 0, rz)
+        sk.parent = k
+        kutu(0, 0, 0, 0.42, 0.42, 0.45, ahsap_ac, bevel=0.02, ust=sk)
+        kutu(0, -0.2, 0.45, 0.42, 0.05, 0.45, ahsap_ac, bevel=0.02, ust=sk)
+
+
+@esya("sofra_bos", 3)
+def _sofra_bos(k):
+    silindir(0, 0, 0, 0.05, 0.72, ahsap, n=8, ust=k)
+    for s in (-1, 1):
+        for t in (-1, 1):
+            kutu(s * 0.42, t * 0.3, 0, 0.06, 0.06, 0.72, ahsap, bevel=0.01, ust=k)
+    kutu(0, 0, 0.72, 1.1, 0.8, 0.05, mat_dama("musamba_soluk", (0.62, 0.3, 0.28), (0.85, 0.82, 0.76), 14, 0.5), bevel=0.02, ust=k)
+    # tek bir çay bardağı — boş
+    silindir(0.2, 0.1, 0.77, 0.07, 0.012, beyaz, n=14, bevel=0, ust=k)
+    silindir(0.2, 0.1, 0.782, 0.035, 0.12, mat("bos_bardak", (0.85, 0.88, 0.9), 0.15), n=10, bevel=0, ust=k)
+    sk = bos("sandalye", 0, -0.62, 0, 0.25)
+    sk.parent = k
+    kutu(0, 0, 0, 0.42, 0.42, 0.45, ahsap_ac, bevel=0.02, ust=sk)
+    kutu(0, -0.2, 0.45, 0.42, 0.05, 0.45, ahsap_ac, bevel=0.02, ust=sk)
+
+
+@esya("takvim", 2)
+def _takvim(k):
+    kutu(0, 0, 0, 0.32, 0.03, 0.42, mat("takvim_arka", (0.8, 0.15, 0.12), 0.6), bevel=0.005, ust=k)
+    kutu(0, -0.02, 0.04, 0.26, 0.02, 0.24, beyaz, bevel=0, ust=k)
+    # yapraklar koparılır: küçük yaprak düşüşleri
+    yap = mat("takvim_yaprak", (0.97, 0.97, 0.95), 0.8)
+    for i, f0 in enumerate(range(40, FR - 120, 55)):
+        y = kutu(0, -0.04, 0.04, 0.26, 0.004, 0.24, yap, bevel=0, ust=k)
+        kf(y, "location", 1, (0, -0.04, 0.04))
+        kf(y, "location", f0, (0, -0.04, 0.04), "SINE", "EASE_IN")
+        kf(y, "location", f0 + 30, (random.uniform(-0.3, 0.3), -0.6, -1.3))
+        kf(y, "rotation_euler", f0, (0, 0, 0))
+        kf(y, "rotation_euler", f0 + 30, (random.uniform(1, 3), random.uniform(-1, 1), random.uniform(-2, 2)))
+        kf(y, "scale", f0 + 29, (1, 1, 1), "CONSTANT")
+        kf(y, "scale", f0 + 30, (0.0001, 0.0001, 0.0001), "CONSTANT")
+
+
+
+
+# ---------------------------------------------------------------- KÖY EVİ eşyaları
+@esya("yuk", 2)
+def _yuk(k):
+    # duvar dibinde üst üste katlanmış yorgan/döşek yığını (yük) + üstünde dantel örtü
+    renk = [(0.75, 0.2, 0.25), (0.95, 0.85, 0.55), (0.3, 0.5, 0.7), (0.85, 0.45, 0.6), (0.95, 0.93, 0.88), (0.5, 0.7, 0.4)]
+    z = 0
+    for i, c in enumerate(renk):
+        h = 0.16 + (i % 2) * 0.04
+        kutu(random.uniform(-0.03, 0.03), 0, z, 1.05, 0.62, h, mat(f"yorgan{i}", c, 0.95), bevel=0.06, ust=k)
+        z += h
+    kutu(0, -0.05, z, 1.1, 0.66, 0.01, dantel, bevel=0, ust=k)
+    kutu(0, -0.34, z - 0.25, 1.05, 0.01, 0.26, dantel, bevel=0, ust=k)
+
+
+@esya("yer_sofrasi", 4)
+def _yer_sofrasi(k):
+    silindir(0, 0, 0, 0.62, 0.025, mat("sofra_bezi", (0.95, 0.93, 0.86), 0.9), n=32, bevel=0, ust=k)
+    silindir(0, 0, 0.025, 0.42, 0.16, ahsap, n=24, ust=k)
+    silindir(0, 0, 0.185, 0.5, 0.03, ahsap_ac, n=32, ust=k)
+    silindir(0, 0, 0.215, 0.15, 0.06, mat("bakir", (0.85, 0.45, 0.25), 0.3, metal=1.0), n=20, ust=k)
+    for i in range(6):
+        a = i / 6 * 2 * math.pi
+        silindir(0.33 * math.cos(a), 0.33 * math.sin(a), 0.215, 0.06, 0.012, beyaz, n=12, bevel=0, ust=k)
+        silindir(0.33 * math.cos(a), 0.33 * math.sin(a), 0.227, 0.03, 0.08, cay, n=10, bevel=0, ust=k)
+        kutu(0.82 * math.cos(a), 0.82 * math.sin(a), 0, 0.5, 0.5, 0.1, mat(f"minder{i%3}", [(0.85, 0.25, 0.2), (0.35, 0.55, 0.8), (0.95, 0.72, 0.25)][i % 3], 0.95), bevel=0.04, ust=k).rotation_euler = (0, 0, a)
+    kure(-0.12, 0.1, 0.25, 0.1, mat("ekmek", (0.82, 0.55, 0.25), 0.8), sub=2, ust=k, olcek=(1.6, 1.2, 0.35))
+
+
+@esya("gaz_lambasi", 0)
+def _gaz(k):
+    silindir(0, 0, 0, 0.07, 0.08, mat("bakir", (0.85, 0.45, 0.25), 0.3, metal=1.0), n=16, ust=k)
+    alev = mat("gaz_alev", (1, 0.6, 0.2), emis=(1.0, 0.55, 0.15), guc=0.0)
+    kure(0, 0, 0.15, 0.03, alev, sub=2, ust=k, olcek=(0.6, 0.6, 1.4))
+    silindir(0, 0, 0.08, 0.055, 0.17, mat("lamba_cam", (0.95, 0.9, 0.8), 0.1), n=16, bevel=0, ust=k)
+    bpy.ops.object.light_add(type="POINT", location=(0, 0, 0.2))
+    l = bpy.context.object
+    l.parent = k
+    l.data.color = (1.0, 0.55, 0.2)
+    l.data.shadow_soft_size = 0.05
+    ISIKLAR.append(dict(veri=l.data, enerji=90, emat=alev, eguc=30, ad=CUR[0], tip="gece", titre=0.25))
+
+
+@esya("bakir_raf", 3)
+def _bakir(k):
+    kutu(0, 0, 0, 0.26, 1.3, 0.04, ahsap, bevel=0.01, ust=k)
+    bak = mat("bakir", (0.85, 0.45, 0.25), 0.3, metal=1.0)
+    for i, (r, h) in enumerate([(0.12, 0.16), (0.09, 0.22), (0.14, 0.12), (0.08, 0.2), (0.11, 0.14)]):
+        silindir(0, -0.5 + i * 0.25, 0.04, r, h, bak, n=18, ust=k)
+
+
+@esya("sandik", 5)
+def _sandik(k):
+    s = mat("sandik", (0.5, 0.28, 0.12), 0.5)
+    kutu(0, 0, 0, 0.95, 0.5, 0.5, s, bevel=0.03, ust=k)
+    kutu(0, 0, 0.5, 0.97, 0.52, 0.08, s, bevel=0.03, ust=k)
+    pir = mat("pirinc", (0.85, 0.65, 0.25), 0.3, metal=1.0)
+    for x in (-0.38, 0, 0.38):
+        kutu(x, -0.255, 0.02, 0.05, 0.01, 0.52, pir, bevel=0, ust=k)
+    kutu(0, -0.26, 0.38, 0.09, 0.02, 0.1, pir, bevel=0.01, ust=k)
+
+
+@esya("ot", 0)
+def _ot(k):
+    # son dönemde döşemenin arasından otlar biter ve büyür
+    yesil = [mat(f"ot{i}", c, 0.85) for i, c in enumerate([(0.25, 0.5, 0.18), (0.35, 0.58, 0.2), (0.45, 0.55, 0.22)])]
+    son = next((d["bas"] for d in DON if d.get("son")), 1)
+    for i in range(150):
+        x, y = random.uniform(-2.4, 2.4), random.uniform(-2.4, 2.4)
+        bpy.ops.mesh.primitive_cone_add(vertices=4, radius1=random.uniform(0.05, 0.09), depth=random.uniform(0.3, 0.8), location=(x, y, 0))
+        o = bpy.context.object
+        o.parent = k
+        o.rotation_euler = (random.uniform(-0.3, 0.3), random.uniform(-0.3, 0.3), random.uniform(0, 3))
+        o.data.materials.append(random.choice(yesil))
+        bas = son + random.randint(10, 200)
+        kf(o, "scale", 1, (0.0001,) * 3, "CONSTANT")
+        kf(o, "scale", bas, (0.0001,) * 3, "SINE", "EASE_OUT")
+        kf(o, "scale", bas + random.randint(60, 120), (1, 1, 1))
+
+
+@esya("kiris", 30)
+def _kiris(k):
+    o = kutu(0, 0, 0, 3.4, 0.22, 0.22, mat("kiris", (0.4, 0.28, 0.18), 0.9), bevel=0.02, ust=k)
+    o.rotation_euler = (0, math.radians(-38), 0)
+
+
+
+
+# ---------------------------------------------------------------- ÇOCUK ODASI eşyaları
+@esya("yatak", 2)
+def _yatak(k):
+    kutu(0, 0, 0, 1.0, 2.0, 0.35, ahsap_ac, bevel=0.03, ust=k)
+    kutu(0, 0, 0.35, 0.95, 1.95, 0.16, beyaz, bevel=0.06, ust=k)
+    kutu(0, 0.2, 0.5, 1.0, 1.4, 0.08, mat("nevresim", (0.35, 0.6, 0.85), 0.9), bevel=0.05, ust=k)
+    kutu(0, -0.72, 0.5, 0.7, 0.35, 0.14, beyaz, bevel=0.06, ust=k)
+    kutu(0, -0.99, 0, 1.0, 0.06, 0.85, ahsap_ac, bevel=0.02, ust=k)
+
+
+@esya("calisma_masasi", 3)
+def _masa_c(k):
+    kutu(0, 0, 0.72, 1.3, 0.62, 0.05, ahsap_ac, bevel=0.01, ust=k)
+    for s in (-1, 1):
+        kutu(s * 0.6, 0, 0, 0.05, 0.6, 0.72, ahsap_ac, bevel=0.01, ust=k)
+    # defter + kalemlik
+    kutu(-0.3, -0.05, 0.77, 0.35, 0.25, 0.02, mat("defter", (0.9, 0.25, 0.2), 0.7), bevel=0.005, ust=k)
+    silindir(0.45, 0.15, 0.77, 0.05, 0.12, mat("kalemlik", (0.2, 0.5, 0.8), 0.5), n=10, ust=k)
+    sk = bos("sandalye", 0.0, -0.55, 0, 0)
+    sk.parent = k
+    kutu(0, 0, 0, 0.42, 0.42, 0.45, mat("sandalye_mavi", (0.2, 0.45, 0.75), 0.5), bevel=0.02, ust=sk)
+    kutu(0, -0.2, 0.45, 0.42, 0.05, 0.4, mat("sandalye_mavi", (0.2, 0.45, 0.75), 0.5), bevel=0.02, ust=sk)
+
+
+@esya("bilgisayar_crt", 3)
+def _crt(k):
+    kasa = mat("bej_plastik", (0.86, 0.83, 0.74), 0.5)
+    kutu(0, 0.05, 0, 0.45, 0.42, 0.4, kasa, bevel=0.04, ust=k)
+    ekran = mat("crt_ekran", (0.1, 0.2, 0.3), 0.2, emis=(0.4, 0.75, 1.0), guc=0.0)
+    kutu(0, -0.17, 0.06, 0.34, 0.02, 0.28, ekran, bevel=0.02, ust=k)
+    kutu(0, -0.32, 0, 0.45, 0.16, 0.03, kasa, bevel=0.01, ust=k)
+    bpy.ops.object.light_add(type="AREA", location=(0, -0.4, 0.25), rotation=(math.pi / 2, 0, 0))
+    l = bpy.context.object
+    l.parent = k
+    l.data.size = 0.35
+    l.data.color = (0.5, 0.75, 1.0)
+    ISIKLAR.append(dict(veri=l.data, enerji=25, emat=ekran, eguc=3.0, ad=CUR[0], tip="gece", titre=0.3))
+
+
+@esya("laptop", 3)
+def _laptop(k):
+    gri = mat("laptop", (0.6, 0.62, 0.65), 0.3, metal=0.6)
+    kutu(0, 0, 0, 0.42, 0.3, 0.02, gri, bevel=0.005, ust=k)
+    e = kutu(0, 0.15, 0.02, 0.42, 0.015, 0.28, gri, bevel=0.005, ust=k)
+    e.rotation_euler = (-0.25, 0, 0)
+    ekran = mat("laptop_ekran", (0.1, 0.1, 0.12), 0.2, emis=(0.7, 0.8, 1.0), guc=0.0)
+    kutu(0, 0.135, 0.04, 0.38, 0.005, 0.24, ekran, bevel=0, ust=k).rotation_euler = (-0.25, 0, 0)
+    ISIKLAR.append(dict(veri=bpy.data.lights.new("lp", "POINT"), enerji=0, emat=ekran, eguc=2.5, ad=CUR[0], tip="gece", titre=0.0))
+
+
+def _poster(k, renk, ad):
+    kutu(0, 0, 0, 0.03, 0.6, 0.8, mat(ad, renk, 0.7), bevel=0, ust=k)
+    kutu(0.02, 0, 0.45, 0.01, 0.4, 0.25, mat(ad + "_b", (0.98, 0.95, 0.8), 0.7), bevel=0, ust=k)
+    kure(0.02, 0.0, 0.25, 0.1, mat(ad + "_c", (0.95, 0.85, 0.2), 0.7), sub=1, ust=k, olcek=(0.2, 1, 1))
+
+
+@esya("poster1", 3)
+def _p1(k):
+    _poster(k, (0.15, 0.25, 0.55), "poster1")
+
+
+@esya("poster2", 5)
+def _p2(k):
+    _poster(k, (0.7, 0.15, 0.2), "poster2")
+
+
+@esya("oyuncak", 6)
+def _oyuncak(k):
+    tuy = mat("ayi", (0.6, 0.38, 0.2), 0.95)
+    kure(0, 0, 0.15, 0.14, tuy, sub=2, ust=k, olcek=(1, 0.9, 1.1))
+    kure(0, 0, 0.36, 0.1, tuy, sub=2, ust=k)
+    for s in (-1, 1):
+        kure(s * 0.07, 0, 0.44, 0.035, tuy, sub=1, ust=k)
+    kure(0.45, -0.3, 0.1, 0.1, mat_dama("top", (0.95, 0.95, 0.95), (0.1, 0.1, 0.1), 6, 0.4), sub=2, ust=k)
+
+
+@esya("kitaplik", 4)
+def _kitaplik(k):
+    kutu(0, 0, 0, 0.32, 0.9, 1.6, ahsap_ac, bevel=0.02, ust=k)
+    for r in range(4):
+        z = 0.1 + r * 0.38
+        x = -0.38
+        while x < 0.38:
+            w = random.uniform(0.04, 0.08)
+            kutu(-0.02, x + w / 2, z, 0.24, w, random.uniform(0.2, 0.3),
+                 mat(f"kitap{int(x*100)%5}", [(0.8, 0.2, 0.2), (0.2, 0.4, 0.7), (0.9, 0.7, 0.2), (0.3, 0.6, 0.3), (0.9, 0.9, 0.85)][int(x * 100) % 5], 0.7), bevel=0.003, ust=k)
+            x += w + 0.01
+
+
+@esya("koliler", 4)
+def _koli(k):
+    km = mat("koli", (0.72, 0.55, 0.35), 0.9)
+    bant = mat("bant", (0.8, 0.7, 0.5), 0.3)
+    for (x, y, z, s) in [(0, 0, 0, 0.6), (0.65, 0.1, 0, 0.55), (0.3, 0.05, 0.6, 0.5), (-0.6, -0.2, 0, 0.5), (0.0, -0.7, 0, 0.45)]:
+        o = kutu(x, y, z, s, s * 0.9, s * 0.95, km, bevel=0.015, ust=k)
+        o.rotation_euler = (0, 0, random.uniform(-0.2, 0.2))
+        kutu(x, y, z + s * 0.95, 0.08, s * 0.92, 0.005, bant, bevel=0, ust=k)
+
+
 # Eşyaların odadaki yerleri (x, y, z, dönüş)
 YER = {
     "soba": (-2.00, 1.49, 0, 0), "sedir": (0.34, 2.08, 0, 0), "kanepe_kahve": (0.34, 2.04, 0, 0),
@@ -622,6 +984,22 @@ for _a, _dx in (("radyo", 0.15), ("foto1", 0.05), ("foto2", 0.05), ("foto3", 0.0
     _v = YER[_a]; YER[_a] = (-ODA + _dx, _v[1], _v[2], _v[3])
 YER["saat"] = (YER["saat"][0], ODA - 0.06, YER["saat"][2], 0)
 YER["dikis"] = (-1.75, -1.75, 0, math.radians(30))
+YER.update({
+    "tezgah_eski": (-ODA, -0.6, 0, 0), "tezgah_yeni": (-ODA, -0.6, 0, 0),
+    "ocak_tuplu": (-0.9, ODA - 0.35, 0, 0), "ocak_yeni": (-1.25, ODA - 0.35, 0, 0),
+    "buzdolabi_eski": (0.25, ODA - 0.4, 0, 0), "buzdolabi_yeni": (0.2, ODA - 0.4, 0, 0),
+    "ust_dolap": (-0.9, ODA - 0.2, 1.75, 0), "raf_kavanoz": (1.4, ODA - 0.14, 1.55, 0),
+    "sofra_musamba": (0.75, -0.2, 0, 0), "sofra_bos": (0.75, -0.2, 0, 0),
+    "takvim": (1.5, ODA - 0.03, 1.0, 0),
+    "yuk": (1.6, ODA - 0.4, 0, 0), "yer_sofrasi": (0.2, 0.0, 0, 0), "gaz_lambasi": (-ODA + 0.2, 1.2, 1.2, 0),
+    "bakir_raf": (-ODA + 0.15, 1.2, 1.9, 0), "sandik": (-1.6, -1.8, 0, math.radians(20)),
+    "ot": (0, 0, 0, 0), "kiris": (0.6, 0.4, 1.0, math.radians(30)),
+    "yatak": (1.85, 1.35, 0, 0), "calisma_masasi": (-1.6, 2.15, 0, 0), "bilgisayar_crt": (-1.5, 2.3, 0.77, 0),
+    "laptop": (-1.5, 2.15, 0.77, 0), "poster1": (-ODA + 0.03, 1.4, 1.5, 0), "poster2": (-ODA + 0.03, -2.0, 1.4, 0),
+    "oyuncak": (1.6, -0.2, 0, 0), "kitaplik": (-0.3, ODA - 0.2, 0, math.radians(-90)), "koliler": (0.6, -0.5, 0, 0),
+})
+for _a, _v in B.get("yerler", {}).items():
+    YER[_a] = tuple(_v[:3]) + (math.radians(_v[3]) if len(_v) > 3 else 0,)
 # kedi ikinci dönemde kanepenin üstünde biraz yükseğe
 ISIKLAR = []
 CUR = [None]

@@ -1,0 +1,160 @@
+{
+ "id": "Z03",
+ "baslik": "Köydeki ev",
+ "set": "oda",
+ "fps": 30,
+ "kare": 1020,
+ "kanca": "Köydeki ev.\n54 yılda ne yaşadı?",
+ "yerler": {
+  "sedir": [
+   -0.2,
+   2.08,
+   0,
+   0
+  ],
+  "kedi": [
+   -0.9,
+   1.95,
+   0.5,
+   20
+  ],
+  "saat": [
+   0.95,
+   2.49,
+   1.9,
+   0
+  ],
+  "radyo": [
+   -2.42,
+   -1.9,
+   1.55,
+   0
+  ],
+  "gaz_lambasi": [
+   -2.3,
+   1.05,
+   1.2,
+   0
+  ]
+ },
+ "donemler": [
+  {
+   "yil": 1972,
+   "bas": 1,
+   "bit": 270,
+   "duvar": [
+    0.93,
+    0.9,
+    0.8
+   ],
+   "hali": "kirmizi",
+   "gece": true,
+   "esyalar": [
+    "soba",
+    "sedir",
+    "yuk",
+    "yer_sofrasi",
+    "gaz_lambasi",
+    "bakir_raf",
+    "sandik",
+    "kilim",
+    "kedi",
+    "perde",
+    "saksi",
+    "saat"
+   ],
+   "yazi": "Bir zamanlar on kişi\nbu odada uyurdu."
+  },
+  {
+   "yil": 1989,
+   "bas": 271,
+   "bit": 480,
+   "duvar": [
+    0.8,
+    0.86,
+    0.8
+   ],
+   "hali": "kirmizi",
+   "gece": true,
+   "esyalar": [
+    "soba",
+    "sedir",
+    "yuk",
+    "yer_sofrasi",
+    "ampul",
+    "radyo",
+    "bakir_raf",
+    "sandik",
+    "kilim",
+    "kedi",
+    "perde",
+    "saksi",
+    "saat",
+    "foto1"
+   ],
+   "yazi": "Elektrik geldi.\nGençler şehre gitti."
+  },
+  {
+   "yil": 2007,
+   "bas": 481,
+   "bit": 690,
+   "duvar": [
+    0.82,
+    0.78,
+    0.7
+   ],
+   "hali": "mavi",
+   "gece": true,
+   "esyalar": [
+    "soba",
+    "sedir",
+    "tv_tuplu",
+    "ampul",
+    "sandik",
+    "kilim",
+    "perde",
+    "saksi",
+    "saat",
+    "foto1",
+    "foto2",
+    "foto3"
+   ],
+   "yazi": "Bir tek babaanne kaldı.\nBayramlarda ev dolardı."
+  },
+  {
+   "yil": 2026,
+   "bas": 691,
+   "bit": 1020,
+   "duvar": [
+    0.62,
+    0.58,
+    0.52
+   ],
+   "hali": "bej",
+   "gece": false,
+   "son": true,
+   "esyalar": [
+    "sandik",
+    "foto1",
+    "saat",
+    "ot",
+    "kiris",
+    "toz",
+    "saksi_kuru"
+   ],
+   "yazi": "Şimdi ev\notlara emanet."
+  }
+ ],
+ "kapanis": [
+  "Kapısı kilitli değil.\nSadece kimse gelmiyor.",
+  "Senin köyündeki ev\nhâlâ ayakta mı?"
+ ],
+ "aciklama": "Bir köy evi, 54 yıl. Yer sofrası, yük, gaz lambası... sonra sessizlik. Senin köyündeki ev hâlâ ayakta mı? Köyünü yorumlara yaz 👇",
+ "hashtags": [
+  "#köy",
+  "#nostalji",
+  "#köyevi",
+  "#zamandurağı",
+  "#keşfet"
+ ]
+}

@@ -6,6 +6,7 @@ on:
       bolum: {description: "Bölüm kimliği (ör. Z01)", required: true}
       genislik: {description: "Render genişliği", default: "720"}
       ornek: {description: "Cycles örnek sayısı", default: "14"}
+      onceki_run: {description: "Kareleri bu çalıştırmadan al (render atla)", default: ""}
 permissions:
   contents: write
   actions: write
@@ -14,6 +15,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   render:
+    if: inputs.onceki_run == ''
     runs-on: ubuntu-latest
     timeout-minutes: 120
     strategy:
@@ -40,14 +42,21 @@ jobs:
         with: {name: "kare-${{ matrix.parca }}", path: kareler, retention-days: 2, compression-level: 0}
   kurgu:
     needs: render
+    if: always() && (needs.render.result == 'success' || inputs.onceki_run != '')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
-        with: {pattern: "kare-*", path: kareler, merge-multiple: true}
+        with:
+          pattern: "kare-*"
+          path: kareler
+          merge-multiple: true
+          run-id: ${{ inputs.onceki_run || github.run_id }}
+          github-token: ${{ github.token }}
       - name: Kurgu
         run: |
           ls kareler | wc -l
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
           pip install -q numpy pillow
           python zaman/kurgu.py zaman/bolumler/${{ inputs.bolum }}.json kareler ${{ inputs.bolum }}.mp4
           ffprobe -v error -show_entries format=duration:stream=width,height -of compact ${{ inputs.bolum }}.mp4

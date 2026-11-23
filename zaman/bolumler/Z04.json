@@ -1,0 +1,159 @@
+{
+ "id": "Z04",
+ "baslik": "Çocukluk odan",
+ "set": "oda",
+ "fps": 30,
+ "kare": 1020,
+ "kanca": "Çocukluk odan.\n30 yılda ne oldu?",
+ "yerler": {
+  "saat": [
+   0.95,
+   2.49,
+   1.9,
+   0
+  ],
+  "kilim": [
+   0.3,
+   0.3,
+   0,
+   0
+  ],
+  "saksi": [
+   -2.5,
+   -0.64,
+   0.97,
+   0
+  ],
+  "ampul": [
+   0.3,
+   0.3,
+   3.1,
+   0
+  ],
+  "avize": [
+   0.3,
+   0.3,
+   3.1,
+   0
+  ],
+  "kedi": [
+   1.85,
+   1.0,
+   0.55,
+   40
+  ]
+ },
+ "donemler": [
+  {
+   "yil": 1996,
+   "bas": 1,
+   "bit": 270,
+   "duvar": [
+    0.72,
+    0.84,
+    0.93
+   ],
+   "hali": "mavi",
+   "gece": true,
+   "esyalar": [
+    "yatak",
+    "calisma_masasi",
+    "bilgisayar_crt",
+    "poster1",
+    "oyuncak",
+    "kitaplik",
+    "kilim",
+    "ampul",
+    "perde",
+    "saat",
+    "kedi"
+   ],
+   "yazi": "Ödevini burada yapar,\nsabaha kadar oyun oynardın."
+  },
+  {
+   "yil": 2006,
+   "bas": 271,
+   "bit": 480,
+   "duvar": [
+    0.78,
+    0.88,
+    0.8
+   ],
+   "hali": "mavi",
+   "gece": true,
+   "esyalar": [
+    "yatak",
+    "calisma_masasi",
+    "bilgisayar_crt",
+    "poster1",
+    "poster2",
+    "kitaplik",
+    "kilim",
+    "ampul",
+    "perde",
+    "saat",
+    "kedi"
+   ],
+   "yazi": "Sınav, ilk aşk,\nkapıyı çarpıp kapandığın gece."
+  },
+  {
+   "yil": 2014,
+   "bas": 481,
+   "bit": 690,
+   "duvar": [
+    0.9,
+    0.88,
+    0.84
+   ],
+   "hali": "bej",
+   "gece": true,
+   "esyalar": [
+    "yatak",
+    "calisma_masasi",
+    "laptop",
+    "poster2",
+    "kitaplik",
+    "kilim",
+    "avize",
+    "perde",
+    "saat"
+   ],
+   "yazi": "Sonra bir bavul aldın.\nOda seni hep bekledi."
+  },
+  {
+   "yil": 2026,
+   "bas": 691,
+   "bit": 1020,
+   "duvar": [
+    0.8,
+    0.78,
+    0.74
+   ],
+   "hali": "bej",
+   "gece": false,
+   "son": true,
+   "esyalar": [
+    "yatak",
+    "koliler",
+    "kitaplik",
+    "saat",
+    "oyuncak",
+    "perde",
+    "toz"
+   ],
+   "yazi": "Annen her hafta\ntozunu alıyor."
+  }
+ ],
+ "kapanis": [
+  "Senin odan da hâlâ\naynen duruyor olabilir.",
+  "Çocukluk odandan\nen çok neyi özlüyorsun?"
+ ],
+ "aciklama": "Bir çocuk odası, 30 yıl. Tüplü monitör, posterler, sabaha kadar süren oyunlar... Çocukluk odandan en çok neyi özlüyorsun? 👇 Kardeşine gönder.",
+ "hashtags": [
+  "#90lar",
+  "#nostalji",
+  "#çocukluk",
+  "#zamandurağı",
+  "#keşfet"
+ ]
+}
