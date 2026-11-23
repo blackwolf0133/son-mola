@@ -6,8 +6,8 @@ jobs:
     steps:
       - run: |
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36"
-          curl -s -A "$UA" -o p.html -w "%{http_code}\n" "https://pixabay.com/music/search/nostalgic%20piano/?order=ec"
-          wc -c p.html; grep -o 'https://cdn.pixabay.com/download/audio/[^"]*\.mp3[^"]*' p.html | head -5
-          grep -o '"bootstrapUrl":"[^"]*"' p.html | head -2
-          grep -o '__BOOTSTRAP_URL__ = [^;]*' p.html | head -2
-          head -c 600 p.html
+          for u in "https://filmmusic.io/en/tags/melancholy" "https://filmmusic.io/en/tags/nostalgic" "https://filmmusic.io/en/tags/sad" "https://incompetech.com/music/royalty-free/music.html" "https://freemusicarchive.org/genre/Soundtrack/"; do
+            curl -sL -A "$UA" -o p.html -w "%{http_code} $u\n" "$u"; wc -c < p.html
+            grep -oE 'https://[^"]+\.mp3' p.html | head -8
+            grep -oE 'href="/en/song/[^"]+"' p.html | sort -u | head -25
+          done
