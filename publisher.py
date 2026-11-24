@@ -95,7 +95,7 @@ def _wait_container(host, container_id, token, timeout=900):
     raise PublishError(f"Video işleme zaman aşımı. Son durum: {last}")
 
 
-HESAP = os.environ.get("IG_USERNAME", "sonmola.dizi").strip().lstrip("@").lower()
+HESAP = os.environ.get("IG_USERNAME", "zamanduragi.tr").strip().lstrip("@").lower()   # 24 Kasım: hesap adı sonmola.dizi -> zamanduragi.tr (kimlik aynı)
 VARSAYILAN_KIMLIK = os.environ.get("IG_KIMLIK", "17841447821857845")   # @sonmola.dizi Instagram kimliği (20 Kasım düzeltmesi: Kayıp'tan kopyalanırken yanlış hesap kaldı)
 
 
