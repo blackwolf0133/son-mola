@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       bolum: {description: "Bölüm kimliği (ör. Z01)", required: true}
-      genislik: {description: "Render genişliği", default: "720"}
+      genislik: {description: "Render genişliği", default: "900"}
       ornek: {description: "Cycles örnek sayısı", default: "14"}
       onceki_run: {description: "Kareleri bu çalıştırmadan al (render atla)", default: ""}
 permissions:

@@ -36,11 +36,13 @@ sc.cycles.caustics_reflective = sc.cycles.caustics_refractive = False
 sc.cycles.blur_glossy = 1.0
 sc.render.use_persistent_data = True
 sc.view_settings.view_transform = "AgX"
-try:
-    sc.view_settings.look = "AgX - Medium High Contrast"
-except Exception:
-    pass
-sc.view_settings.exposure = -0.45
+for _look in ("AgX - Punchy", "AgX - Medium High Contrast"):
+    try:
+        sc.view_settings.look = _look
+        break
+    except Exception:
+        pass
+sc.view_settings.exposure = -0.32
 sc.render.image_settings.file_format = "PNG"
 sc.render.image_settings.color_mode = "RGB"
 
@@ -1188,6 +1190,18 @@ world = bpy.data.worlds.new("w")
 sc.world = world
 world.use_nodes = True
 bg = world.node_tree.nodes["Background"]
+# Kameranın gördüğü fon: koyu, döneme göre renk alan perde (aydınlatma gökyüzünden gelmeye devam eder).
+# Parlak oda koyu fonda "vitrin" gibi parlar; akışta göz buna takılır.
+_wn, _wl = world.node_tree.nodes, world.node_tree.links
+_lp = _wn.new("ShaderNodeLightPath")
+bg_kam = _wn.new("ShaderNodeBackground")
+_mx = _wn.new("ShaderNodeMixShader")
+_out = _wn["World Output"]
+_wl.new(_lp.outputs["Is Camera Ray"], _mx.inputs[0])
+_wl.new(bg.outputs[0], _mx.inputs[1])
+_wl.new(bg_kam.outputs[0], _mx.inputs[2])
+_wl.new(_mx.outputs[0], _out.inputs["Surface"])
+bg_kam.inputs["Strength"].default_value = 1.0
 bpy.ops.object.light_add(type="SUN", location=(0, 0, 10))
 gunes = bpy.context.object
 gunes.data.angle = math.radians(3)
@@ -1204,6 +1218,7 @@ dolgu.rotation_euler = (math.radians(55), 0, math.radians(40))
 def gok(f, renk, guc, g_enerji, g_yuk, g_az, g_renk=(1, 0.95, 0.85), dolgu_e=900):
     soket_kf(bg.inputs["Color"], f, (*renk, 1))
     soket_kf(bg.inputs["Strength"], f, guc)
+    soket_kf(bg_kam.inputs["Color"], f, (*(0.018 + c * 0.075 for c in renk), 1))
     gunes.data.energy = g_enerji
     gunes.data.keyframe_insert("energy", frame=f)
     gunes.data.color = g_renk
@@ -1272,11 +1287,11 @@ for I in ISIKLAR:
 hedef = bos("hedef", 0.0, 0.0, 0.7)
 pivot = bos("pivot", 0, 0, 0)
 cam_d = bpy.data.cameras.new("kam")
-cam_d.lens = 36
+cam_d.lens = 43
 cam_d.sensor_width = 36
 cam_d.dof.use_dof = True
 cam_d.dof.focus_object = hedef
-cam_d.dof.aperture_fstop = 1.4
+cam_d.dof.aperture_fstop = 2.2
 kam = bpy.data.objects.new("kam", cam_d)
 sc.collection.objects.link(kam)
 kam.parent = pivot
@@ -1286,14 +1301,31 @@ tr.target = hedef
 tr.track_axis = "TRACK_NEGATIVE_Z"
 tr.up_axis = "UP_Y"
 sc.camera = kam
-kf(pivot, "rotation_euler", 1, (0, 0, math.radians(-14)), "SINE", "EASE_IN_OUT")
-kf(pivot, "rotation_euler", FR, (0, 0, math.radians(22)), "SINE", "EASE_IN_OUT")
-# açılış: yakından geri çekil; final: yavaşça yaklaş
-kf(pivot, "scale", 1, (0.9, 0.9, 0.9), "SINE", "EASE_OUT")
-kf(pivot, "scale", 75, (1.0, 1.0, 1.0), "SINE", "EASE_IN_OUT")
+# Yörünge: her dönem geçişinde hızlı bir savrulma (yeni dönem = yeni açı), arada yavaş süzülme.
+ACI0, ACI1 = -18.0, 20.0
 son_bas = next((d["bas"] for d in DON if d.get("son")), FR)
-kf(pivot, "scale", son_bas, (1.0, 1.0, 1.0), "SINE", "EASE_IN_OUT")
-kf(pivot, "scale", FR, (0.88, 0.88, 0.88), "SINE", "EASE_IN_OUT")
+n_d = len(DON)
+for i, d in enumerate(DON):
+    a0 = ACI0 + (ACI1 - ACI0) * i / n_d
+    a1 = ACI0 + (ACI1 - ACI0) * (i + 1) / n_d
+    if i == 0:
+        kf(pivot, "rotation_euler", 1, (0, 0, math.radians(a0)), "SINE", "EASE_OUT")
+    else:
+        kf(pivot, "rotation_euler", d["bas"], (0, 0, math.radians(a0)), "BACK", "EASE_OUT")
+    kf(pivot, "rotation_euler", min(d["bas"] + 26, d["bit"] - 2), (0, 0, math.radians(a0 + (a1 - a0) * 0.55)), "SINE", "EASE_IN_OUT")
+kf(pivot, "rotation_euler", FR, (0, 0, math.radians(ACI1)), "SINE", "EASE_IN_OUT")
+# Ölçek (=uzaklık): açılışta yakından hızla geri çekil; her geçişte kısa "vurma" (yaklaş-uzaklaş); finalde yaklaş.
+kf(pivot, "scale", 1, (0.58, 0.58, 0.58), "EXPO", "EASE_OUT")
+kf(pivot, "scale", 46, (1.0, 1.0, 1.0), "SINE", "EASE_IN_OUT")
+for i, d in enumerate(DON[1:], 1):
+    b = d["bas"]
+    kf(pivot, "scale", b - 3, (1.0, 1.0, 1.0), "SINE", "EASE_IN")
+    kf(pivot, "scale", b + 7, (0.9, 0.9, 0.9), "SINE", "EASE_OUT")
+    if not d.get("son"):
+        kf(pivot, "scale", b + 40, (1.0, 1.0, 1.0), "SINE", "EASE_IN_OUT")
+    else:
+        kf(pivot, "scale", b + 40, (0.97, 0.97, 0.97), "SINE", "EASE_IN_OUT")
+kf(pivot, "scale", FR, (0.86, 0.86, 0.86), "SINE", "EASE_IN_OUT")
 
 # ---------------------------------------------------------------- render
 os.makedirs(OUT, exist_ok=True)
